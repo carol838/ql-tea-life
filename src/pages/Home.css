@@ -1,0 +1,558 @@
+.home-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--color-cream);
+}
+
+.home-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 76px);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.34) 0%,
+      rgba(255, 255, 255, 0.16) 30%,
+      rgba(255, 255, 255, 0.04) 48%,
+      rgba(255, 255, 255, 0) 62%
+    ),
+    url('/images/Hero/tea-mountain.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-section,
+.home-final-cta {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.home-hero__content {
+  position: absolute;
+  top: 36%;
+  left: 5.5vw;
+  width: min(680px, calc(100% - 11vw));
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+.home-hero__eyebrow {
+  margin: 0 0 18px;
+  color: rgba(49, 92, 58, 0.82);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.home-hero__content h1 {
+  max-width: 680px;
+  margin: 0;
+  color: #173f29;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.home-button,
+.home-text-link,
+.home-category-card {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 12px 22px;
+}
+
+.home-button--primary {
+  background: var(--color-gold-soft);
+}
+
+.home-section {
+  padding: 76px 0;
+}
+
+.home-section--tinted {
+  width: 100%;
+  padding-right: max(20px, calc((100% - 1120px) / 2));
+  padding-left: max(20px, calc((100% - 1120px) / 2));
+  background: var(--color-beige);
+}
+
+.home-section__heading {
+  max-width: 660px;
+  margin-bottom: 30px;
+}
+
+.home-section__heading--row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  max-width: none;
+  gap: 24px;
+}
+
+.home-section__eyebrow {
+  margin: 0 0 10px;
+  color: var(--color-gold);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.home-section h2,
+.home-final-cta h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.home-section__heading > p:last-child {
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+
+.home-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-advantage {
+  min-height: 250px;
+  padding: 28px 22px;
+  border-right: 1px solid var(--color-line);
+}
+
+.home-advantage:last-child {
+  border-right: 0;
+}
+
+.home-advantage__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.home-advantage__icon {
+  width: 54px;
+  height: 54px;
+  fill: none;
+  stroke: #b89b5e;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-advantage__number {
+  color: rgba(184, 155, 94, 0.82);
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+.home-advantage h3,
+.home-category-card h3,
+.home-article-card h3 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.home-advantage p {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.home-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-category-card,
+.home-article-card {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.home-category-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.home-card__visual {
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(135deg, rgba(185, 144, 72, 0.12), rgba(255, 250, 240, 0.18)),
+    var(--color-beige);
+}
+
+.home-category-card h3 {
+  padding: 18px 18px 8px;
+}
+
+.home-category-card > span {
+  display: block;
+  padding: 0 18px 18px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.home-private-label {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.home-private-label__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.home-private-label__content {
+  max-width: 500px;
+}
+
+.home-private-label__content h2 {
+  max-width: 460px;
+  font-size: 44px;
+}
+
+.home-private-label__description {
+  margin: 20px 0 0;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.home-private-label__features {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.home-private-label__features li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--color-ink);
+  font-size: 15px;
+}
+
+.home-private-label__features li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #b89b5e;
+  content: "\2713";
+}
+
+.home-private-label__visual {
+  overflow: hidden;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 20px 48px rgba(45, 40, 31, 0.14);
+}
+
+.home-private-label__visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 62%;
+}
+
+.home-oem-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 72px;
+  border-top: 1px solid var(--color-line);
+}
+
+.home-oem-process__step {
+  position: relative;
+  min-height: 120px;
+  padding: 26px 24px 0 0;
+}
+
+.home-oem-process__step:not(:last-child)::after {
+  position: absolute;
+  top: -1px;
+  right: 22px;
+  width: 42%;
+  border-top: 1px solid #b89b5e;
+  content: "";
+}
+
+.home-oem-process__step span {
+  color: #b89b5e;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+.home-oem-process__step h3 {
+  margin: 14px 0 0;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.home-article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.home-article-card {
+  padding-bottom: 20px;
+}
+
+.home-article-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-article-card .home-section__eyebrow,
+.home-article-card h3,
+.home-article-card .home-text-link {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.home-article-card .home-section__eyebrow {
+  margin-top: 20px;
+}
+
+.home-article-card h3 {
+  min-height: 50px;
+  margin-bottom: 18px;
+}
+
+.home-text-link {
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 3px;
+  font-size: 14px;
+}
+
+.home-faq {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 72px;
+}
+
+.home-faq__list {
+  border-top: 1px solid var(--color-line);
+}
+
+.home-faq__list details {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-faq__list summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.home-faq__list p {
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+
+.home-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 76px;
+  padding: 48px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.home-final-cta h2 {
+  max-width: 720px;
+}
+
+.home-final-cta p:last-child {
+  margin: 16px 0 0;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .home-advantage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-advantage {
+    min-height: 220px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .home-category-grid,
+  .home-article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-private-label__layout,
+  .home-faq {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .home-private-label__content {
+    max-width: 620px;
+  }
+
+  .home-oem-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-section,
+  .home-final-cta {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .home-hero {
+    min-height: calc(100vh - 76px);
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.34) 0%,
+        rgba(255, 255, 255, 0.16) 42%,
+        rgba(255, 255, 255, 0.04) 64%,
+        rgba(255, 255, 255, 0) 82%
+      ),
+      url('/images/Hero/tea-mountain.png');
+    background-position: 58% center;
+    background-size: cover;
+  }
+
+  .home-hero__content {
+    top: 38%;
+    left: 0;
+    width: 100%;
+    max-width: 620px;
+    padding: 0 24px;
+    transform: translateY(-50%);
+  }
+
+  .home-hero__content h1 {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+  }
+
+  .home-hero__eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+  }
+
+  .home-section {
+    padding: 54px 0;
+  }
+
+  .home-section--tinted {
+    width: 100%;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .home-section h2,
+  .home-final-cta h2 {
+    font-size: 31px;
+  }
+
+  .home-section__heading--row,
+  .home-final-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-advantage-grid,
+  .home-category-grid,
+  .home-article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-private-label {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .home-private-label__content h2 {
+    font-size: 34px;
+  }
+
+  .home-private-label__visual img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-oem-process {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+    padding-left: 22px;
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+
+  .home-oem-process__step {
+    min-height: 100px;
+    padding: 0 0 30px 22px;
+  }
+
+  .home-oem-process__step::before {
+    position: absolute;
+    top: 4px;
+    left: -27px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #b89b5e;
+    border-radius: 50%;
+    background: var(--color-cream);
+    content: "";
+  }
+
+  .home-oem-process__step:not(:last-child)::after {
+    display: none;
+  }
+
+  .home-advantage {
+    min-height: 210px;
+    border-right: 0;
+  }
+
+  .home-button {
+    width: 100%;
+  }
+
+  .home-final-cta {
+    margin-bottom: 54px;
+    padding: 30px 24px;
+  }
+}
