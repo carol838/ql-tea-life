@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qltealife.com/sitemap.xml
+Sitemap: https://www.qltealife.com/sitemap.xml

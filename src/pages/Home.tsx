@@ -72,12 +72,12 @@ function AdvantageIcon({ type }: { type: string }) {
 }
 
 const teaCategories = [
-  ['Jasmine Tea', '/jasmine-tea', '/images/tea-collection/categories/jasmine-tea.jpg'],
-  ['Green Tea', '/green-tea', '/images/tea-collection/categories/green-tea.jpg'],
-  ['Black Tea', '/black-tea', '/images/tea-collection/categories/black-tea.jpg'],
-  ['Oolong Tea', '/oolong-tea', '/images/tea-collection/categories/oolong-tea.jpg'],
-  ['Herbal Tea', '/herbal-tea', '/images/tea-collection/categories/herbal-tea.jpg'],
-  ['Flavoured Tea', '/flavoured-tea', '/images/tea-collection/categories/flavoured-tea.jpg'],
+  ['Jasmine Tea', '/jasmine-tea', '/images/tea-collection/categories/jasmine-tea.webp'],
+  ['Green Tea', '/green-tea', '/images/tea-collection/categories/green-tea.webp'],
+  ['Black Tea', '/black-tea', '/images/tea-collection/categories/black-tea.webp'],
+  ['Oolong Tea', '/oolong-tea', '/images/tea-collection/categories/oolong-tea.webp'],
+  ['Herbal Tea', '/herbal-tea', '/images/tea-collection/categories/herbal-tea.webp'],
+  ['Flavoured Tea', '/flavoured-tea', '/images/tea-collection/categories/flavoured-tea.webp'],
 ];
 
 const privateLabelFeatures = [
@@ -99,19 +99,19 @@ const articles = [
   [
     'How to Choose High-Quality Chinese Tea for Your Business',
     '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business',
-    '/images/tea-knowledge/chinese-tea-quality-guide.jpg',
+    '/images/tea-knowledge/chinese-tea-quality-guide.webp',
     'Chinese green tea being evaluated in a glass brewing bowl',
   ],
   [
     'Chinese Tea Types Explained: Green Tea, Black Tea, Oolong and Herbal Tea',
     '/tea-knowledge/chinese-tea-types-explained',
-    '/images/tea-knowledge/chinese-tea-types-guide.jpg',
+    '/images/tea-knowledge/chinese-tea-types-guide.webp',
     'Fresh Chinese tea leaves drying in traditional round trays',
   ],
   [
     'Private Label Tea: How to Build Your Own Tea Brand',
     '/tea-knowledge/private-label-tea-guide',
-    '/images/tea-knowledge/private-label-tea-guide.jpg',
+    '/images/tea-knowledge/private-label-tea-guide.webp',
     'Custom private label flower and fruit tea pouch packaging',
   ],
 ];
@@ -198,7 +198,15 @@ export default function Home() {
         <div className="home-category-grid">
           {teaCategories.map(([name, path, image]) => (
             <a className="home-category-card" href={path} key={path}>
-              <img className="home-category-card__image" src={image} alt={`${name} loose leaf tea`} />
+              <img
+                className="home-category-card__image"
+                src={image}
+                alt={`${name} loose leaf tea`}
+                width="1000"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
               <h3>{name}</h3>
               <span>Explore category</span>
             </a>
@@ -225,8 +233,12 @@ export default function Home() {
           </div>
           <figure className="home-private-label__visual">
             <img
-              src="/images/private-label/jasmine-green-tea-packaging.jpg"
+              src="/images/private-label/jasmine-green-tea-packaging.webp"
               alt="Private label jasmine green tea bags and retail packaging"
+              width="800"
+              height="500"
+              loading="lazy"
+              decoding="async"
             />
           </figure>
         </div>
@@ -251,7 +263,15 @@ export default function Home() {
         <div className="home-article-grid">
           {articles.map(([title, path, image, alt]) => (
             <article className="home-article-card" key={path}>
-              <img className="home-article-card__image" src={image} alt={alt} />
+              <img
+                className="home-article-card__image"
+                src={image}
+                alt={alt}
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
               <p className="home-section__eyebrow">Tea Knowledge</p>
               <h3>{title}</h3>
               <a className="home-text-link" href={path}>Read article</a>

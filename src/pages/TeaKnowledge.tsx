@@ -16,7 +16,7 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'How to Choose High-Quality Chinese Tea for Your Business',
     url: '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business',
     description: 'Learn how to evaluate tea quality, choose reliable tea suppliers, and source premium Chinese tea for your tea business, brand, or distribution network.',
-    image: '/images/tea-knowledge/chinese-tea-quality-guide.jpg',
+    image: '/images/tea-knowledge/chinese-tea-quality-guide.webp',
     imageAlt: 'Chinese green tea being evaluated in a glass brewing bowl',
   },
   {
@@ -24,7 +24,7 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'Chinese Tea Types Explained: Green Tea, Black Tea, Oolong Tea, White Tea, Yellow Tea and Dark Tea',
     url: '/tea-knowledge/chinese-tea-types-explained',
     description: 'Learn the differences between Green Tea, Black Tea, Oolong Tea, White Tea, Yellow Tea, Dark Tea and Herbal Tea. A complete guide to Chinese tea categories for tea buyers, importers and tea brands.',
-    image: '/images/tea-knowledge/chinese-tea-types-guide.jpg',
+    image: '/images/tea-knowledge/chinese-tea-types-guide.webp',
     imageAlt: 'Fresh Chinese tea leaves drying in traditional round trays',
   },
   {
@@ -32,7 +32,7 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'Private Label Tea: How to Build Your Own Tea Brand',
     url: '/tea-knowledge/private-label-tea-how-to-build-your-own-tea-brand',
     description: 'Learn how to launch a successful private label tea brand, choose tea products, customize packaging, understand MOQ requirements, and work with reliable tea suppliers.',
-    image: '/images/tea-knowledge/private-label-tea-guide.jpg',
+    image: '/images/tea-knowledge/private-label-tea-guide.webp',
     imageAlt: 'Custom private label flower and fruit tea pouch packaging',
     aliases: ['/tea-knowledge/private-label-tea-guide'],
   },
@@ -56,7 +56,15 @@ export default function TeaKnowledge() {
         <div className="article-grid">
           {knowledgeArticles.map((article) => (
             <article className="article-card" key={article.url}>
-              <img className="article-card__image" src={article.image} alt={article.imageAlt} />
+              <img
+                className="article-card__image"
+                src={article.image}
+                alt={article.imageAlt}
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
               <p className="page-eyebrow">{article.category}</p>
               <h2>{article.title}</h2>
               <a className="text-link" href={article.url}>Read Article</a>
@@ -107,7 +115,15 @@ function PrivateLabelTeaArticle({ article }: { article: KnowledgeArticleData }) 
       </header>
 
       <article className="article-body">
-        <img className="article-body__lead-image" src={article.image} alt={article.imageAlt} />
+        <img
+          className="article-body__lead-image"
+          src={article.image}
+          alt={article.imageAlt}
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
 
         <section>
           <h2>Introduction</h2>
@@ -370,7 +386,15 @@ function ChineseTeaTypesArticle({ article }: { article: KnowledgeArticleData }) 
       </header>
 
       <article className="article-body">
-        <img className="article-body__lead-image" src={article.image} alt={article.imageAlt} />
+        <img
+          className="article-body__lead-image"
+          src={article.image}
+          alt={article.imageAlt}
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
 
         <section>
           <h2>Introduction</h2>
@@ -591,6 +615,10 @@ function TeaQualityArticle({ article }: { article: KnowledgeArticleData }) {
           className="article-body__lead-image"
           src={article.image}
           alt={article.imageAlt}
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
         />
 
         <section>

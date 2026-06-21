@@ -53,8 +53,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Fragrant Chinese jasmine teas prepared for wholesale, private label and international distribution.',
     heroSubtitle: ['Fragrant Chinese Jasmine Tea', 'For Global Buyers'],
     seoTitle: 'Jasmine Tea Wholesale & Private Label | QL Tea Life',
-    heroImage: '/images/category-hero/jasmine-tea-hero.jpg',
-    lifestyleImage: '/images/jasmine-tea/jasmine-tea-garden.jpg',
+    heroImage: '/images/category-hero/jasmine-tea-hero.webp',
+    lifestyleImage: '/images/jasmine-tea/jasmine-tea-garden.webp',
     aboutTitle: 'About Chinese Jasmine Tea',
     about: [
       'Jasmine tea is one of the most popular scented teas in the world.',
@@ -68,9 +68,9 @@ export const teaCategories: Record<string, TeaCategory> = {
       { title: 'Worldwide Export Support', description: 'Supporting tea brands, distributors, and tea shops globally.', icon: 'globe' },
     ],
     products: [
-      { title: 'Jasmine Green Tea', description: 'Traditional Chinese green tea scented with fresh jasmine flowers.', image: '/images/jasmine-tea/jasmine-green-tea.jpg' },
-      { title: 'Jasmine Dragon Pearls', description: 'Hand-rolled jasmine tea pearls with rich floral aroma.', image: '/images/jasmine-tea/jasmine-dragon-pearls.jpg' },
-      { title: 'Jasmine Tea Bags', description: 'Convenient tea bag format suitable for retail and private label projects.', image: '/images/jasmine-tea/jasmine-tea-bags.jpg' },
+      { title: 'Jasmine Green Tea', description: 'Traditional Chinese green tea scented with fresh jasmine flowers.', image: '/images/jasmine-tea/jasmine-green-tea.webp' },
+      { title: 'Jasmine Dragon Pearls', description: 'Hand-rolled jasmine tea pearls with rich floral aroma.', image: '/images/jasmine-tea/jasmine-dragon-pearls.webp' },
+      { title: 'Jasmine Tea Bags', description: 'Convenient tea bag format suitable for retail and private label projects.', image: '/images/jasmine-tea/jasmine-tea-bags.webp' },
     ],
     faqs: commonFaqs('jasmine tea', 'Loose leaf tea, dragon pearls, tea bags, and custom retail packs are available.', 'We evaluate the tea base, jasmine aroma, scenting consistency, moisture, and finished appearance.'),
   },
@@ -80,8 +80,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Fresh Chinese green teas sourced for importers, distributors, tea brands, and foodservice buyers.',
     heroSubtitle: ['Pure Chinese Green Tea', 'For Wholesale Buyers'],
     seoTitle: 'Chinese Green Tea Wholesale & Private Label | QL Tea Life',
-    heroImage: '/images/category-hero/green-tea-hero.png',
-    lifestyleImage: '/images/category-intro/tea-garden.png',
+    heroImage: '/images/category-hero/green-tea-hero.webp',
+    lifestyleImage: '/images/category-intro/tea-garden.webp',
     aboutTitle: 'About Chinese Green Tea',
     about: [
       'Chinese green tea is valued for its fresh aroma, clean character, and wide appeal across retail and hospitality markets.',
@@ -90,9 +90,9 @@ export const teaCategories: Record<string, TeaCategory> = {
     ],
     benefits: commonBenefits('Fresh Seasonal Selection', 'Green teas selected for clean aroma, leaf appearance, and dependable cup quality.'),
     products: [
-      { title: 'Longjing Tea', description: 'Flat-leaf Chinese green tea with a fresh, smooth, and lightly roasted profile.', image: '/images/tea-collection/categories/green-tea.jpg' },
-      { title: 'Dian Green Tea', description: 'A vibrant Chinese green tea from Yunnan, known for its fresh aroma, rich body and lasting sweetness.', image: '/images/green-tea/dian-green-tea.jpg' },
-      { title: 'Mao Feng Green Tea', description: 'A classic Chinese green tea with tender leaves, delicate chestnut notes and a smooth refreshing taste.', image: '/images/green-tea/mao-feng-green-tea.jpg' },
+      { title: 'Longjing Tea', description: 'Flat-leaf Chinese green tea with a fresh, smooth, and lightly roasted profile.', image: '/images/tea-collection/categories/green-tea.webp' },
+      { title: 'Dian Green Tea', description: 'A vibrant Chinese green tea from Yunnan, known for its fresh aroma, rich body and lasting sweetness.', image: '/images/green-tea/dian-green-tea.webp' },
+      { title: 'Mao Feng Green Tea', description: 'A classic Chinese green tea with tender leaves, delicate chestnut notes and a smooth refreshing taste.', image: '/images/green-tea/mao-feng-green-tea.webp' },
     ],
     faqs: commonFaqs('green tea', 'Loose leaf grades, tea bags, bulk cartons, and private label retail formats are available.', 'We review harvest timing, leaf shape, color, aroma, moisture, and liquor quality.'),
   },
@@ -102,8 +102,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Full-bodied Chinese black teas available for bulk supply, blending, and custom branded programs.',
     heroSubtitle: ['Rich Chinese Black Tea', 'For Global Distribution'],
     seoTitle: 'Chinese Black Tea Wholesale & Private Label | QL Tea Life',
-    heroImage: '/images/category-hero/black-tea-hero.png',
-    lifestyleImage: '/images/category-intro/tea-garden.png',
+    heroImage: '/images/category-hero/black-tea-hero.webp',
+    lifestyleImage: '/images/category-intro/tea-garden.webp',
     aboutTitle: 'About Chinese Black Tea',
     about: [
       'Chinese black tea offers rich color, smooth body, and naturally sweet or malty aromas for diverse international markets.',
@@ -112,9 +112,9 @@ export const teaCategories: Record<string, TeaCategory> = {
     ],
     benefits: commonBenefits('Rich Flavor Profiles', 'Black teas selected for liquor color, aroma, body, and blending performance.'),
     products: [
-      { title: 'Lapsang Souchong', description: 'A famous Chinese black tea from the Wuyi Mountains, known for its rich aroma, smooth body and traditional heritage.', image: '/images/tea-collection/categories/black-tea.jpg' },
-      { title: 'Dian Hong Black Tea', description: 'A premium Yunnan black tea with golden tips, natural sweetness and a full-bodied character.', image: '/images/black-tea/dian-hong-black-tea.jpg' },
-      { title: 'Black Tea Bags', description: 'Convenient black tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/black-tea/black-tea-bags.jpg' },
+      { title: 'Lapsang Souchong', description: 'A famous Chinese black tea from the Wuyi Mountains, known for its rich aroma, smooth body and traditional heritage.', image: '/images/tea-collection/categories/black-tea.webp' },
+      { title: 'Dian Hong Black Tea', description: 'A premium Yunnan black tea with golden tips, natural sweetness and a full-bodied character.', image: '/images/black-tea/dian-hong-black-tea.webp' },
+      { title: 'Black Tea Bags', description: 'Convenient black tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/black-tea/black-tea-bags.webp' },
     ],
     faqs: commonFaqs('black tea', 'Whole leaf, broken leaf, blending grades, tea bags, and custom packs are available.', 'We assess oxidation, aroma, liquor color, taste consistency, moisture, and grade specifications.'),
   },
@@ -124,8 +124,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Distinctive Chinese oolong teas selected for aroma, balance, premium positioning, and dependable supply.',
     heroSubtitle: ['Authentic Chinese Oolong Tea', 'For Premium Tea Programs'],
     seoTitle: 'Chinese Oolong Tea Wholesale & Private Label | QL Tea Life',
-    heroImage: '/images/category-hero/oolong-tea-hero.png',
-    lifestyleImage: '/images/category-intro/tea-garden.png',
+    heroImage: '/images/category-hero/oolong-tea-hero.webp',
+    lifestyleImage: '/images/category-intro/tea-garden.webp',
     aboutTitle: 'About Chinese Oolong Tea',
     about: [
       'Oolong tea combines partial oxidation with skilled rolling and roasting to create complex floral, fruity, mineral, or roasted profiles.',
@@ -134,9 +134,9 @@ export const teaCategories: Record<string, TeaCategory> = {
     ],
     benefits: commonBenefits('Complex Regional Styles', 'Oolong teas selected for aroma, roast level, mouthfeel, and multiple-infusion performance.'),
     products: [
-      { title: 'Rougui Oolong Tea', description: 'A traditional Wuyi Rock Tea known for its distinctive cinnamon aroma, rich body and long-lasting finish.', image: '/images/tea-collection/categories/oolong-tea.jpg' },
-      { title: 'Shui Xian Oolong Tea', description: 'A classic Wuyi Oolong Tea with floral notes, smooth texture and a balanced, mellow character.', image: '/images/oolong-tea/shui-xian-oolong-tea.jpg' },
-      { title: 'Oolong Tea Bags', description: 'Convenient oolong tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/oolong-tea/oolong-tea-bags.jpg' },
+      { title: 'Rougui Oolong Tea', description: 'A traditional Wuyi Rock Tea known for its distinctive cinnamon aroma, rich body and long-lasting finish.', image: '/images/tea-collection/categories/oolong-tea.webp' },
+      { title: 'Shui Xian Oolong Tea', description: 'A classic Wuyi Oolong Tea with floral notes, smooth texture and a balanced, mellow character.', image: '/images/oolong-tea/shui-xian-oolong-tea.webp' },
+      { title: 'Oolong Tea Bags', description: 'Convenient oolong tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/oolong-tea/oolong-tea-bags.webp' },
     ],
     faqs: commonFaqs('oolong tea', 'Rolled oolong, strip-style oolong, roasted grades, tea bags, and private label packs are available.', 'We evaluate origin, oxidation, roasting, aroma, liquor, leaf integrity, and infusion performance.'),
   },
@@ -146,8 +146,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Herbal infusions prepared for buyers seeking caffeine-free products, wellness positioning, and flexible formats.',
     heroSubtitle: ['Natural Herbal Infusions', 'For Wellness Markets'],
     seoTitle: 'Herbal Tea Wholesale, Blends & Private Label | QL Tea Life',
-    heroImage: '/images/category-hero/herbal-tea-hero.png',
-    lifestyleImage: '/images/category-intro/herbal-tea-lifestyle.png',
+    heroImage: '/images/category-hero/herbal-tea-hero.webp',
+    lifestyleImage: '/images/category-intro/herbal-tea-lifestyle.webp',
     aboutTitle: 'About Herbal Tea and Infusions',
     about: [
       'Herbal tea brings together flowers, fruits, leaves, roots, and botanicals to create caffeine-free beverages with broad consumer appeal.',
@@ -156,9 +156,9 @@ export const teaCategories: Record<string, TeaCategory> = {
     ],
     benefits: commonBenefits('Flexible Botanical Blends', 'Ingredients and blends developed for flavor, appearance, and target-market positioning.'),
     products: [
-      { title: 'Herbal Flower Blend', description: 'Colorful botanical blend designed for aromatic, caffeine-free infusions.', image: '/images/tea-collection/categories/herbal-tea.jpg' },
-      { title: 'Wellness Herbal Tea', description: 'A carefully selected blend of botanical ingredients designed for daily wellness and herbal tea programs.', image: '/images/herbal-tea/wellness-herbal-tea.jpg' },
-      { title: 'Herbal Tea Bags', description: 'Convenient herbal tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/herbal-tea/herbal-tea-bags.jpg' },
+      { title: 'Herbal Flower Blend', description: 'Colorful botanical blend designed for aromatic, caffeine-free infusions.', image: '/images/tea-collection/categories/herbal-tea.webp' },
+      { title: 'Wellness Herbal Tea', description: 'A carefully selected blend of botanical ingredients designed for daily wellness and herbal tea programs.', image: '/images/herbal-tea/wellness-herbal-tea.webp' },
+      { title: 'Herbal Tea Bags', description: 'Convenient herbal tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/herbal-tea/herbal-tea-bags.webp' },
     ],
     faqs: commonFaqs('herbal tea', 'Bulk botanicals, custom blends, pyramid bags, sachets, and retail packaging are available.', 'We review ingredient identity, cleanliness, moisture, sensory quality, and blend consistency.'),
   },
@@ -168,8 +168,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     intro: 'Custom flavoured tea concepts developed for retail brands, hospitality, gifting, and specialty tea markets.',
     heroSubtitle: ['Creative Tea Blends', 'For Modern Tea Brands'],
     seoTitle: 'Flavoured Tea Wholesale & Custom Blends | QL Tea Life',
-    heroImage: '/images/category-hero/flavoured-tea-hero.png',
-    lifestyleImage: '/images/category-intro/tea-garden.png',
+    heroImage: '/images/category-hero/flavoured-tea-hero.webp',
+    lifestyleImage: '/images/category-intro/tea-garden.webp',
     aboutTitle: 'About Flavoured Tea',
     about: [
       'Flavoured tea combines a tea or herbal base with fruits, flowers, spices, or carefully selected flavor profiles.',
@@ -178,9 +178,9 @@ export const teaCategories: Record<string, TeaCategory> = {
     ],
     benefits: commonBenefits('Custom Flavor Development', 'Blend concepts tailored to audience, format, and market positioning.'),
     products: [
-      { title: 'Fruit Tea Blend', description: 'Bright fruit and botanical blend with strong visual and aromatic appeal.', image: '/images/tea-collection/categories/flavoured-tea.jpg' },
-      { title: 'Floral Tea Blend', description: 'A fragrant blend of tea leaves and flowers, combining natural floral aromas with a smooth and balanced tea profile.', image: '/images/flavoured-tea/floral-tea-blend.png' },
-      { title: 'Flavoured Tea Bags', description: 'Convenient flavoured tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/flavoured-tea/flavoured-tea-bags.jpg' },
+      { title: 'Fruit Tea Blend', description: 'Bright fruit and botanical blend with strong visual and aromatic appeal.', image: '/images/tea-collection/categories/flavoured-tea.webp' },
+      { title: 'Floral Tea Blend', description: 'A fragrant blend of tea leaves and flowers, combining natural floral aromas with a smooth and balanced tea profile.', image: '/images/flavoured-tea/floral-tea-blend.webp' },
+      { title: 'Flavoured Tea Bags', description: 'Convenient flavoured tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/flavoured-tea/flavoured-tea-bags.webp' },
     ],
     faqs: commonFaqs('flavoured tea', 'Loose blends, tea bags, pyramid bags, gift packs, and custom retail packaging are available.', 'We evaluate base tea, ingredient balance, aroma stability, appearance, and batch consistency.'),
   },
@@ -189,8 +189,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     label: 'Chinese White Tea Wholesale',
     intro: 'Delicate Chinese white teas sourced for premium retail, wellness, and specialty tea markets.',
     seoTitle: 'Chinese White Tea Wholesale | QL Tea Life',
-    heroImage: '/images/tea-collection/categories/green-tea.jpg',
-    lifestyleImage: '/images/tea-collection/categories/green-tea.jpg',
+    heroImage: '/images/tea-collection/categories/green-tea.webp',
+    lifestyleImage: '/images/tea-collection/categories/green-tea.webp',
     aboutTitle: 'About Chinese White Tea',
     about: ['White tea is gently withered and dried to preserve delicate sweetness and natural leaf character.'],
     benefits: commonBenefits('Delicate Premium Grades', 'White teas selected for bud quality, sweetness, and clean aging potential.'),
@@ -202,8 +202,8 @@ export const teaCategories: Record<string, TeaCategory> = {
     label: 'Chinese Dark Tea Wholesale',
     intro: 'Post-fermented Chinese teas selected for buyers interested in aged and specialty products.',
     seoTitle: 'Chinese Dark Tea Wholesale | QL Tea Life',
-    heroImage: '/images/tea-collection/categories/black-tea.jpg',
-    lifestyleImage: '/images/tea-collection/categories/black-tea.jpg',
+    heroImage: '/images/tea-collection/categories/black-tea.webp',
+    lifestyleImage: '/images/tea-collection/categories/black-tea.webp',
     aboutTitle: 'About Chinese Dark Tea',
     about: ['Dark tea develops earthy depth and smooth character through post-fermentation and aging.'],
     benefits: commonBenefits('Aged Tea Selection', 'Dark teas selected for fermentation quality, storage, and mature flavor.'),
@@ -244,7 +244,14 @@ export default function CategoryPage({ category }: { category: TeaCategory }) {
       <section className="jasmine-about">
         <figure className="jasmine-about__visual">
           {category.lifestyleImage ? (
-            <img src={category.lifestyleImage} alt={`${category.name} sourcing and origin`} />
+            <img
+              src={category.lifestyleImage}
+              alt={`${category.name} sourcing and origin`}
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
           ) : (
             <div
               className="category-intro-placeholder"
@@ -283,7 +290,14 @@ export default function CategoryPage({ category }: { category: TeaCategory }) {
           {category.products.map((product) => (
             <article className="jasmine-product-card" key={product.title}>
               {product.image ? (
-                <img src={product.image} alt={`${product.title} wholesale product`} />
+                <img
+                  src={product.image}
+                  alt={`${product.title} wholesale product`}
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
               ) : (
                 <div className="category-product-placeholder" aria-hidden="true" />
               )}

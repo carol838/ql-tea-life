@@ -2,6 +2,25 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tea-knowledge/private-label-tea-guide",
+      "destination": "https://www.qltealife.com/tea-knowledge/private-label-tea-how-to-build-your-own-tea-brand",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "qltealife.com"
+        }
+      ],
+      "destination": "https://www.qltealife.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

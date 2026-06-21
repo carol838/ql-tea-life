@@ -7,6 +7,15 @@ import Home from './pages/Home';
 import PrivateLabelPage, { privateLabelPages } from './pages/PrivateLabelPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
 
+const SITE_URL = 'https://www.qltealife.com';
+const GA_MEASUREMENT_ID = 'G-8YF3DVMVNC';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 function NotFound() {
   return (
     <main className="content-page">
@@ -27,6 +36,7 @@ export default function App() {
   const knowledgeArticle = knowledgeArticles.find(
     (article) => article.url === path || article.aliases?.includes(path),
   );
+  const canonicalPath = knowledgeArticle?.url ?? path;
 
   let page = <NotFound />;
   let title = 'Page Not Found | QL Tea Life';
@@ -73,7 +83,25 @@ export default function App() {
     }
 
     meta.content = description;
-  }, [description, title]);
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+
+    const canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
+    canonical.href = canonicalUrl;
+
+    window.gtag?.('event', 'page_view', {
+      send_to: GA_MEASUREMENT_ID,
+      page_title: title,
+      page_location: canonicalUrl,
+      page_path: canonicalPath,
+    });
+  }, [canonicalPath, description, title]);
 
   return (
     <>

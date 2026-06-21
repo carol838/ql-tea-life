@@ -18,7 +18,7 @@
       rgba(255, 255, 255, 0.04) 48%,
       rgba(255, 255, 255, 0) 62%
     ),
-    url('/images/Hero/tea-mountain.png');
+    url('/images/Hero/tea-mountain.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -449,7 +449,7 @@
         rgba(255, 255, 255, 0.04) 64%,
         rgba(255, 255, 255, 0) 82%
       ),
-      url('/images/Hero/tea-mountain.png');
+      url('/images/Hero/tea-mountain.webp');
     background-position: 58% center;
     background-size: cover;
   }
