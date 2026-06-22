@@ -1,9 +1,29 @@
+import { useEffect, useState } from 'react';
 import './WhatsAppButton.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
+const TOOLTIP_STORAGE_KEY = 'ql-tea-whatsapp-tooltip-seen';
 
 export default function WhatsAppButton() {
+  const [showFirstVisitTooltip, setShowFirstVisitTooltip] = useState(false);
+
+  useEffect(() => {
+    if (window.localStorage.getItem(TOOLTIP_STORAGE_KEY)) {
+      return;
+    }
+
+    window.localStorage.setItem(TOOLTIP_STORAGE_KEY, 'true');
+    setShowFirstVisitTooltip(true);
+
+    const timeout = window.setTimeout(() => {
+      setShowFirstVisitTooltip(false);
+    }, 6000);
+
+    return () => window.clearTimeout(timeout);
+  }, []);
+
   const trackWhatsAppClick = () => {
+    setShowFirstVisitTooltip(false);
     window.gtag?.('event', 'whatsapp_click', {
       contact_method: 'whatsapp',
     });
@@ -11,7 +31,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      className="whatsapp-button"
+      className={`whatsapp-button${showFirstVisitTooltip ? ' whatsapp-button--first-visit' : ''}`}
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"

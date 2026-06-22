@@ -167,6 +167,19 @@ export default function Home() {
             <br />
             For Global Buyers
           </h1>
+          <a
+            className="home-hero__cta"
+            href="https://wa.me/8618767158838"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              window.gtag?.('event', 'whatsapp_click', {
+                location: 'hero_button',
+              });
+            }}
+          >
+            Get Wholesale Quote
+          </a>
         </div>
       </section>
 
