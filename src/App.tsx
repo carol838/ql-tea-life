@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import WhatsAppButton from './components/WhatsAppButton';
 import About from './pages/About';
@@ -108,6 +109,7 @@ export default function App() {
     <>
       <SiteHeader />
       {page}
+      <SiteFooter />
       <WhatsAppButton />
     </>
   );
