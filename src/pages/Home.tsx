@@ -167,6 +167,14 @@ export default function Home() {
             <br />
             For Global Buyers
           </h1>
+          <div
+            className="home-hero__trust-signals--desktop"
+            aria-label="Wholesale service highlights"
+          >
+            <span>MOQ 10kg</span>
+            <span>Private Label Available</span>
+            <span>Worldwide Shipping</span>
+          </div>
           <a
             className="home-hero__cta"
             href="https://wa.me/8618767158838"
@@ -180,7 +188,10 @@ export default function Home() {
           >
             Get Wholesale Quote
           </a>
-          <div className="home-hero__trust-signals" aria-label="Wholesale service highlights">
+          <div
+            className="home-hero__trust-signals--mobile"
+            aria-label="Wholesale service highlights"
+          >
             <span>MOQ 50kg</span>
             <span>Private Label</span>
             <span>Worldwide Shipping</span>
