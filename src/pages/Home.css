@@ -241,6 +241,7 @@
 .home-category-card,
 .home-article-card {
   overflow: hidden;
+  min-width: 0;
   border: 1px solid var(--color-line);
   border-radius: 8px;
   background: var(--color-surface);
@@ -249,6 +250,8 @@
 .home-category-card__image {
   display: block;
   width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1;
   object-fit: cover;
 }
