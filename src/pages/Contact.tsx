@@ -20,13 +20,9 @@ export default function Contact() {
 
           <dl className="contact-details">
             <div>
-              <dt>WhatsApp</dt>
-              <dd>+86 187 6715 8838</dd>
-            </div>
-            <div>
               <dt>Email</dt>
               <dd>
-                <a href="mailto:info@qltealife.com">info@qltealife.com</a>
+                <a href="mailto:carol@nbqltrading.com">carol@nbqltrading.com</a>
               </dd>
             </div>
             <div>

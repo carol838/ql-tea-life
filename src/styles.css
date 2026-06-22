@@ -7,6 +7,7 @@
   --color-muted: #7b6f5d;
   --color-surface: #fffaf0;
   --color-line: #d8c79f;
+  --product-image-ratio: 4 / 3;
 }
 
 * {

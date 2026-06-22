@@ -231,8 +231,8 @@ export default function Home() {
                 className="home-category-card__image"
                 src={image}
                 alt={`${name} loose leaf tea`}
-                width="1000"
-                height="1000"
+                width="1200"
+                height="900"
                 loading="lazy"
                 decoding="async"
               />

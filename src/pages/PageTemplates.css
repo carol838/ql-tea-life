@@ -438,14 +438,14 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--product-image-ratio);
   object-fit: cover;
 }
 
 .category-product-placeholder {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--product-image-ratio);
   background:
     linear-gradient(135deg, rgba(185, 144, 72, 0.14), rgba(255, 250, 240, 0.2)),
     var(--color-beige);
@@ -503,7 +503,7 @@
 .article-card__image {
   display: block;
   width: calc(100% + 40px);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--product-image-ratio);
   margin: -20px -20px 20px;
   border-radius: 8px 8px 0 0;
   background: var(--color-beige);

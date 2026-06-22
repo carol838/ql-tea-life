@@ -252,7 +252,7 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: var(--product-image-ratio);
   object-fit: cover;
 }
 
