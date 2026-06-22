@@ -180,6 +180,11 @@ export default function Home() {
           >
             Get Wholesale Quote
           </a>
+          <div className="home-hero__trust-signals" aria-label="Wholesale service highlights">
+            <span>MOQ 50kg</span>
+            <span>Private Label</span>
+            <span>Worldwide Shipping</span>
+          </div>
         </div>
       </section>
 
