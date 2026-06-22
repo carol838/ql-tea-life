@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SiteHeader from './components/SiteHeader';
+import WhatsAppButton from './components/WhatsAppButton';
 import About from './pages/About';
 import CategoryPage, { teaCategories } from './pages/CategoryPage';
 import Contact from './pages/Contact';
@@ -107,6 +108,7 @@ export default function App() {
     <>
       <SiteHeader />
       {page}
+      <WhatsAppButton />
     </>
   );
 }
