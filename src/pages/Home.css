@@ -113,6 +113,16 @@
   white-space: nowrap;
 }
 
+@media (min-width: 601px) {
+  .home-hero__trust-signals {
+    flex-direction: column;
+    justify-content: center;
+    width: 201px;
+    gap: 10px;
+    margin-top: 18px;
+  }
+}
+
 .home-button,
 .home-text-link,
 .home-category-card {
