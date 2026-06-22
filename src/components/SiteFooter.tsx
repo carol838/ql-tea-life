@@ -28,36 +28,41 @@ export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <div className="site-footer__brand-group">
-          <a className="site-footer__brand" href="/">
-            QL Tea Life
-          </a>
-          <div className="site-footer__links" aria-label="Footer navigation">
-            <a href="/about">About</a>
-            <a href="/jasmine-tea">Tea Collection</a>
-            <a href="/contact">Contact</a>
+        <div className="site-footer__content">
+          <div className="site-footer__brand-group">
+            <a className="site-footer__brand" href="/">
+              QL Tea Life
+            </a>
+            <p className="site-footer__positioning">
+              Premium Chinese Tea Supplier
+              <span>OEM / Private Label / Wholesale</span>
+            </p>
+          </div>
+
+          <div className="site-footer__social">
+            <p>Follow Us</p>
+            <div className="site-footer__social-links">
+              {socialLinks.map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow QL Tea Life on ${social.name}`}
+                  key={social.name}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    {social.icon}
+                  </svg>
+                  <span>{social.name}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="site-footer__social">
-          <p>Follow Us</p>
-          <div className="site-footer__social-links">
-            {socialLinks.map((social) => (
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Follow QL Tea Life on ${social.name}`}
-                key={social.name}
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  {social.icon}
-                </svg>
-                <span>{social.name}</span>
-              </a>
-            ))}
-          </div>
-        </div>
+        <small className="site-footer__copyright">
+          &copy; 2026 QL Tea Life. All rights reserved.
+        </small>
       </div>
     </footer>
   );
