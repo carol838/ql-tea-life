@@ -192,7 +192,7 @@ export default function Home() {
             className="home-hero__trust-signals--mobile"
             aria-label="Wholesale service highlights"
           >
-            <span>MOQ 50kg</span>
+            <span>MOQ 10kg</span>
             <span>Private Label</span>
             <span>Worldwide Shipping</span>
           </div>
