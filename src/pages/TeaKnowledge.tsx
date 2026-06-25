@@ -12,6 +12,14 @@ export type KnowledgeArticleData = {
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
   {
+    category: 'Jasmine Tea',
+    title: 'How Is Jasmine Tea Traditionally Made?',
+    url: '/tea-knowledge/how-is-jasmine-tea-traditionally-made',
+    description: 'Learn how traditional Chinese jasmine tea is made through the scenting process, from tea base selection to flower awakening, scenting, drying and final tea quality.',
+    image: '/images/tea-knowledge/jasmine-tea-making/jasmine-tea-making-hero.webp',
+    imageAlt: 'Traditional jasmine tea scenting process with green tea leaves and fresh jasmine flowers',
+  },
+  {
     category: 'Tea Quality',
     title: 'How to Choose High-Quality Chinese Tea for Your Business',
     url: '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business',
@@ -77,6 +85,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/how-is-jasmine-tea-traditionally-made') {
+    return <JasmineTeaMakingArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business') {
     return <TeaQualityArticle article={article} />;
   }
@@ -100,6 +112,181 @@ export function KnowledgeArticle({ article }: { article: KnowledgeArticleData })
         <h2>Tea Knowledge</h2>
         <p>Explore sourcing, tea category and private label guidance for international tea buyers.</p>
         <a className="text-link" href="/tea-knowledge">Back to Tea Knowledge</a>
+      </section>
+    </main>
+  );
+}
+
+function JasmineArticleImage({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}) {
+  return (
+    <figure className="article-media-frame">
+      <img
+        src={src}
+        alt={alt}
+        width="1200"
+        height="900"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  );
+}
+
+function JasmineTeaMakingArticle({ article }: { article: KnowledgeArticleData }) {
+  return (
+    <main className="article-page">
+      <header className="article-hero">
+        <p className="page-eyebrow">{article.category}</p>
+        <h1>{article.title}</h1>
+        <p>
+          A clear look at how traditional Chinese jasmine tea is made, from tea base selection to flower scenting,
+          drying, and final tea quality.
+        </p>
+      </header>
+
+      <article className="article-body">
+        <figure className="article-media-frame article-media-frame--lead">
+          <img
+            src={article.image}
+            alt={article.imageAlt}
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <section>
+          <h2>Introduction</h2>
+          <p>
+            Jasmine tea is one of China's most recognized scented teas. Its refined floral aroma is created by
+            carefully combining prepared tea leaves with fresh jasmine flowers during the traditional scenting process.
+          </p>
+          <p>
+            For tea buyers, understanding how jasmine tea is made can help evaluate aroma quality, tea base selection,
+            processing standards, and overall product value.
+          </p>
+        </section>
+
+        <section>
+          <h2>Selecting the Tea Base</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-making/tea-base-green-tea.webp"
+            alt="Spring green tea leaves used as the tea base for premium jasmine tea"
+          />
+          <p>
+            Traditional jasmine tea usually begins with a clean green tea base. The tea leaves should have a balanced
+            appearance, fresh aroma, and enough structure to absorb jasmine fragrance without losing their own tea
+            character.
+          </p>
+          <p>
+            A good tea base supports the final cup with freshness, clarity, and a smooth finish.
+          </p>
+        </section>
+
+        <section>
+          <h2>Choosing Fresh Jasmine Blossoms</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-making/fresh-jasmine-flowers.webp"
+            alt="Fresh jasmine flower buds selected for traditional jasmine tea scenting"
+          />
+          <p>
+            Fresh jasmine flower buds are selected for scenting. The flowers are usually picked before they fully open,
+            because their fragrance becomes strongest when they begin to bloom later in the day.
+          </p>
+          <p>
+            The quality, freshness, and timing of the flowers directly influence the fragrance of the finished jasmine
+            tea.
+          </p>
+        </section>
+
+        <section>
+          <h2>Flower Awakening</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-making/jasmine-flower-awakening.webp"
+            alt="Fresh jasmine flowers blooming during the awakening process before scenting"
+          />
+          <p>
+            Before scenting, jasmine buds are allowed to awaken and open naturally. This stage helps release the floral
+            aroma that will later be absorbed by the tea leaves.
+          </p>
+          <p>
+            Careful temperature and timing control are important because flowers that open too early or too late may
+            produce a weaker fragrance.
+          </p>
+        </section>
+
+        <section>
+          <h2>Scenting the Tea</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.webp"
+            alt="Traditional jasmine tea scenting process with fresh jasmine blossoms and tea leaves"
+          />
+          <p>
+            During scenting, the tea base and fresh jasmine blossoms are layered together so the tea leaves can absorb
+            the natural floral aroma. Premium jasmine teas may be scented several times to build a deeper and cleaner
+            fragrance.
+          </p>
+          <div className="article-video">
+            <video
+              controls
+              preload="metadata"
+              poster="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.webp"
+            >
+              <source
+                src="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>
+            After scenting, the flowers are separated from the tea leaves. The tea is then dried carefully to stabilize
+            quality and preserve the aroma for storage and shipment.
+          </p>
+        </section>
+
+        <section>
+          <h2>Final Product</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-making/brewed-jasmine-tea.webp"
+            alt="Freshly brewed premium Chinese jasmine tea"
+          />
+          <p>
+            Finished jasmine tea should show a clean floral aroma, balanced tea flavor, and a pleasant aftertaste. The
+            fragrance should feel natural and integrated with the tea base rather than sharp or artificial.
+          </p>
+        </section>
+
+        <section>
+          <h2>Looking for Premium Chinese Jasmine Tea</h2>
+          <p>
+            If you are sourcing jasmine tea for wholesale, tea bags, or private label projects, it is important to
+            evaluate both the tea base and the quality of the scenting process.
+          </p>
+          <p>
+            QL Tea Life supports global buyers with jasmine green tea, jasmine dragon pearls, tea bag solutions, and
+            private label packaging options.
+          </p>
+        </section>
+      </article>
+
+      <section className="article-cta">
+        <div>
+          <p className="page-eyebrow">Jasmine Tea Sourcing</p>
+          <h2>Looking for Premium Chinese Jasmine Tea?</h2>
+          <p>
+            Contact us to discuss wholesale jasmine tea, jasmine tea bags, private label packaging, and export-ready
+            tea sourcing solutions.
+          </p>
+        </div>
+        <a className="page-button" href="/contact">Request a Quote</a>
       </section>
     </main>
   );

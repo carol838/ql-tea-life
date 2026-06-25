@@ -97,6 +97,18 @@ export default function App() {
     const canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
     canonical.href = canonicalUrl;
 
+    if (knowledgeArticle) {
+      let ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+
+      if (!ogImage) {
+        ogImage = document.createElement('meta');
+        ogImage.setAttribute('property', 'og:image');
+        document.head.appendChild(ogImage);
+      }
+
+      ogImage.content = `${SITE_URL}${knowledgeArticle.image}`;
+    }
+
     window.gtag?.('event', 'page_view', {
       send_to: GA_MEASUREMENT_ID,
       page_title: title,
