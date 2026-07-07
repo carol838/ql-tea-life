@@ -7,12 +7,7 @@ import CategoryPage, { teaCategories } from './pages/CategoryPage';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import PrivateLabelPage, { privateLabelPages } from './pages/PrivateLabelPage';
-import ProductPage, {
-  JASMINE_FLOWERS_PRODUCT_DESCRIPTION,
-  JASMINE_FLOWERS_PRODUCT_IMAGE,
-  JASMINE_FLOWERS_PRODUCT_TITLE,
-  JASMINE_FLOWERS_PRODUCT_URL,
-} from './pages/ProductPage';
+import ProductPage, { productPages } from './pages/ProductPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
 
 const SITE_URL = 'https://www.qltealife.com';
@@ -41,6 +36,7 @@ export default function App() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   const teaCategory = teaCategories[path];
   const privateLabelPage = privateLabelPages[path];
+  const productPage = productPages[path];
   const knowledgeArticle = knowledgeArticles.find(
     (article) => article.url === path || article.aliases?.includes(path),
   );
@@ -71,11 +67,11 @@ export default function App() {
     page = <KnowledgeArticle article={knowledgeArticle} />;
     title = `${knowledgeArticle.title} | QL Tea Life`;
     description = knowledgeArticle.description;
-  } else if (path === JASMINE_FLOWERS_PRODUCT_URL) {
-    page = <ProductPage />;
-    title = JASMINE_FLOWERS_PRODUCT_TITLE;
-    description = JASMINE_FLOWERS_PRODUCT_DESCRIPTION;
-    ogImagePath = JASMINE_FLOWERS_PRODUCT_IMAGE;
+  } else if (productPage) {
+    page = <ProductPage page={productPage} />;
+    title = productPage.seoTitle;
+    description = productPage.seoDescription;
+    ogImagePath = productPage.ogImage;
   } else if (path === '/about') {
     page = <About />;
     title = 'About QL Tea Life | Chinese Tea Export';

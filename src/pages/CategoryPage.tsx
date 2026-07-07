@@ -69,10 +69,9 @@ export const teaCategories: Record<string, TeaCategory> = {
       { title: 'Worldwide Export Support', description: 'Supporting tea brands, distributors, and tea shops globally.', icon: 'globe' },
     ],
     products: [
-      { title: 'Jasmine Green Tea', description: 'Traditional Chinese green tea scented with fresh jasmine flowers.', image: '/images/jasmine-tea/jasmine-green-tea.webp' },
-      { title: 'Jasmine Dragon Pearls', description: 'Hand-rolled jasmine tea pearls with rich floral aroma.', image: '/images/jasmine-tea/jasmine-dragon-pearls.webp' },
-      { title: 'Jasmine Tea Bags', description: 'Convenient tea bag format suitable for retail and private label projects.', image: '/images/jasmine-tea/jasmine-tea-bags.webp' },
       { title: 'Jasmine Tea With Flowers', description: 'Visually attractive jasmine green tea with visible blossoms for retail and private label projects.', image: '/images/products/jasmine-tea-with-flowers/dry-tea.webp', href: '/products/jasmine-tea-with-flowers' },
+      { title: 'Traditional Jasmine Tea', description: 'Traditionally scented jasmine tea with clean leaf appearance and naturally absorbed floral aroma.', image: '/images/products/traditional-jasmine-tea/traditional-jasmine-tea.webp', href: '/products/traditional-jasmine-tea' },
+      { title: 'Jasmine Dragon Pearls', description: 'Hand-rolled jasmine tea pearls with rich floral aroma.', image: '/images/jasmine-tea/jasmine-dragon-pearls.webp' },
     ],
     faqs: commonFaqs('jasmine tea', 'Loose leaf tea, dragon pearls, tea bags, and custom retail packs are available.', 'We evaluate the tea base, jasmine aroma, scenting consistency, moisture, and finished appearance.'),
   },
