@@ -7,6 +7,12 @@ import CategoryPage, { teaCategories } from './pages/CategoryPage';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import PrivateLabelPage, { privateLabelPages } from './pages/PrivateLabelPage';
+import ProductPage, {
+  JASMINE_FLOWERS_PRODUCT_DESCRIPTION,
+  JASMINE_FLOWERS_PRODUCT_IMAGE,
+  JASMINE_FLOWERS_PRODUCT_TITLE,
+  JASMINE_FLOWERS_PRODUCT_URL,
+} from './pages/ProductPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
 
 const SITE_URL = 'https://www.qltealife.com';
@@ -39,6 +45,7 @@ export default function App() {
     (article) => article.url === path || article.aliases?.includes(path),
   );
   const canonicalPath = knowledgeArticle?.url ?? path;
+  let ogImagePath = knowledgeArticle?.image;
 
   let page = <NotFound />;
   let title = 'Page Not Found | QL Tea Life';
@@ -64,6 +71,11 @@ export default function App() {
     page = <KnowledgeArticle article={knowledgeArticle} />;
     title = `${knowledgeArticle.title} | QL Tea Life`;
     description = knowledgeArticle.description;
+  } else if (path === JASMINE_FLOWERS_PRODUCT_URL) {
+    page = <ProductPage />;
+    title = JASMINE_FLOWERS_PRODUCT_TITLE;
+    description = JASMINE_FLOWERS_PRODUCT_DESCRIPTION;
+    ogImagePath = JASMINE_FLOWERS_PRODUCT_IMAGE;
   } else if (path === '/about') {
     page = <About />;
     title = 'About QL Tea Life | Chinese Tea Export';
@@ -97,7 +109,7 @@ export default function App() {
     const canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
     canonical.href = canonicalUrl;
 
-    if (knowledgeArticle) {
+    if (ogImagePath) {
       let ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
       let ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
       let ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
@@ -120,7 +132,7 @@ export default function App() {
         document.head.appendChild(ogDescription);
       }
 
-      ogImage.content = `${SITE_URL}${knowledgeArticle.image}`;
+      ogImage.content = `${SITE_URL}${ogImagePath}`;
       ogTitle.content = title;
       ogDescription.content = description;
     }
@@ -131,7 +143,7 @@ export default function App() {
       page_location: canonicalUrl,
       page_path: canonicalPath,
     });
-  }, [canonicalPath, description, title]);
+  }, [canonicalPath, description, ogImagePath, title]);
 
   return (
     <>
