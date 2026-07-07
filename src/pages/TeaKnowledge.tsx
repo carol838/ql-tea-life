@@ -20,6 +20,14 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     imageAlt: 'Traditional jasmine tea scenting process with green tea leaves and fresh jasmine flowers',
   },
   {
+    category: 'Jasmine Tea',
+    title: 'Jasmine Tea With Flowers or Without: Which Is Better?',
+    url: '/tea-knowledge/jasmine-tea-with-flowers-or-without',
+    description: 'Discover the difference between jasmine tea with visible flowers and traditional jasmine tea without flowers, and learn what really determines aroma, quality and value.',
+    image: '/images/tea-knowledge/jasmine-tea-flowers/hero.webp',
+    imageAlt: 'Fresh jasmine blossoms placed beside loose jasmine tea leaves',
+  },
+  {
     category: 'Tea Quality',
     title: 'How to Choose High-Quality Chinese Tea for Your Business',
     url: '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business',
@@ -89,6 +97,10 @@ export function KnowledgeArticle({ article }: { article: KnowledgeArticleData })
     return <JasmineTeaMakingArticle article={article} />;
   }
 
+  if (article.url === '/tea-knowledge/jasmine-tea-with-flowers-or-without') {
+    return <JasmineTeaFlowersArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business') {
     return <TeaQualityArticle article={article} />;
   }
@@ -120,12 +132,16 @@ export function KnowledgeArticle({ article }: { article: KnowledgeArticleData })
 function JasmineArticleImage({
   src,
   alt,
+  caption,
+  wide = false,
 }: {
   src: string;
   alt: string;
+  caption?: string;
+  wide?: boolean;
 }) {
   return (
-    <figure className="article-media-frame">
+    <figure className={`article-media-frame${wide ? ' article-media-frame--wide' : ''}`}>
       <img
         src={src}
         alt={alt}
@@ -134,6 +150,7 @@ function JasmineArticleImage({
         loading="lazy"
         decoding="async"
       />
+      {caption ? <figcaption>{caption}</figcaption> : null}
     </figure>
   );
 }
@@ -287,6 +304,261 @@ function JasmineTeaMakingArticle({ article }: { article: KnowledgeArticleData })
           </p>
         </div>
         <a className="page-button" href="/contact">Request a Quote</a>
+      </section>
+    </main>
+  );
+}
+
+function JasmineTeaFlowersArticle({ article }: { article: KnowledgeArticleData }) {
+  return (
+    <main className="article-page">
+      <header className="article-hero">
+        <p className="page-eyebrow">{article.category}</p>
+        <h1>{article.title}</h1>
+        <p>
+          A practical guide to understanding visible jasmine flowers, traditional scenting, and what really determines
+          jasmine tea quality.
+        </p>
+      </header>
+
+      <article className="article-body">
+        <figure className="article-media-frame article-media-frame--lead article-media-frame--wide">
+          <img
+            src={article.image}
+            alt={article.imageAlt}
+            width="1200"
+            height="675"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <section>
+          <h2>Introduction</h2>
+          <p>Do you love jasmine tea?</p>
+          <p>
+            Have you ever looked at a bag of jasmine tea and wondered whether more visible flowers mean stronger aroma
+            or better quality?
+          </p>
+          <p>It is an easy assumption to make. More flowers should mean more fragrance, right?</p>
+          <p>Not necessarily.</p>
+          <p>
+            The truth behind the flowers in jasmine tea is more interesting, and understanding it can help both tea
+            drinkers and buyers make better choices.
+          </p>
+        </section>
+
+        <section>
+          <h2>Do More Jasmine Flowers Mean Better Tea?</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-flowers/jasmine-tea-with-flowers.webp"
+            alt="Loose jasmine tea leaves mixed with visible dried jasmine flowers"
+          />
+          <p>Jasmine behaves differently from many flowers commonly used in herbal infusions.</p>
+          <p>
+            Fresh jasmine blossoms release their fragrance most actively as they open. Once the flowers have completed
+            blooming and dried, much of that fresh, vivid aroma is no longer present.
+          </p>
+          <p>
+            This is why a large amount of visible dried jasmine flowers in finished tea does not automatically mean
+            stronger aroma or higher quality.
+          </p>
+          <p>
+            In some cases, too much spent floral material may even affect the clean character of the infusion.
+          </p>
+          <p>
+            By comparison, flowers such as osmanthus can retain a noticeable aroma after drying, which makes them
+            behave differently in tea products.
+          </p>
+          <p>The key point is simple:</p>
+          <p><strong>Visible flowers and absorbed jasmine aroma are not the same thing.</strong></p>
+        </section>
+
+        <section>
+          <h2>Why Do Traditional Jasmine Teas Have Few or No Visible Flowers?</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-flowers/traditional-jasmine-tea.webp"
+            alt="Traditional loose jasmine tea leaves with few visible flower petals"
+          />
+          <p>Traditional jasmine tea is scented with fresh jasmine blossoms.</p>
+          <p>
+            During the scenting process, tea leaves and fresh jasmine flowers are carefully mixed together. The tea
+            gradually absorbs the natural fragrance released by the blossoms.
+          </p>
+          <p>After the scenting stage, the wilted flowers are separated from the tea.</p>
+          <p>
+            Depending on the tea grade and scenting method, approximately 150g to 500g of fresh jasmine flowers may be
+            used throughout the processing of every 500g of finished jasmine tea.
+          </p>
+          <p>This can represent roughly 600 to 2,000 fresh blossoms over the full production process.</p>
+          <p>Yet after processing, the finished tea may contain very few visible flowers.</p>
+          <p>Any small petals that remain may simply be traces left after separation.</p>
+          <p>The fragrance is already in the tea.</p>
+          <p>
+            This is the traditional idea behind jasmine tea that is rich in aroma while showing little or no visible
+            flower material.
+          </p>
+          <div className="article-video">
+            <video
+              controls
+              preload="metadata"
+              poster="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.webp"
+            >
+              <source
+                src="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="article-media-caption">
+            Fresh jasmine blossoms are mixed with tea leaves during the traditional scenting process, allowing the tea
+            to absorb the natural floral aroma.
+          </p>
+          <p>
+            To see the full process from tea base selection to flower awakening, scenting, separation and drying, read
+            our guide:{' '}
+            <a className="article-inline-link" href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
+              How Is Jasmine Tea Traditionally Made?
+            </a>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2>The Exception: Jasmine Tea With Visible Flowers</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-flowers/jasmine-piaoxue.webp"
+            alt="Brewed jasmine tea with flower petals floating in a white cup"
+          />
+          <p>Not every jasmine tea is designed to be flowerless.</p>
+          <p>
+            Some products intentionally retain or include visible jasmine petals to create a more attractive
+            appearance.
+          </p>
+          <p>One well-known style is often called Jasmine Piaoxue, or "Jasmine Snow."</p>
+          <p>
+            When brewed, pale jasmine petals float above the green tea infusion, creating a visually appealing
+            presentation.
+          </p>
+          <p>This style can be particularly suitable for:</p>
+          <ul>
+            <li>visually driven retail products</li>
+            <li>gift packaging</li>
+            <li>lifestyle tea brands</li>
+            <li>social media presentation</li>
+            <li>consumers who enjoy seeing flowers in the cup</li>
+          </ul>
+          <p>The visible flowers create a different product experience.</p>
+          <p>
+            That does not automatically make the tea better or worse. It reflects a different product style and market
+            positioning.
+          </p>
+        </section>
+
+        <section>
+          <h2>Do More Scenting Cycles Always Mean Better Jasmine Tea?</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-flowers/jasmine-scenting-process.webp"
+            alt="Fresh jasmine blossoms layered with tea leaves during scenting"
+          />
+          <p>Another common belief is that more scenting cycles always mean higher quality.</p>
+          <p>You may see products promoted with claims such as nine scentings, ten scentings, or even more.</p>
+          <p>But the number alone does not determine quality.</p>
+          <p>
+            Tea leaves have practical limits, and repeated processing must be handled carefully. Excessive handling may
+            affect leaf appearance, increase breakage, or disturb the balance between the tea base and floral aroma.
+          </p>
+          <p>A high-quality jasmine tea depends on several factors:</p>
+          <ul>
+            <li>quality of the tea base</li>
+            <li>freshness and quality of jasmine blossoms</li>
+            <li>amount of flowers used</li>
+            <li>scenting technique</li>
+            <li>temperature and humidity control</li>
+            <li>drying process</li>
+            <li>balance and persistence of aroma</li>
+          </ul>
+          <p>
+            A well-made jasmine tea with fewer carefully managed scenting cycles may be better than a tea promoted
+            only through a very high number.
+          </p>
+        </section>
+
+        <section>
+          <h2>So Which Is Better: With Flowers or Without?</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/jasmine-tea-flowers/jasmine-tea-infusion.webp"
+            alt="Brewed jasmine tea served in a small cup beside a glass teapot"
+          />
+          <p>There is no universal answer.</p>
+          <p>Jasmine tea with visible flowers can be a good choice when visual appeal is important.</p>
+          <p>It may suit:</p>
+          <ul>
+            <li>retail shelves</li>
+            <li>gift products</li>
+            <li>lifestyle brands</li>
+            <li>visually attractive loose-leaf tea</li>
+          </ul>
+          <p>Traditional jasmine tea with few or no visible flowers may suit buyers who value:</p>
+          <ul>
+            <li>traditional scenting craftsmanship</li>
+            <li>clean tea appearance</li>
+            <li>natural absorbed aroma</li>
+            <li>premium loose-leaf positioning</li>
+          </ul>
+          <p>
+            For wholesale and private label buyers, the better choice depends on the target consumer, price
+            positioning, packaging concept, and desired drinking experience.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Should You Really Look for When Choosing Jasmine Tea?</h2>
+          <p>Do not judge jasmine tea only by how many flowers you can see.</p>
+          <p>And do not judge it only by the claimed number of scenting cycles.</p>
+          <p>Instead, pay attention to:</p>
+          <ul>
+            <li>whether the aroma feels fresh and natural</li>
+            <li>whether the tea and floral notes are balanced</li>
+            <li>whether the infusion tastes clean</li>
+            <li>whether the fragrance remains pleasant after brewing</li>
+            <li>whether the tea base matches your target market</li>
+          </ul>
+          <p>In the end, good jasmine tea should be enjoyable to drink.</p>
+          <p>That matters more than the number of flowers in the bag.</p>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>Flowers or no flowers?</p>
+          <p>Both styles can have a place in the market.</p>
+          <p>
+            The real question is not simply which one looks better, but which one better matches the product concept
+            and target customer.
+          </p>
+          <p>
+            QL Tea Life offers different jasmine tea styles for wholesale, OEM and private label projects, including
+            visually attractive jasmine teas with flowers and traditionally scented jasmine teas with few or no visible
+            flowers.
+          </p>
+          <p>
+            If you are developing your own tea brand, we can help you compare different tea bases, aroma profiles and
+            packaging directions.
+          </p>
+        </section>
+      </article>
+
+      <section className="article-cta">
+        <div>
+          <p className="page-eyebrow">Jasmine Tea Selection</p>
+          <h2>Looking for the Right Jasmine Tea for Your Market?</h2>
+          <p>
+            Whether you prefer jasmine tea with visible flowers or traditionally scented jasmine tea without flowers,
+            we can help you select the right style for your wholesale or private label project.
+          </p>
+        </div>
+        <a className="page-button" href="/contact">Contact Us</a>
       </section>
     </main>
   );

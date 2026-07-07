@@ -99,6 +99,8 @@ export default function App() {
 
     if (knowledgeArticle) {
       let ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+      let ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
+      let ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
 
       if (!ogImage) {
         ogImage = document.createElement('meta');
@@ -106,7 +108,21 @@ export default function App() {
         document.head.appendChild(ogImage);
       }
 
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta');
+        ogDescription.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDescription);
+      }
+
       ogImage.content = `${SITE_URL}${knowledgeArticle.image}`;
+      ogTitle.content = title;
+      ogDescription.content = description;
     }
 
     window.gtag?.('event', 'page_view', {
