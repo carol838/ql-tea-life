@@ -155,33 +155,49 @@ function JasmineArticleImage({
   );
 }
 
-function JasmineProductLinks({ comparison = false }: { comparison?: boolean }) {
+function JasmineProductLinks() {
   return (
     <section className="article-product-links">
       <div>
         <p className="page-eyebrow">Jasmine Tea Options</p>
         <h2>Explore Our Jasmine Tea Options</h2>
-        <p>
-          QL Tea Life offers both visually attractive jasmine tea with flowers and traditionally scented jasmine tea
-          with few or no visible flowers for wholesale and private label projects.
-        </p>
       </div>
       <div className="article-product-links__grid">
         <a href="/products/jasmine-tea-with-flowers">
+          <div className="article-product-links__image">
+            <img
+              src="/images/products/jasmine-tea-with-flowers/dry-tea.webp"
+              alt="Jasmine tea with visible jasmine blossoms"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <span>Jasmine Tea With Flowers</span>
           <p>
-            {comparison
-              ? 'Visual appeal for retail shelves, gift packaging, and lifestyle tea products.'
-              : 'A visually attractive jasmine tea style for retail and private label projects.'}
+            Visually attractive jasmine tea with visible jasmine blossoms, suitable for retail packaging, gift products
+            and private label brands.
           </p>
+          <strong>View Product</strong>
         </a>
         <a href="/products/traditional-jasmine-tea">
+          <div className="article-product-links__image">
+            <img
+              src="/images/products/traditional-jasmine-tea/traditional-jasmine-tea.webp"
+              alt="Traditional jasmine tea with clean tea appearance"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <span>Traditional Jasmine Tea</span>
           <p>
-            {comparison
-              ? 'Traditional scenting craftsmanship with clean appearance and premium loose leaf positioning.'
-              : 'Traditionally scented jasmine tea with refined aroma and clean tea appearance.'}
+            Classic jasmine tea made through traditional scenting craftsmanship, focusing on refined aroma and clean tea
+            appearance.
           </p>
+          <strong>View Product</strong>
         </a>
       </div>
     </section>
@@ -548,7 +564,7 @@ function JasmineTeaFlowersArticle({ article }: { article: KnowledgeArticleData }
           </p>
         </section>
 
-        <JasmineProductLinks comparison />
+        <JasmineProductLinks />
 
         <section>
           <h2>What Should You Really Look for When Choosing Jasmine Tea?</h2>
