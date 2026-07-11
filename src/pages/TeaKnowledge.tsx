@@ -7,10 +7,22 @@ export type KnowledgeArticleData = {
   description: string;
   image: string;
   imageAlt: string;
+  seoTitle?: string;
+  listingSummary?: string;
   aliases?: string[];
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Jasmine Tea',
+    title: 'How Will the 2026 Hengzhou Floods Affect Jasmine Tea Supply?',
+    url: '/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply',
+    description: 'How will the 2026 Hengzhou floods affect jasmine tea supply? Learn about flower recovery, traditional scenting, supply risks and what global tea buyers should watch.',
+    image: '/images/tea-knowledge/hengzhou-floods/hengzhou-flood-recovery.webp',
+    imageAlt: 'Flood-affected jasmine flower field in Hengzhou after heavy rainfall',
+    seoTitle: '2026 Hengzhou Floods: Impact on Jasmine Tea Supply | QL Tea Life',
+    listingSummary: 'Explore how the 2026 Hengzhou floods affected jasmine flower production, how local farmers are recovering, and what global tea buyers should know about jasmine tea supply chains.',
+  },
   {
     category: 'Jasmine Tea',
     title: 'How Is Jasmine Tea Traditionally Made?',
@@ -83,6 +95,7 @@ export default function TeaKnowledge() {
               />
               <p className="page-eyebrow">{article.category}</p>
               <h2>{article.title}</h2>
+              <p className="article-card__summary">{article.listingSummary ?? article.description}</p>
               <a className="text-link" href={article.url}>Read Article</a>
             </article>
           ))}
@@ -93,6 +106,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply') {
+    return <HengzhouFloodArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/how-is-jasmine-tea-traditionally-made') {
     return <JasmineTeaMakingArticle article={article} />;
   }
@@ -155,7 +172,34 @@ function JasmineArticleImage({
   );
 }
 
-function JasmineProductLinks() {
+type JasmineProductCard = {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+};
+
+const defaultJasmineProductCards: JasmineProductCard[] = [
+  {
+    title: 'Jasmine Tea With Flowers',
+    description:
+      'Visually attractive jasmine tea with visible jasmine blossoms, suitable for retail packaging, gift products and private label brands.',
+    image: '/images/products/jasmine-tea-with-flowers/dry-tea.webp',
+    imageAlt: 'Jasmine tea with visible jasmine blossoms',
+    href: '/products/jasmine-tea-with-flowers',
+  },
+  {
+    title: 'Traditional Jasmine Tea',
+    description:
+      'Classic jasmine tea made through traditional scenting craftsmanship, focusing on refined aroma and clean tea appearance.',
+    image: '/images/products/traditional-jasmine-tea/traditional-jasmine-tea.webp',
+    imageAlt: 'Traditional jasmine tea with clean tea appearance',
+    href: '/products/traditional-jasmine-tea',
+  },
+];
+
+function JasmineProductLinks({ products = defaultJasmineProductCards }: { products?: JasmineProductCard[] }) {
   return (
     <section className="article-product-links">
       <div>
@@ -163,44 +207,447 @@ function JasmineProductLinks() {
         <h2>Explore Our Jasmine Tea Options</h2>
       </div>
       <div className="article-product-links__grid">
-        <a href="/products/jasmine-tea-with-flowers">
-          <div className="article-product-links__image">
-            <img
-              src="/images/products/jasmine-tea-with-flowers/dry-tea.webp"
-              alt="Jasmine tea with visible jasmine blossoms"
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <span>Jasmine Tea With Flowers</span>
-          <p>
-            Visually attractive jasmine tea with visible jasmine blossoms, suitable for retail packaging, gift products
-            and private label brands.
-          </p>
-          <strong>View Product</strong>
-        </a>
-        <a href="/products/traditional-jasmine-tea">
-          <div className="article-product-links__image">
-            <img
-              src="/images/products/traditional-jasmine-tea/traditional-jasmine-tea.webp"
-              alt="Traditional jasmine tea with clean tea appearance"
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <span>Traditional Jasmine Tea</span>
-          <p>
-            Classic jasmine tea made through traditional scenting craftsmanship, focusing on refined aroma and clean tea
-            appearance.
-          </p>
-          <strong>View Product</strong>
-        </a>
+        {products.map((product) => (
+          <a href={product.href} key={product.href}>
+            <div className="article-product-links__image">
+              <img
+                src={product.image}
+                alt={product.imageAlt}
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <span>{product.title}</span>
+            <p>{product.description}</p>
+            <strong>View Product</strong>
+          </a>
+        ))}
       </div>
     </section>
+  );
+}
+
+const hengzhouJasmineProductCards: JasmineProductCard[] = [
+  {
+    title: 'Traditional Jasmine Tea',
+    description:
+      'A classic jasmine tea created through traditional scenting craftsmanship, with refined aroma and a clean tea appearance.',
+    image: '/images/tea-knowledge/hengzhou-floods/traditional-jasmine-tea.webp',
+    imageAlt: 'Traditional jasmine tea product leaves for wholesale buyers',
+    href: '/products/traditional-jasmine-tea',
+  },
+  {
+    title: 'Jasmine Tea With Flowers',
+    description:
+      'A visually attractive jasmine tea with visible blossoms, suitable for retail packaging, gift products and private label brands.',
+    image: '/images/tea-knowledge/hengzhou-floods/jasmine-tea-with-flowers.webp',
+    imageAlt: 'Brewed jasmine tea with visible jasmine blossoms',
+    href: '/products/jasmine-tea-with-flowers',
+  },
+];
+
+function trackHengzhouWhatsAppClick() {
+  window.gtag?.('event', 'whatsapp_click', {
+    contact_method: 'whatsapp',
+    location: 'article_hengzhou_flood_2026',
+  });
+}
+
+function HengzhouFloodArticle({ article }: { article: KnowledgeArticleData }) {
+  return (
+    <main className="article-page">
+      <header className="article-hero">
+        <p className="page-eyebrow">{article.category}</p>
+        <h1>{article.title}</h1>
+        <p className="article-published">Published: July 2026</p>
+        <p>
+          What global tea buyers should know about jasmine flowers, recovery efforts, and supply chain resilience.
+        </p>
+      </header>
+
+      <article className="article-body">
+        <figure className="article-media-frame article-media-frame--lead article-media-frame--wide">
+          <img
+            src={article.image}
+            alt={article.imageAlt}
+            width="1241"
+            height="698"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+
+        <section>
+          <h2>Introduction</h2>
+          <p>For global tea buyers, jasmine tea is more than a finished product.</p>
+          <p>
+            Behind every cup of jasmine tea is a seasonal supply chain that depends on fresh jasmine flowers, skilled
+            farmers, traditional scenting techniques, and precise timing.
+          </p>
+          <p>
+            In July 2026, severe flooding affected parts of Hengzhou, Guangxi, one of the world's most important
+            jasmine flower production areas and a key region for traditional jasmine tea processing.
+          </p>
+          <p>While the long-term impact is still being evaluated, the event has highlighted an important reality:</p>
+          <p>
+            Agricultural products are closely connected to nature, seasons, and the resilience of the people behind
+            them.
+          </p>
+          <p>
+            For tea brands, wholesalers, and private label buyers, understanding what happens at the origin can help
+            make better sourcing decisions.
+          </p>
+        </section>
+
+        <aside className="article-editor-note">
+          <p className="page-eyebrow">Editor's Note</p>
+          <p>
+            This article is based on publicly available reports and observations from the jasmine tea industry as of
+            July 2026. Recovery efforts are ongoing, and supply conditions may continue to evolve.
+          </p>
+        </aside>
+
+        <section>
+          <h2>Why Hengzhou Matters to Jasmine Tea Production</h2>
+          <JasmineArticleImage
+            src="/images/tea-knowledge/hengzhou-floods/farmer-picking-jasmine.webp"
+            alt="Jasmine farmers picking fresh flowers in Hengzhou fields"
+          />
+          <p>
+            Hengzhou, Guangxi is widely recognized as one of the most important jasmine flower production areas in
+            China.
+          </p>
+          <p>The region has developed a complete jasmine tea ecosystem, including:</p>
+          <ul>
+            <li>Jasmine flower cultivation</li>
+            <li>Fresh flower trading</li>
+            <li>Traditional scenting facilities</li>
+            <li>Experienced tea processors</li>
+            <li>A skilled agricultural community</li>
+          </ul>
+          <p>Traditional jasmine tea production relies on a unique combination of:</p>
+          <p><strong>Tea leaves + Fresh jasmine flowers + Timing + Craftsmanship</strong></p>
+          <p>
+            Unlike many tea products that mainly depend on processed tea leaves, jasmine tea quality is closely
+            connected with fresh flower availability and seasonal conditions.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Happened During the 2026 Hengzhou Floods?</h2>
+          <p>In July 2026, continuous heavy rainfall caused flooding in parts of Hengzhou.</p>
+          <p>
+            Some jasmine-growing areas were affected, with fields submerged and agricultural activities disrupted during
+            an important flowering season.
+          </p>
+          <p>The impact varies depending on:</p>
+          <ul>
+            <li>Location of the farmland</li>
+            <li>Duration of water exposure</li>
+            <li>Plant condition before the flood</li>
+            <li>Recovery speed after the water recedes</li>
+          </ul>
+          <p>
+            At this stage, it is still too early to determine the final impact on the global jasmine tea supply chain.
+          </p>
+          <p>
+            However, the event has drawn attention from tea buyers worldwide because Hengzhou plays an important role
+            in jasmine flower production.
+          </p>
+        </section>
+
+        <section>
+          <h2>After the Flood: Jasmine Farmers Begin Recovery Efforts</h2>
+          <p>As floodwaters gradually receded, jasmine farmers returned to their fields and started recovery work.</p>
+          <p>
+            One of the important recovery steps was cleaning mud and debris from jasmine plants affected by flooding.
+          </p>
+          <p>
+            By removing the remaining mud from leaves and branches, farmers aim to help plants regain better sunlight
+            exposure and improve their chances of returning to normal growth.
+          </p>
+          <div className="article-video">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/tea-knowledge/hengzhou-floods/hengzhou-flood-recovery.webp"
+            >
+              <source
+                src="/images/tea-knowledge/hengzhou-floods/hengzhou-flood-recovery.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="article-media-caption">
+            Recovery footage from Hengzhou after the floodwaters receded, showing local jasmine farmers cleaning mud
+            and debris from affected jasmine plants to help restore healthy growth conditions.
+          </p>
+          <p>For jasmine plants, recovery after flooding requires careful management.</p>
+          <p>Farmers need to:</p>
+          <ul>
+            <li>Remove damaged parts of plants</li>
+            <li>Clean affected branches and leaves</li>
+            <li>Observe plant recovery conditions</li>
+            <li>Protect healthy root systems</li>
+            <li>Prepare for future flowering periods</li>
+          </ul>
+          <p>This process reflects the resilience of local jasmine growers.</p>
+          <p>
+            Behind every jasmine tea product is not only a supply chain, but also the dedication of thousands of farmers
+            who work closely with nature.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why Fresh Jasmine Flowers Are Critical for Jasmine Tea</h2>
+          <p>Traditional jasmine tea is not made by simply adding dried jasmine flowers to tea leaves.</p>
+          <p>
+            The core of traditional production is the scenting process, where fresh jasmine flowers release their
+            natural aroma and tea leaves gradually absorb the fragrance.
+          </p>
+          <div className="article-video">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.webp"
+            >
+              <source
+                src="/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>The traditional process includes:</p>
+          <ul>
+            <li>Harvesting fresh jasmine flowers</li>
+            <li>Preparing flowers at the right stage of opening</li>
+            <li>Mixing flowers with tea leaves</li>
+            <li>Allowing aroma transfer during scenting</li>
+            <li>Separating used flowers after processing</li>
+          </ul>
+          <p>The quality of jasmine tea depends on:</p>
+          <ul>
+            <li>Flower freshness</li>
+            <li>Aroma intensity</li>
+            <li>Harvest timing</li>
+            <li>Processing experience</li>
+          </ul>
+          <p>
+            This is why jasmine tea supply can be more sensitive to weather conditions compared with many other tea
+            categories.
+          </p>
+        </section>
+
+        <section>
+          <h2>How Could Flooding Affect Jasmine Tea Production?</h2>
+          <h3>1. Fresh Flower Availability</h3>
+          <p>
+            Flooding may temporarily affect flower harvesting activities. Because jasmine flowers are highly seasonal,
+            delays during the flowering period can influence production schedules.
+          </p>
+          <h3>2. Flower Quality</h3>
+          <p>Jasmine flowers require suitable conditions to develop strong aroma.</p>
+          <p>Excessive moisture may affect:</p>
+          <ul>
+            <li>Flower development</li>
+            <li>Aroma performance</li>
+            <li>Harvesting efficiency</li>
+          </ul>
+          <h3>3. Scenting Schedule</h3>
+          <p>Traditional jasmine tea production depends on precise timing.</p>
+          <p>Weather disruptions can create challenges in coordinating:</p>
+          <ul>
+            <li>Fresh flower collection</li>
+            <li>Flower preparation</li>
+            <li>Tea scenting schedules</li>
+          </ul>
+          <h3>4. Long-Term Plant Recovery</h3>
+          <p>
+            The final impact depends not only on immediate flooding but also on how well jasmine plants recover.
+          </p>
+          <p>
+            Some plants with healthier root systems may gradually recover, while severely affected areas may require
+            additional agricultural restoration.
+          </p>
+        </section>
+
+        <section>
+          <h2>Will Jasmine Tea Prices Increase?</h2>
+          <p>Not necessarily immediately.</p>
+          <p>Jasmine tea prices are influenced by many factors:</p>
+          <ul>
+            <li>Fresh flower availability</li>
+            <li>Tea leaf quality</li>
+            <li>Processing methods</li>
+            <li>Market demand</li>
+            <li>Existing inventory</li>
+            <li>Production recovery</li>
+          </ul>
+          <p>A single weather event does not automatically determine global jasmine tea prices.</p>
+          <p>
+            For international buyers, the more important factor is working with suppliers who understand sourcing
+            conditions and can maintain consistent quality.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Should International Tea Buyers Do?</h2>
+          <p>For tea brands and wholesalers, several strategies can help manage supply risks.</p>
+          <h3>1. Work With Experienced Suppliers</h3>
+          <p>A reliable tea supplier should understand:</p>
+          <ul>
+            <li>Tea origins</li>
+            <li>Seasonal changes</li>
+            <li>Production planning</li>
+            <li>Quality control</li>
+          </ul>
+          <h3>2. Build a Balanced Jasmine Tea Portfolio</h3>
+          <p>Different jasmine tea products serve different market positions.</p>
+          <p>For example:</p>
+          <h3>Traditional Jasmine Tea</h3>
+          <p>A classic product focused on traditional scenting craftsmanship.</p>
+          <p>Suitable for:</p>
+          <ul>
+            <li>Premium loose-leaf tea</li>
+            <li>Daily premium collections</li>
+          </ul>
+          <h3>Jasmine Tea With Flowers</h3>
+          <p>A visually attractive product with visible jasmine blossoms.</p>
+          <p>Suitable for:</p>
+          <ul>
+            <li>Gift packaging</li>
+            <li>Retail shelves</li>
+            <li>Premium brand presentation</li>
+          </ul>
+          <h3>Jasmine Dragon Pearls</h3>
+          <p>A signature jasmine tea with a distinctive appearance.</p>
+          <p>Suitable for:</p>
+          <ul>
+            <li>Luxury collections</li>
+            <li>High-end gift products</li>
+          </ul>
+          <h3>3. Plan Purchasing Earlier</h3>
+          <p>Seasonal agricultural products require planning.</p>
+          <p>Early communication with suppliers can help brands:</p>
+          <ul>
+            <li>Confirm availability</li>
+            <li>Prepare packaging schedules</li>
+            <li>Maintain consistent supply</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>QL Tea Life's Approach to Jasmine Tea Supply</h2>
+          <p>At QL Tea Life, we believe long-term tea partnerships are built on transparency and communication.</p>
+          <p>For jasmine tea projects, we support buyers with:</p>
+          <ul>
+            <li>Product selection</li>
+            <li>Different jasmine tea styles</li>
+            <li>Private label recommendations</li>
+            <li>Packaging solutions</li>
+            <li>Flexible MOQ options</li>
+          </ul>
+          <p>Our goal is not only to supply tea, but also to help global brands build sustainable tea collections.</p>
+        </section>
+
+        <JasmineProductLinks products={hengzhouJasmineProductCards} />
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>The 2026 Hengzhou floods remind the tea industry of an important lesson:</p>
+          <p>
+            Behind every traditional tea product is a connection between nature, farmers, craftsmanship, and supply
+            chains.
+          </p>
+          <p>
+            While the jasmine tea industry continues to monitor recovery developments, the dedication of local farmers
+            shows the resilience behind one of the world's most beloved floral teas.
+          </p>
+          <p>
+            For international tea buyers, building relationships with experienced suppliers and understanding the
+            production process remain essential for long-term success.
+          </p>
+        </section>
+
+        <section>
+          <h2>Related Reading</h2>
+          <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
+                How Is Jasmine Tea Traditionally Made?
+              </a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/jasmine-tea-with-flowers-or-without">
+                Jasmine Tea With Flowers or Without: Which Is Better?
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>References</h2>
+          <ul className="article-reference-list">
+            <li>
+              <a
+                href="https://apnews.com/article/18959154a068bf186f04fe6dea882c16"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AP News: China disaster relief and Guangxi flooding reports
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.theguardian.com/world/2026/jul/10/weather-tracker-typhoon-leaves-people-stranded-on-rooftops-in-china"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Guardian: Weather tracker report on flooding in southern China
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/Jasmine_tea"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Jasmine tea background and traditional scenting overview
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <section className="article-cta">
+        <div>
+          <p className="page-eyebrow">Jasmine Tea Sourcing</p>
+          <h2>Looking for Jasmine Tea Supply Support?</h2>
+          <p>
+            Contact QL Tea Life to discuss jasmine tea sourcing, private label options, and supply planning for your
+            market.
+          </p>
+        </div>
+        <div className="article-cta__actions">
+          <a className="page-button" href="/contact">Contact Us</a>
+          <a
+            className="page-button"
+            href="https://wa.me/8618767158838"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackHengzhouWhatsAppClick}
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }
 

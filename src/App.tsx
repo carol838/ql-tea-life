@@ -65,7 +65,7 @@ export default function App() {
     description = 'Tea sourcing, private label and Chinese tea category guidance for international buyers.';
   } else if (knowledgeArticle) {
     page = <KnowledgeArticle article={knowledgeArticle} />;
-    title = `${knowledgeArticle.title} | QL Tea Life`;
+    title = knowledgeArticle.seoTitle ?? `${knowledgeArticle.title} | QL Tea Life`;
     description = knowledgeArticle.description;
   } else if (productPage) {
     page = <ProductPage page={productPage} />;
@@ -109,6 +109,7 @@ export default function App() {
       let ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
       let ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
       let ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
+      let ogType = document.querySelector<HTMLMetaElement>('meta[property="og:type"]');
 
       if (!ogImage) {
         ogImage = document.createElement('meta');
@@ -128,9 +129,16 @@ export default function App() {
         document.head.appendChild(ogDescription);
       }
 
+      if (!ogType) {
+        ogType = document.createElement('meta');
+        ogType.setAttribute('property', 'og:type');
+        document.head.appendChild(ogType);
+      }
+
       ogImage.content = `${SITE_URL}${ogImagePath}`;
       ogTitle.content = title;
       ogDescription.content = description;
+      ogType.content = knowledgeArticle ? 'article' : 'website';
     }
 
     window.gtag?.('event', 'page_view', {
