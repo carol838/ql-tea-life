@@ -10,21 +10,38 @@ type WhatsAppClickParams = {
   location?: string;
 };
 
+const isDevelopment = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env?.DEV === true;
+const debugParams = isDevelopment ? { debug_mode: true } : {};
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
 
+function sendGtagEvent(eventName: string, params: Record<string, unknown>) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, params);
+    return;
+  }
+
+  window.dataLayer?.push(['event', eventName, params]);
+}
+
 export function generateLead({ method, location }: LeadTrackingParams) {
-  window.gtag?.('event', 'generate_lead', {
+  sendGtagEvent('generate_lead', {
     method,
     ...(location ? { location } : {}),
+    ...debugParams,
   });
 }
 
 export function trackWhatsAppLead(params: WhatsAppClickParams = {}) {
-  window.gtag?.('event', 'whatsapp_click', params);
+  sendGtagEvent('whatsapp_click', {
+    ...params,
+    ...debugParams,
+  });
   generateLead({
     method: 'whatsapp',
     location: params.location,
