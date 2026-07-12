@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { trackWhatsAppLead } from '../utils/analytics';
 import './WhatsAppButton.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
@@ -24,7 +25,7 @@ export default function WhatsAppButton() {
 
   const trackWhatsAppClick = () => {
     setShowFirstVisitTooltip(false);
-    window.gtag?.('event', 'whatsapp_click', {
+    trackWhatsAppLead({
       contact_method: 'whatsapp',
     });
   };

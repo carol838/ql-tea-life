@@ -1,3 +1,4 @@
+import { trackWhatsAppLead } from '../utils/analytics';
 import './Home.css';
 
 const advantages = [
@@ -181,7 +182,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
-              window.gtag?.('event', 'whatsapp_click', {
+              trackWhatsAppLead({
                 location: 'hero_button',
               });
             }}

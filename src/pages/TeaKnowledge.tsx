@@ -1,3 +1,4 @@
+import { trackWhatsAppLead } from '../utils/analytics';
 import './PageTemplates.css';
 
 export type KnowledgeArticleData = {
@@ -249,7 +250,7 @@ const hengzhouJasmineProductCards: JasmineProductCard[] = [
 ];
 
 function trackHengzhouWhatsAppClick() {
-  window.gtag?.('event', 'whatsapp_click', {
+  trackWhatsAppLead({
     contact_method: 'whatsapp',
     location: 'article_hengzhou_flood_2026',
   });

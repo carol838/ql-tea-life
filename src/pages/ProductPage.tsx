@@ -1,3 +1,4 @@
+import { trackWhatsAppLead } from '../utils/analytics';
 import './ProductPage.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
@@ -291,7 +292,7 @@ type ProductPageProps = {
 };
 
 function trackProductWhatsAppClick(location: string) {
-  window.gtag?.('event', 'whatsapp_click', {
+  trackWhatsAppLead({
     contact_method: 'whatsapp',
     location,
   });

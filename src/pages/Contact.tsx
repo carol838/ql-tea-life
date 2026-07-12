@@ -1,10 +1,11 @@
+import { trackWhatsAppLead } from '../utils/analytics';
 import './Contact.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
 
 export default function Contact() {
   const trackWhatsAppClick = () => {
-    window.gtag?.('event', 'whatsapp_click', {
+    trackWhatsAppLead({
       contact_method: 'whatsapp',
       location: 'contact_page',
     });
