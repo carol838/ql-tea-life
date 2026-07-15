@@ -11,9 +11,9 @@ const teaLinks = [
 ];
 
 const privateLabelLinks = [
-  ['Tea Bags', '/tea-bags'],
-  ['Custom Packaging', '/custom-packaging'],
-  ['OEM Service', '/oem-service'],
+  ['Private Label Solutions', '/private-label'],
+  ['Packaging Options', '/custom-packaging'],
+  ['How It Works', '/oem-service'],
 ];
 
 function Dropdown({
@@ -63,10 +63,7 @@ export default function SiteHeader() {
         <nav className={`site-nav${menuOpen ? ' site-nav--open' : ''}`} aria-label="Main navigation">
           <a href="/">Home</a>
           <Dropdown label="Tea Collection" links={teaLinks} />
-          <Dropdown
-            label="Private Label"
-            links={[['Private Label Overview', '/private-label'], ...privateLabelLinks]}
-          />
+          <Dropdown label="Private Label" links={privateLabelLinks} />
           <a href="/tea-knowledge">Tea Knowledge</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
