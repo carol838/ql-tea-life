@@ -6,6 +6,14 @@ type PrivateLabelContent = {
   features: [string, string][];
 };
 
+export const PACKAGING_OPTIONS_ROUTE = '/private-label/packaging-options';
+export const PACKAGING_OPTIONS_SEO = {
+  title: 'Private Label Tea Packaging Options | QL Tea Life',
+  description:
+    'Explore private label tea packaging options including tea tins, flexible pouches, tea bags and luxury gift boxes for wholesale tea brands and retail projects.',
+  ogImage: '/images/private-label/jasmine-green-tea-packaging.webp',
+};
+
 export const privateLabelPages: Record<string, PrivateLabelContent> = {
   '/private-label': {
     title: 'Private Label Tea',
@@ -45,6 +53,118 @@ export const privateLabelPages: Record<string, PrivateLabelContent> = {
   },
 };
 
+const packagingOptions = [
+  {
+    title: 'Tea Tins',
+    description:
+      'Tea tins are suitable for premium loose-leaf tea, retail collections and gift-oriented products.',
+    points: [
+      'Suitable for 50g, 100g and other retail weights',
+      'Standard tins with custom labels',
+      'Fully custom-printed tins for larger quantities',
+      'Strong shelf presence and premium positioning',
+    ],
+    bestFor: 'Premium loose-leaf tea and signature collections',
+  },
+  {
+    title: 'Kraft & Flexible Pouches',
+    description:
+      'Flexible pouches provide a practical and cost-effective option for new brands, refill products and online retail.',
+    points: [
+      'Lower-cost launch option',
+      'Flexible order quantities',
+      'Custom labels or printed pouch solutions',
+      'Easy storage and shipping',
+    ],
+    bestFor: 'Startup brands, refill products and market testing',
+  },
+  {
+    title: 'Tea Bags',
+    description:
+      'Tea bag formats are suitable for convenience-focused products, hotels, cafes and retail channels.',
+    points: [
+      'Pyramid tea bags',
+      'Individual sachets',
+      'Retail boxes',
+      'Private label artwork options',
+    ],
+    bestFor: 'Hotels, cafes, gifting and convenience products',
+  },
+  {
+    title: 'Luxury Gift Boxes',
+    description:
+      'Gift boxes help tea brands create premium collections for seasonal gifts, corporate gifting and special occasions.',
+    points: [
+      'Two-tin and multi-tin combinations',
+      'Different box structures',
+      'Custom sleeves, labels and artwork',
+      'Suitable for curated tea collections',
+    ],
+    bestFor: 'Luxury collections, seasonal gifts and corporate gifting',
+  },
+];
+
+const customizationGroups: [string, string[]][] = [
+  ['Brand Design', ['Logo placement', 'Brand colors', 'Artwork', 'Labels and sleeves']],
+  [
+    'Product Information',
+    ['Tea name', 'Origin', 'Ingredients', 'Brewing instructions', 'Net weight', 'Required market information'],
+  ],
+  [
+    'Collection Planning',
+    [
+      'Individual retail products',
+      'Signature tea ranges',
+      'Gift sets',
+      'Seasonal collections',
+      'Starter collections for new brands',
+    ],
+  ],
+];
+
+const packagingProcess = [
+  ['01', 'Choose Your Tea', 'Confirm tea varieties, grades and initial quantities.'],
+  ['02', 'Select Packaging', 'Compare tins, pouches, tea bags and gift boxes.'],
+  ['03', 'Confirm Retail Specifications', 'Confirm retail weight, product count and collection structure.'],
+  ['04', 'Prepare Artwork', 'Confirm logo, labels, colors and required product information.'],
+  ['05', 'Sample Approval', 'Review packaging appearance and technical details before production.'],
+  ['06', 'Production & Delivery', 'Complete tea packing, quality checks and shipment preparation.'],
+];
+
+const packagingFaqs = [
+  [
+    'Can I start with small quantities?',
+    'Flexible launch solutions may be available depending on the selected tea, packaging format and customization method. Standard packaging with custom labels is usually more suitable for smaller initial projects.',
+  ],
+  [
+    'Can you help with packaging design?',
+    "QL Tea Life can provide packaging recommendations and coordinate packaging production based on the buyer's artwork, branding and market requirements.",
+  ],
+  [
+    'Can I use different packaging for different teas?',
+    'Yes. Tea tins, pouches and gift boxes can be combined within one product collection depending on the tea positioning and launch plan.',
+  ],
+  [
+    'Can different tea varieties be packed in the same gift box?',
+    'Yes. Multi-tea gift sets can be developed after confirming the selected teas, retail weight, box structure and packaging quantities.',
+  ],
+  [
+    'Are packaging prices included in the tea price?',
+    'No. Bulk tea prices and packaging costs are calculated separately. Packaging costs can be confirmed after the format, material, size, printing and quantity are selected.',
+  ],
+  [
+    'Do all teas use the same inner packaging?',
+    'Not always. The suitable inner-packaging solution depends on the tea type, destination, shipping method and storage requirements.',
+  ],
+];
+
+function trackPackagingContactClick() {
+  window.gtag?.('event', 'click', {
+    location: 'private_label_packaging_options',
+    link_url: '/contact',
+  });
+}
+
 export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }) {
   return (
     <main className="content-page">
@@ -65,6 +185,205 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
       <section className="inquiry-cta">
         <div><p className="page-eyebrow">Start a Project</p><h2>Discuss Your Private Label Requirements</h2></div>
         <a className="page-button" href="/contact">Contact Us</a>
+      </section>
+    </main>
+  );
+}
+
+export function PackagingOptionsPage() {
+  return (
+    <main className="content-page packaging-options-page">
+      <section className="packaging-hero">
+        <div className="packaging-hero__content">
+          <p className="page-eyebrow">Private Label Packaging</p>
+          <h1>Premium Tea Packaging Solutions for Your Brand</h1>
+          <p>
+            From tea tins and flexible pouches to luxury gift boxes, QL Tea Life provides packaging options to help
+            tea brands create retail-ready products for different markets and launch budgets.
+          </p>
+          <div className="packaging-hero__actions">
+            <a className="page-button" href="/contact" onClick={trackPackagingContactClick}>
+              Discuss Your Packaging
+            </a>
+            <a className="text-link" href="/private-label">
+              Explore Private Label Solutions
+            </a>
+          </div>
+        </div>
+        <figure className="packaging-hero__visual">
+          <img
+            src="/images/private-label/jasmine-green-tea-packaging.webp"
+            alt="Private label tea bags and retail packaging options"
+            width="800"
+            height="500"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </section>
+
+      <section className="page-section">
+        <p className="page-eyebrow">Packaging Formats</p>
+        <h2>Packaging Options for Different Brand Needs</h2>
+        <p className="packaging-section-intro">
+          Different tea products and launch stages require different packaging solutions. We help buyers compare
+          presentation, MOQ, customization and cost before selecting the most suitable option.
+        </p>
+        <div className="packaging-card-grid">
+          {packagingOptions.map((option) => (
+            <article className="packaging-card" key={option.title}>
+              <h3>{option.title}</h3>
+              <p>{option.description}</p>
+              <ul>
+                {option.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <p className="packaging-card__best">
+                <span>Best for:</span> {option.bestFor}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section page-section--tinted">
+        <p className="page-eyebrow">Customization</p>
+        <h2>Build a Consistent Tea Brand Identity</h2>
+        <p className="packaging-section-intro">
+          Packaging should not only protect the tea. It should also communicate the product story, market positioning
+          and brand personality.
+        </p>
+        <div className="packaging-feature-grid">
+          {customizationGroups.map(([title, items]) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <ul>
+                {items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section packaging-protection">
+        <div>
+          <p className="page-eyebrow">Tea Protection</p>
+          <h2>Protecting Tea Quality Inside the Packaging</h2>
+        </div>
+        <div>
+          <p>
+            The outer package creates the brand presentation, while the inner packaging helps protect tea quality
+            during storage and transport.
+          </p>
+          <p>Suitable solutions may include:</p>
+          <ul>
+            <li>Food-grade inner pouches</li>
+            <li>High-barrier foil packaging</li>
+            <li>Heat sealing</li>
+            <li>Moisture and oxygen protection</li>
+            <li>Packaging recommendations based on tea type and shipping conditions</li>
+          </ul>
+          <p>
+            The final inner-packaging solution should be confirmed according to the tea type, destination, shipping
+            method and storage requirements.
+          </p>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <p className="page-eyebrow">Project Flow</p>
+        <h2>How the Packaging Process Works</h2>
+        <div className="packaging-process-grid">
+          {packagingProcess.map(([number, title, description]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section page-section--tinted">
+        <p className="page-eyebrow">MOQ Guidance</p>
+        <h2>Flexible Solutions for Different Launch Stages</h2>
+        <div className="packaging-copy-block">
+          <p>Tea and packaging MOQs are calculated separately.</p>
+          <p>Tea MOQ depends on the selected tea variety.</p>
+          <p>Packaging MOQ depends on:</p>
+          <ul>
+            <li>packaging type</li>
+            <li>printing method</li>
+            <li>packaging size</li>
+            <li>customization level</li>
+            <li>total quantity</li>
+          </ul>
+          <p>
+            For new tea brands, QL Tea Life can recommend practical launch solutions such as standard tins with custom
+            labels, flexible pouches or mixed tea collections before moving to fully customized packaging.
+          </p>
+        </div>
+      </section>
+
+      <section className="page-section packaging-example">
+        <p className="page-eyebrow">Starter Brand Example</p>
+        <h2>A Practical Packaging Approach for a New Tea Brand</h2>
+        <div className="packaging-example__layout">
+          <article>
+            <h3>Initial Tea Collection</h3>
+            <ul>
+              <li>5-8 loose-leaf teas</li>
+              <li>100g retail tins</li>
+              <li>Standard tins with custom labels</li>
+              <li>Optional two-tin or four-tin gift boxes</li>
+            </ul>
+          </article>
+          <div>
+            <p>This approach can help a new brand:</p>
+            <ul>
+              <li>control initial investment</li>
+              <li>test several tea categories</li>
+              <li>reduce packaging risk</li>
+              <li>identify future best sellers</li>
+              <li>upgrade to fully custom-printed packaging later</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <p className="page-eyebrow">Buyer Questions</p>
+        <h2>Packaging FAQ</h2>
+        <div className="faq-list">
+          {packagingFaqs.map(([question, answer]) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="inquiry-cta">
+        <div>
+          <p className="page-eyebrow">Start Your Private Label Project</p>
+          <h2>Ready to Create Packaging for Your Tea Brand?</h2>
+          <p>
+            Tell us about your tea selection, target market, preferred retail weight and packaging direction. We will
+            help you evaluate suitable options for your launch.
+          </p>
+        </div>
+        <div className="article-cta__actions">
+          <a className="page-button" href="/contact" onClick={trackPackagingContactClick}>
+            Request a Packaging Proposal
+          </a>
+          <a className="page-button" href="/jasmine-tea">
+            View Tea Collection
+          </a>
+        </div>
       </section>
     </main>
   );

@@ -6,7 +6,12 @@ import About from './pages/About';
 import CategoryPage, { teaCategories } from './pages/CategoryPage';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import PrivateLabelPage, { privateLabelPages } from './pages/PrivateLabelPage';
+import PrivateLabelPage, {
+  PACKAGING_OPTIONS_ROUTE,
+  PACKAGING_OPTIONS_SEO,
+  PackagingOptionsPage,
+  privateLabelPages,
+} from './pages/PrivateLabelPage';
 import ProductPage, { productPages } from './pages/ProductPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
 
@@ -51,6 +56,11 @@ export default function App() {
     page = <Home />;
     title = 'QL Tea Life | Premium Chinese Tea for Global Buyers';
     description = 'Source premium Chinese tea, private label tea and OEM services for international markets.';
+  } else if (path === PACKAGING_OPTIONS_ROUTE) {
+    page = <PackagingOptionsPage />;
+    title = PACKAGING_OPTIONS_SEO.title;
+    description = PACKAGING_OPTIONS_SEO.description;
+    ogImagePath = PACKAGING_OPTIONS_SEO.ogImage;
   } else if (teaCategory) {
     page = <CategoryPage category={teaCategory} />;
     title = teaCategory.seoTitle;

@@ -12,7 +12,7 @@ const teaLinks = [
 
 const privateLabelLinks = [
   ['Private Label Solutions', '/private-label'],
-  ['Packaging Options', '/custom-packaging'],
+  ['Packaging Options', '/private-label/packaging-options'],
   ['How It Works', '/oem-service'],
 ];
 
