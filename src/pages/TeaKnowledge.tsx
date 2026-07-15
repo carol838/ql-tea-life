@@ -28,7 +28,7 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     category: 'Jasmine Tea',
     title: 'How Is Jasmine Tea Traditionally Made?',
     url: '/tea-knowledge/how-is-jasmine-tea-traditionally-made',
-    description: 'Learn how traditional Chinese jasmine tea is made through the scenting process, from tea base selection to flower awakening, scenting, drying and final tea quality.',
+    description: 'Discover how traditional jasmine tea is made, including jasmine flower harvesting, scenting techniques, and how tea buyers can evaluate jasmine tea quality for wholesale and private label projects.',
     image: '/images/tea-knowledge/jasmine-tea-making/jasmine-tea-making-hero.webp',
     imageAlt: 'Traditional jasmine tea scenting process with green tea leaves and fresh jasmine flowers',
   },
@@ -198,6 +198,11 @@ const defaultJasmineProductCards: JasmineProductCard[] = [
     imageAlt: 'Traditional jasmine tea with clean tea appearance',
     href: '/products/traditional-jasmine-tea',
   },
+];
+
+const traditionalFirstJasmineProductCards: JasmineProductCard[] = [
+  defaultJasmineProductCards[1],
+  defaultJasmineProductCards[0],
 ];
 
 function JasmineProductLinks({ products = defaultJasmineProductCards }: { products?: JasmineProductCard[] }) {
@@ -408,7 +413,12 @@ function HengzhouFloodArticle({ article }: { article: KnowledgeArticleData }) {
           <p>Traditional jasmine tea is not made by simply adding dried jasmine flowers to tea leaves.</p>
           <p>
             The core of traditional production is the scenting process, where fresh jasmine flowers release their
-            natural aroma and tea leaves gradually absorb the fragrance.
+            natural aroma and tea leaves gradually absorb the fragrance. Buyers who want to understand this step in
+            more detail can review the{' '}
+            <a className="article-inline-link" href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
+              traditional jasmine tea scenting process
+            </a>
+            .
           </p>
           <div className="article-video">
             <video
@@ -683,6 +693,16 @@ function JasmineTeaMakingArticle({ article }: { article: KnowledgeArticleData })
             carefully combining prepared tea leaves with fresh jasmine flowers during the traditional scenting process.
           </p>
           <p>
+            Recent{' '}
+            <a
+              className="article-inline-link"
+              href="/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply"
+            >
+              jasmine tea supply chain developments in Hengzhou
+            </a>{' '}
+            also show why fresh flower sourcing and regional production conditions matter to international tea buyers.
+          </p>
+          <p>
             For tea buyers, understanding how jasmine tea is made can help evaluate aroma quality, tea base selection,
             processing standards, and overall product value.
           </p>
@@ -767,6 +787,36 @@ function JasmineTeaMakingArticle({ article }: { article: KnowledgeArticleData })
         </section>
 
         <section>
+          <h2>Why the Scenting Process Matters for Tea Buyers</h2>
+          <p>
+            For tea buyers, understanding the jasmine tea scenting process helps evaluate product quality and supplier
+            capability.
+          </p>
+          <p>Different jasmine teas may vary depending on:</p>
+          <ul>
+            <li>Tea leaf quality</li>
+            <li>Jasmine flower quality</li>
+            <li>Number of scenting cycles</li>
+            <li>Processing experience</li>
+          </ul>
+          <p>These factors influence:</p>
+          <ul>
+            <li>Aroma intensity</li>
+            <li>Taste balance</li>
+            <li>Product positioning</li>
+            <li>Customer experience</li>
+          </ul>
+          <p>
+            For private label tea brands, choosing the right jasmine tea style is an important part of building a
+            successful product line. Buyers comparing{' '}
+            <a className="article-inline-link" href="/tea-knowledge/jasmine-tea-with-flowers-or-without">
+              different jasmine tea styles
+            </a>{' '}
+            should consider both aroma quality and market positioning.
+          </p>
+        </section>
+
+        <section>
           <h2>Final Product</h2>
           <JasmineArticleImage
             src="/images/tea-knowledge/jasmine-tea-making/brewed-jasmine-tea.webp"
@@ -790,8 +840,41 @@ function JasmineTeaMakingArticle({ article }: { article: KnowledgeArticleData })
           </p>
         </section>
 
-        <JasmineProductLinks />
+        <JasmineProductLinks products={traditionalFirstJasmineProductCards} />
+
+        <aside className="article-related">
+          <p className="page-eyebrow">Related Reading</p>
+          <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply">
+                How Will the 2026 Hengzhou Floods Affect Jasmine Tea Supply?
+              </a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/jasmine-tea-with-flowers-or-without">
+                Jasmine Tea With Flowers or Without: Which Is Better?
+              </a>
+            </li>
+          </ul>
+        </aside>
       </article>
+
+      <section className="article-cta">
+        <div>
+          <p className="page-eyebrow">Jasmine Tea Wholesale</p>
+          <h2>Looking for Jasmine Tea Supply?</h2>
+          <p>
+            QL Tea Life provides jasmine tea options for wholesalers, tea brands, and private label projects.
+          </p>
+          <p>We support:</p>
+          <ul>
+            <li>Jasmine tea selection</li>
+            <li>Wholesale supply</li>
+            <li>Custom packaging solutions</li>
+          </ul>
+        </div>
+        <a className="page-button" href="/contact">Request a Quote</a>
+      </section>
 
       <section className="article-cta">
         <div>
@@ -897,6 +980,13 @@ function JasmineTeaFlowersArticle({ article }: { article: KnowledgeArticleData }
             This is the traditional idea behind jasmine tea that is rich in aroma while showing little or no visible
             flower material.
           </p>
+          <p>
+            For a step-by-step explanation of{' '}
+            <a className="article-inline-link" href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
+              how traditional jasmine tea is produced
+            </a>
+            , review our complete guide to tea base selection, flower awakening, scenting, separation and drying.
+          </p>
           <div className="article-video">
             <video
               controls
@@ -915,12 +1005,15 @@ function JasmineTeaFlowersArticle({ article }: { article: KnowledgeArticleData }
             to absorb the natural floral aroma.
           </p>
           <p>
-            To see the full process from tea base selection to flower awakening, scenting, separation and drying, read
-            our guide:{' '}
-            <a className="article-inline-link" href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
-              How Is Jasmine Tea Traditionally Made?
-            </a>
-            .
+            Jasmine flower quality can also be affected by origin conditions and seasonal availability. Buyers can
+            follow{' '}
+            <a
+              className="article-inline-link"
+              href="/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply"
+            >
+              jasmine flower supply and production conditions
+            </a>{' '}
+            to better understand sourcing risk.
           </p>
         </section>
 
@@ -1048,6 +1141,22 @@ function JasmineTeaFlowersArticle({ article }: { article: KnowledgeArticleData }
             packaging directions.
           </p>
         </section>
+
+        <aside className="article-related">
+          <p className="page-eyebrow">Related Reading</p>
+          <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply">
+                How Will the 2026 Hengzhou Floods Affect Jasmine Tea Supply?
+              </a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/how-is-jasmine-tea-traditionally-made">
+                How Is Jasmine Tea Traditionally Made?
+              </a>
+            </li>
+          </ul>
+        </aside>
       </article>
 
       <section className="article-cta">
