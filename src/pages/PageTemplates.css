@@ -780,27 +780,31 @@
 
 .packaging-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+  gap: 68px;
   align-items: center;
-  padding: 88px max(24px, calc((100% - 1120px) / 2)) 76px;
+  padding: 96px max(24px, calc((100% - 1120px) / 2)) 84px;
   background: linear-gradient(120deg, var(--color-beige), var(--color-surface));
 }
 
 .packaging-hero h1 {
-  max-width: 760px;
-  margin: 0 0 20px;
+  max-width: 650px;
+  margin: 0 0 24px;
   font-family: Georgia, serif;
   font-size: 54px;
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.06;
 }
 
 .packaging-hero p:not(.page-eyebrow) {
-  max-width: 720px;
+  max-width: 520px;
   color: var(--color-muted);
   font-size: 18px;
   line-height: 1.75;
+}
+
+.packaging-hero .page-eyebrow {
+  margin-bottom: 16px;
 }
 
 .packaging-hero__actions,
@@ -813,7 +817,41 @@
 .packaging-hero__actions {
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 32px;
+  margin-top: 36px;
+}
+
+.packaging-hero__actions .page-button,
+.packaging-hero__actions .text-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 13px 22px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.packaging-hero__actions .page-button {
+  color: var(--color-surface);
+  background: var(--color-gold);
+}
+
+.packaging-hero__actions .page-button:hover {
+  border-color: #9f8349;
+  background: #9f8349;
+}
+
+.packaging-hero__actions .text-link {
+  color: var(--color-gold);
+  background: transparent;
+}
+
+.packaging-hero__actions .text-link:hover {
+  background: rgba(185, 155, 94, 0.12);
 }
 
 .packaging-hero__visual {
@@ -821,6 +859,8 @@
   margin: 0;
   border-radius: 16px;
   box-shadow: 0 22px 52px rgba(45, 40, 31, 0.14);
+  transform: translateY(-38px) scale(1.09);
+  transform-origin: center top;
 }
 
 .packaging-hero__visual img {
@@ -1115,6 +1155,10 @@
   .packaging-hero {
     padding-top: 64px;
     padding-bottom: 56px;
+  }
+
+  .packaging-hero__visual {
+    transform: none;
   }
 
   .packaging-hero h1 {
