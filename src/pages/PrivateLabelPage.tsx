@@ -210,9 +210,6 @@ export function PackagingOptionsPage() {
             <a className="page-button" href="/contact" onClick={trackPackagingContactClick}>
               Discuss Your Packaging
             </a>
-            <a className="text-link" href="/private-label">
-              Explore Private Label Solutions
-            </a>
           </div>
         </div>
         <figure className="packaging-hero__visual">

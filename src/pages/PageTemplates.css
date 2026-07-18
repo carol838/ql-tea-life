@@ -780,8 +780,8 @@
 
 .packaging-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
-  gap: 68px;
+  grid-template-columns: minmax(0, 0.43fr) minmax(360px, 0.57fr);
+  gap: 34px;
   align-items: center;
   padding: 96px max(24px, calc((100% - 1120px) / 2)) 84px;
   background: linear-gradient(120deg, var(--color-beige), var(--color-surface));
@@ -789,7 +789,7 @@
 
 .packaging-hero h1 {
   max-width: 650px;
-  margin: 0 0 24px;
+  margin: 0 0 30px;
   font-family: Georgia, serif;
   font-size: 54px;
   font-weight: 400;
@@ -804,7 +804,7 @@
 }
 
 .packaging-hero .page-eyebrow {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .packaging-hero__actions,
@@ -817,7 +817,7 @@
 .packaging-hero__actions {
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 38px;
 }
 
 .packaging-hero__actions .page-button,
@@ -855,19 +855,19 @@
 }
 
 .packaging-hero__visual {
-  overflow: hidden;
+  overflow: visible;
   margin: 0;
-  border-radius: 16px;
-  box-shadow: 0 22px 52px rgba(45, 40, 31, 0.14);
-  transform: translateY(-38px) scale(1.09);
-  transform-origin: center top;
+  border-radius: 0;
+  box-shadow: none;
+  transform: translateX(-24px) scale(1.08);
+  transform-origin: center;
 }
 
 .packaging-hero__visual img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .packaging-section-intro,
