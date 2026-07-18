@@ -865,6 +865,20 @@
   background: var(--color-surface);
 }
 
+.packaging-card {
+  overflow: hidden;
+}
+
+.packaging-card__image {
+  display: block;
+  width: calc(100% + 52px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: -26px -26px 24px;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
 .packaging-card h3,
 .packaging-feature-grid h3,
 .packaging-process-grid h3,

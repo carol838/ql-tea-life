@@ -56,6 +56,8 @@ export const privateLabelPages: Record<string, PrivateLabelContent> = {
 const packagingOptions = [
   {
     title: 'Tea Tins',
+    image: '/images/packaging-options/tea-tins.webp',
+    imageAlt: 'Premium tea tin packaging options for private label tea brands',
     description:
       'Tea tins are suitable for premium loose-leaf tea, retail collections and gift-oriented products.',
     points: [
@@ -68,6 +70,8 @@ const packagingOptions = [
   },
   {
     title: 'Kraft & Flexible Pouches',
+    image: '/images/packaging-options/kraft-bag.webp',
+    imageAlt: 'Kraft and flexible pouch tea packaging for private label tea brands',
     description:
       'Flexible pouches provide a practical and cost-effective option for new brands, refill products and online retail.',
     points: [
@@ -80,6 +84,8 @@ const packagingOptions = [
   },
   {
     title: 'Tea Bags',
+    image: '/images/packaging-options/tea-bag-box.webp',
+    imageAlt: 'Private label tea bag box packaging for retail tea products',
     description:
       'Tea bag formats are suitable for convenience-focused products, hotels, cafes and retail channels.',
     points: [
@@ -92,6 +98,8 @@ const packagingOptions = [
   },
   {
     title: 'Luxury Gift Boxes',
+    image: '/images/packaging-options/gift-box.webp',
+    imageAlt: 'Luxury tea gift box packaging for premium tea collections',
     description:
       'Gift boxes help tea brands create premium collections for seasonal gifts, corporate gifting and special occasions.',
     points: [
@@ -212,8 +220,8 @@ export function PackagingOptionsPage() {
         </div>
         <figure className="packaging-hero__visual">
           <img
-            src="/images/private-label/jasmine-green-tea-packaging.webp"
-            alt="Private label tea bags and retail packaging options"
+            src="/images/packaging-options/hero.webp"
+            alt="Premium private label tea packaging options for retail tea brands"
             width="800"
             height="500"
             loading="eager"
@@ -232,6 +240,15 @@ export function PackagingOptionsPage() {
         <div className="packaging-card-grid">
           {packagingOptions.map((option) => (
             <article className="packaging-card" key={option.title}>
+              <img
+                className="packaging-card__image"
+                src={option.image}
+                alt={option.imageAlt}
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
               <h3>{option.title}</h3>
               <p>{option.description}</p>
               <ul>
