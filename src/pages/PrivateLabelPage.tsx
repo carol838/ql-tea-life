@@ -118,17 +118,14 @@ const customizationGroups: [string, string[]][] = [
     'Product Information',
     ['Tea name', 'Origin', 'Ingredients', 'Brewing instructions', 'Net weight', 'Required market information'],
   ],
-  [
-    'Collection Planning',
-    [
-      'Individual retail products',
-      'Signature tea ranges',
-      'Gift sets',
-      'Seasonal collections',
-      'Starter collections for new brands',
-    ],
-  ],
 ];
+
+const collectionPlanning = {
+  title: 'Collection Planning',
+  description:
+    'From blank packaging to a complete retail-ready collection, we help you coordinate tea formats, packaging styles and product combinations around your brand positioning.',
+  items: ['Individual retail products', 'Signature tea ranges', 'Gift sets', 'Seasonal collections'],
+};
 
 const packagingProcess = [
   ['01', 'Choose Your Tea', 'Confirm tea varieties, grades and initial quantities.'],
@@ -283,6 +280,25 @@ export function PackagingOptionsPage() {
             </article>
           ))}
         </div>
+        <article className="packaging-collection-card">
+          <div>
+            <h3>{collectionPlanning.title}</h3>
+            <p>{collectionPlanning.description}</p>
+            <ul>
+              {collectionPlanning.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <img
+            src="/images/packaging-options/collection-planning.webp"
+            alt="Tea packaging collection planning from blank packaging to retail-ready branded products"
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+        </article>
       </section>
 
       <section className="page-section packaging-protection">

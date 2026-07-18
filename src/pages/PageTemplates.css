@@ -857,12 +857,31 @@
 
 .packaging-card,
 .packaging-feature-grid article,
+.packaging-collection-card,
 .packaging-process-grid article,
 .packaging-example article {
   border: 1px solid var(--color-line);
   border-radius: 8px;
   padding: 26px;
   background: var(--color-surface);
+}
+
+.packaging-collection-card {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 32px;
+  align-items: center;
+  margin-top: 22px;
+  padding: 32px;
+}
+
+.packaging-collection-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .packaging-card {
@@ -881,6 +900,7 @@
 
 .packaging-card h3,
 .packaging-feature-grid h3,
+.packaging-collection-card h3,
 .packaging-process-grid h3,
 .packaging-example h3 {
   margin: 0 0 14px;
@@ -892,6 +912,8 @@
 .packaging-card p,
 .packaging-card li,
 .packaging-feature-grid li,
+.packaging-collection-card p,
+.packaging-collection-card li,
 .packaging-process-grid p,
 .packaging-copy-block p,
 .packaging-copy-block li,
@@ -905,6 +927,7 @@
 
 .packaging-card ul,
 .packaging-feature-grid ul,
+.packaging-collection-card ul,
 .packaging-copy-block ul,
 .packaging-protection ul,
 .packaging-example ul {
@@ -1083,6 +1106,7 @@
   .product-placeholder-grid,
   .benefit-grid,
   .packaging-hero,
+  .packaging-collection-card,
   .packaging-protection,
   .packaging-example__layout {
     grid-template-columns: 1fr;
