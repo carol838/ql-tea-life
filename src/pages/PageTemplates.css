@@ -780,8 +780,8 @@
 
 .packaging-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.43fr) minmax(360px, 0.57fr);
-  gap: 34px;
+  grid-template-columns: minmax(0, 0.42fr) minmax(360px, 0.58fr);
+  gap: 44px;
   align-items: center;
   padding: 96px max(24px, calc((100% - 1120px) / 2)) 84px;
   background: linear-gradient(120deg, var(--color-beige), var(--color-surface));
@@ -859,7 +859,7 @@
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  transform: translateX(-24px) scale(1.08);
+  transform: translateX(-54px) scale(1.22);
   transform-origin: center;
 }
 
@@ -1169,7 +1169,7 @@
   }
 
   .packaging-hero__visual {
-    transform: translateX(-8px) scale(1.08);
+    transform: translateX(-10px) scale(1.12);
   }
 
   .packaging-hero h1 {
