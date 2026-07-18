@@ -866,7 +866,8 @@
 .packaging-hero__visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: auto;
   object-fit: contain;
 }
 
@@ -920,6 +921,16 @@
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.packaging-feature-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 24px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -1158,7 +1169,7 @@
   }
 
   .packaging-hero__visual {
-    transform: none;
+    transform: translateX(-8px) scale(1.08);
   }
 
   .packaging-hero h1 {

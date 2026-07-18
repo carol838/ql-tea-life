@@ -120,48 +120,23 @@ const customizationGroups: [string, string[]][] = [
   ],
 ];
 
+const customizationVisuals: Record<string, { image: string; imageAlt: string }> = {
+  'Brand Design': {
+    image: '/images/packaging-options/brand-design.webp',
+    imageAlt: 'Private label tea brand design board with logo colors labels and packaging artwork',
+  },
+  'Product Information': {
+    image: '/images/packaging-options/product-information.webp',
+    imageAlt: 'Tea packaging product information mockup showing front label brewing guide and back label details',
+  },
+};
+
 const collectionPlanning = {
   title: 'Collection Planning',
   description:
     'From blank packaging to a complete retail-ready collection, we help you coordinate tea formats, packaging styles and product combinations around your brand positioning.',
   items: ['Individual retail products', 'Signature tea ranges', 'Gift sets', 'Seasonal collections'],
 };
-
-const packagingProcess = [
-  ['01', 'Choose Your Tea', 'Confirm tea varieties, grades and initial quantities.'],
-  ['02', 'Select Packaging', 'Compare tins, pouches, tea bags and gift boxes.'],
-  ['03', 'Confirm Retail Specifications', 'Confirm retail weight, product count and collection structure.'],
-  ['04', 'Prepare Artwork', 'Confirm logo, labels, colors and required product information.'],
-  ['05', 'Sample Approval', 'Review packaging appearance and technical details before production.'],
-  ['06', 'Production & Delivery', 'Complete tea packing, quality checks and shipment preparation.'],
-];
-
-const packagingFaqs = [
-  [
-    'Can I start with small quantities?',
-    'Flexible launch solutions may be available depending on the selected tea, packaging format and customization method. Standard packaging with custom labels is usually more suitable for smaller initial projects.',
-  ],
-  [
-    'Can you help with packaging design?',
-    "QL Tea Life can provide packaging recommendations and coordinate packaging production based on the buyer's artwork, branding and market requirements.",
-  ],
-  [
-    'Can I use different packaging for different teas?',
-    'Yes. Tea tins, pouches and gift boxes can be combined within one product collection depending on the tea positioning and launch plan.',
-  ],
-  [
-    'Can different tea varieties be packed in the same gift box?',
-    'Yes. Multi-tea gift sets can be developed after confirming the selected teas, retail weight, box structure and packaging quantities.',
-  ],
-  [
-    'Are packaging prices included in the tea price?',
-    'No. Bulk tea prices and packaging costs are calculated separately. Packaging costs can be confirmed after the format, material, size, printing and quantity are selected.',
-  ],
-  [
-    'Do all teas use the same inner packaging?',
-    'Not always. The suitable inner-packaging solution depends on the tea type, destination, shipping method and storage requirements.',
-  ],
-];
 
 function trackPackagingContactClick() {
   window.gtag?.('event', 'click', {
@@ -268,6 +243,15 @@ export function PackagingOptionsPage() {
         <div className="packaging-feature-grid">
           {customizationGroups.map(([title, items]) => (
             <article key={title}>
+              <img
+                className="packaging-feature-card__image"
+                src={customizationVisuals[title].image}
+                alt={customizationVisuals[title].imageAlt}
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
               <h3>{title}</h3>
               <ul>
                 {items.map((item) => (
@@ -296,105 +280,6 @@ export function PackagingOptionsPage() {
             decoding="async"
           />
         </article>
-      </section>
-
-      <section className="page-section packaging-protection">
-        <div>
-          <p className="page-eyebrow">Tea Protection</p>
-          <h2>Protecting Tea Quality Inside the Packaging</h2>
-        </div>
-        <div>
-          <p>
-            The outer package creates the brand presentation, while the inner packaging helps protect tea quality
-            during storage and transport.
-          </p>
-          <p>Suitable solutions may include:</p>
-          <ul>
-            <li>Food-grade inner pouches</li>
-            <li>High-barrier foil packaging</li>
-            <li>Heat sealing</li>
-            <li>Moisture and oxygen protection</li>
-            <li>Packaging recommendations based on tea type and shipping conditions</li>
-          </ul>
-          <p>
-            The final inner-packaging solution should be confirmed according to the tea type, destination, shipping
-            method and storage requirements.
-          </p>
-        </div>
-      </section>
-
-      <section className="page-section">
-        <p className="page-eyebrow">Project Flow</p>
-        <h2>How the Packaging Process Works</h2>
-        <div className="packaging-process-grid">
-          {packagingProcess.map(([number, title, description]) => (
-            <article key={number}>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="page-section page-section--tinted">
-        <p className="page-eyebrow">MOQ Guidance</p>
-        <h2>Flexible Solutions for Different Launch Stages</h2>
-        <div className="packaging-copy-block">
-          <p>Tea and packaging MOQs are calculated separately.</p>
-          <p>Tea MOQ depends on the selected tea variety.</p>
-          <p>Packaging MOQ depends on:</p>
-          <ul>
-            <li>packaging type</li>
-            <li>printing method</li>
-            <li>packaging size</li>
-            <li>customization level</li>
-            <li>total quantity</li>
-          </ul>
-          <p>
-            For new tea brands, QL Tea Life can recommend practical launch solutions such as standard tins with custom
-            labels, flexible pouches or mixed tea collections before moving to fully customized packaging.
-          </p>
-        </div>
-      </section>
-
-      <section className="page-section packaging-example">
-        <p className="page-eyebrow">Starter Brand Example</p>
-        <h2>A Practical Packaging Approach for a New Tea Brand</h2>
-        <div className="packaging-example__layout">
-          <article>
-            <h3>Initial Tea Collection</h3>
-            <ul>
-              <li>5-8 loose-leaf teas</li>
-              <li>100g retail tins</li>
-              <li>Standard tins with custom labels</li>
-              <li>Optional two-tin or four-tin gift boxes</li>
-            </ul>
-          </article>
-          <div>
-            <p>This approach can help a new brand:</p>
-            <ul>
-              <li>control initial investment</li>
-              <li>test several tea categories</li>
-              <li>reduce packaging risk</li>
-              <li>identify future best sellers</li>
-              <li>upgrade to fully custom-printed packaging later</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section">
-        <p className="page-eyebrow">Buyer Questions</p>
-        <h2>Packaging FAQ</h2>
-        <div className="faq-list">
-          {packagingFaqs.map(([question, answer]) => (
-            <details key={question}>
-              <summary>{question}</summary>
-              <p>{answer}</p>
-            </details>
-          ))}
-        </div>
       </section>
 
       <section className="inquiry-cta">
