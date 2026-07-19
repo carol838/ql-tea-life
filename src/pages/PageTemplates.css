@@ -789,7 +789,7 @@
 .private-label-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
-  gap: 48px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -810,9 +810,12 @@
 
 .private-label-hero__image {
   display: block;
-  width: 100%;
+  width: min(100%, 620px);
+  max-height: 430px;
   height: auto;
-  border-radius: 16px;
+  justify-self: center;
+  margin-left: -28px;
+  border-radius: 0;
   object-fit: contain;
 }
 
@@ -1515,6 +1518,17 @@
 
   .private-label-hero {
     gap: 34px;
+  }
+
+  .private-label-hero__copy {
+    order: 2;
+  }
+
+  .private-label-hero__image {
+    order: 1;
+    width: min(100%, 420px);
+    max-height: 310px;
+    margin: 0 auto;
   }
 
   .private-label-hero__copy h1 {

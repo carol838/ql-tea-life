@@ -257,12 +257,12 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
           </div>
           <img
             className="private-label-hero__image"
-            src="/images/private-label/private-label-hero.webp"
-            srcSet="/images/private-label/private-label-hero-900.webp 900w, /images/private-label/private-label-hero.webp 1600w"
-            sizes="(max-width: 760px) 100vw, 52vw"
+            src="/images/private-label/private-label-hero-floating.webp"
+            srcSet="/images/private-label/private-label-hero-floating-760.webp 760w, /images/private-label/private-label-hero-floating.webp 1200w"
+            sizes="(max-width: 760px) 100vw, 48vw"
             alt="Private label tea packaging development with tea samples labels and packaging mockups"
-            width="1600"
-            height="932"
+            width="1200"
+            height="800"
             loading="eager"
             decoding="async"
           />
