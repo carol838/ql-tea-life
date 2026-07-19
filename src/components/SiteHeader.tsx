@@ -13,7 +13,6 @@ const teaLinks = [
 const privateLabelLinks = [
   ['Private Label Solutions', '/private-label'],
   ['Packaging Options', '/private-label/packaging-options'],
-  ['How It Works', '/oem-service'],
 ];
 
 function Dropdown({

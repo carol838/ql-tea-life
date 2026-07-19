@@ -43,15 +43,6 @@ export const privateLabelPages: Record<string, PrivateLabelContent> = {
       ['Outer Cartons', 'Plan transport packaging suitable for international distribution requirements.'],
     ],
   },
-  '/oem-service': {
-    title: 'Tea OEM Service',
-    intro: 'OEM tea project support from category selection through packing and export preparation.',
-    features: [
-      ['Project Planning', 'Define tea selection, packaging, quantities and target timelines before production.'],
-      ['Sample Coordination', 'Review tea and packaging samples before confirming the final specification.'],
-      ['Production Support', 'Coordinate packing, quality checks and export preparation for confirmed projects.'],
-    ],
-  },
 };
 
 const packagingOptions = [
@@ -250,22 +241,10 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
     return (
       <main className="content-page private-label-manufacturing-page">
         <section className="page-hero private-label-hero">
-          <div className="private-label-hero__copy">
-            <p className="page-eyebrow">Private Label Solutions</p>
-            <h1>{page.title}</h1>
-            <p>{page.intro}</p>
-          </div>
-          <img
-            className="private-label-hero__image"
-            src="/images/private-label/private-label-hero-floating.webp"
-            srcSet="/images/private-label/private-label-hero-floating-760.webp 760w, /images/private-label/private-label-hero-floating.webp 1200w"
-            sizes="(max-width: 760px) 100vw, 48vw"
-            alt="Private label tea packaging development with tea samples labels and packaging mockups"
-            width="1200"
-            height="800"
-            loading="eager"
-            decoding="async"
-          />
+          <p className="page-eyebrow">Private Label Solutions</p>
+          <h1>{page.title}</h1>
+          <p>{page.intro}</p>
+          <a className="page-button" href="/contact">Contact Us</a>
         </section>
 
         <section className="page-section manufacturer-section">

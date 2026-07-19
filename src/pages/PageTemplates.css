@@ -779,7 +779,9 @@
 }
 
 .private-label-manufacturing-page .page-hero {
-  padding-bottom: 104px;
+  min-height: 380px;
+  padding-top: 76px;
+  padding-bottom: 76px;
 }
 
 .private-label-manufacturing-page {
@@ -787,36 +789,18 @@
 }
 
 .private-label-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
-  gap: 36px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.private-label-hero__copy h1 {
-  max-width: 760px;
-  margin: 0 0 18px;
-  font-family: Georgia, serif;
-  font-size: 54px;
-  font-weight: 400;
-}
-
-.private-label-hero__copy p:last-child {
+.private-label-hero > * {
   max-width: 680px;
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.7;
 }
 
-.private-label-hero__image {
-  display: block;
-  width: min(100%, 620px);
-  max-height: 430px;
-  height: auto;
-  justify-self: center;
-  margin-left: -28px;
-  border-radius: 0;
-  object-fit: contain;
+.private-label-hero .page-button {
+  width: fit-content;
+  margin-top: 32px;
 }
 
 .manufacturer-section h2,
@@ -1472,7 +1456,6 @@
   .product-placeholder-grid,
   .benefit-grid,
   .packaging-hero,
-  .private-label-hero,
   .production-section,
   .export-experience,
   .packaging-collection-card,
@@ -1503,7 +1486,9 @@
   }
 
   .private-label-manufacturing-page .page-hero {
-    padding-bottom: 64px;
+    min-height: 360px;
+    padding-top: 58px;
+    padding-bottom: 58px;
   }
 
   .private-label-manufacturing-page .page-section,
@@ -1514,25 +1499,6 @@
   .private-label-manufacturing-page .page-section h2 {
     font-size: 34px;
     line-height: 1.14;
-  }
-
-  .private-label-hero {
-    gap: 34px;
-  }
-
-  .private-label-hero__copy {
-    order: 2;
-  }
-
-  .private-label-hero__image {
-    order: 1;
-    width: min(100%, 420px);
-    max-height: 310px;
-    margin: 0 auto;
-  }
-
-  .private-label-hero__copy h1 {
-    font-size: 40px;
   }
 
   .production-section {
