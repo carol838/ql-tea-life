@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import WhatsAppButton from './components/WhatsAppButton';
-import About from './pages/About';
 import CategoryPage, { teaCategories } from './pages/CategoryPage';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
@@ -82,10 +81,6 @@ export default function App() {
     title = productPage.seoTitle;
     description = productPage.seoDescription;
     ogImagePath = productPage.ogImage;
-  } else if (path === '/about') {
-    page = <About />;
-    title = 'About QL Tea Life | Chinese Tea Export';
-    description = 'Learn about QL Tea Life and our approach to Chinese tea sourcing for global B2B buyers.';
   } else if (path === '/contact') {
     page = <Contact />;
     title = 'Contact QL Tea Life | Wholesale Tea Inquiry';
