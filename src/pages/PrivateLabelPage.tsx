@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import './PageTemplates.css';
 
 type PrivateLabelContent = {
@@ -176,11 +177,49 @@ const manufacturingCapabilities = [
   },
 ];
 
+const productionVideoPoster = '/images/contact/tea-processing-workshop.jpg';
+const productionVideoSrc = '/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.mp4';
+
 function trackPackagingContactClick() {
   window.gtag?.('event', 'click', {
     location: 'private_label_packaging_options',
     link_url: '/contact',
   });
+}
+
+function ProductionVideoShowcase() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  function handlePlay() {
+    setHasStarted(true);
+    void videoRef.current?.play();
+  }
+
+  return (
+    <div className={`production-video-card ${hasStarted ? 'production-video-card--playing' : ''}`}>
+      <video
+        ref={videoRef}
+        src={productionVideoSrc}
+        controls={hasStarted}
+        preload="metadata"
+        playsInline
+      />
+      <img
+        className="production-video-card__poster"
+        src={productionVideoPoster}
+        alt="Tea production facility for private label tea manufacturing"
+        width="1200"
+        height="675"
+        loading="lazy"
+        decoding="async"
+      />
+      <button className="production-video-card__play" type="button" onClick={handlePlay} aria-label="Play production video">
+        <span aria-hidden="true" />
+      </button>
+      <span className="production-video-card__label">Factory Production</span>
+    </div>
+  );
 }
 
 export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }) {
@@ -211,16 +250,13 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
 
         <section className="page-section production-section">
           <div className="production-section__copy">
-            <p className="page-eyebrow">Factory Process</p>
             <h2>Inside Our Production</h2>
             <p>
-              See how our tea is professionally produced in our factory, following standardized procedures to ensure
-              consistent quality for every OEM order.
+              Take a closer look inside our production facility and see how we manufacture tea products with
+              standardized procedures, experienced staff and consistent quality for OEM partners worldwide.
             </p>
           </div>
-          <div className="production-video-placeholder" aria-label="Production video placeholder">
-            <span className="production-video-placeholder__button" aria-hidden="true" />
-          </div>
+          <ProductionVideoShowcase />
         </section>
 
         <section className="page-section page-section--tinted manufacturer-section">

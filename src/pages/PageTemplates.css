@@ -839,7 +839,6 @@
 }
 
 .manufacturer-placeholder,
-.production-video-placeholder,
 .export-experience__visual {
   position: relative;
   overflow: hidden;
@@ -856,7 +855,6 @@
 }
 
 .manufacturer-placeholder::before,
-.production-video-placeholder::before,
 .export-experience__visual::before {
   position: absolute;
   inset: 0;
@@ -887,10 +885,12 @@
 }
 
 .production-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-  gap: 56px;
-  align-items: center;
+  display: block;
+  max-width: 1120px;
+  text-align: center;
+  animation: productionReveal 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 32%;
 }
 
 .production-section__copy p:not(.page-eyebrow),
@@ -901,34 +901,123 @@
   line-height: 1.8;
 }
 
-.production-video-placeholder {
-  aspect-ratio: 16 / 9;
-  min-height: 320px;
-  box-shadow: 0 24px 54px rgba(45, 40, 31, 0.12);
+.production-section__copy {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.production-video-placeholder__button {
+.production-section__copy h2 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.production-section__copy p:not(.page-eyebrow) {
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.production-video-card {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  aspect-ratio: 16 / 9;
+  margin: 54px auto 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--color-ink);
+  box-shadow: 0 28px 70px rgba(45, 40, 31, 0.18);
+}
+
+.production-video-card video,
+.production-video-card__poster {
   position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.production-video-card video {
+  z-index: 1;
+}
+
+.production-video-card__poster {
+  z-index: 2;
+  transition:
+    opacity 420ms ease,
+    visibility 420ms ease;
+}
+
+.production-video-card__play {
+  position: absolute;
+  z-index: 3;
   top: 50%;
   left: 50%;
   width: 72px;
   height: 72px;
-  border: 1px solid rgba(255, 250, 240, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 999px;
-  background: rgba(255, 250, 240, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 36px rgba(17, 40, 25, 0.22);
+  cursor: pointer;
   transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease;
+  backdrop-filter: blur(12px);
 }
 
-.production-video-placeholder__button::before {
+.production-video-card__play:hover {
+  box-shadow: 0 22px 48px rgba(17, 40, 25, 0.3);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.production-video-card__play span::before {
   position: absolute;
   top: 50%;
   left: 52%;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
-  border-left: 18px solid rgba(255, 250, 240, 0.9);
+  border-left: 18px solid var(--color-ink);
   content: "";
   transform: translate(-40%, -50%);
+}
+
+.production-video-card__label {
+  position: absolute;
+  z-index: 4;
+  right: 24px;
+  bottom: 22px;
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #fffaf0;
+  background: rgba(17, 24, 18, 0.58);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.production-video-card--playing .production-video-card__poster,
+.production-video-card--playing .production-video-card__play {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes productionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .export-experience {
@@ -1384,8 +1473,21 @@
     grid-template-columns: 1fr;
   }
 
-  .production-video-placeholder {
-    min-height: 0;
+  .production-video-card {
+    margin-top: 42px;
+    border-radius: 18px;
+  }
+
+  .production-video-card__play {
+    width: 62px;
+    height: 62px;
+  }
+
+  .production-video-card__label {
+    right: 14px;
+    bottom: 14px;
+    padding: 7px 12px;
+    font-size: 11px;
   }
 
   .export-experience {
