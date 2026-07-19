@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './PageTemplates.css';
 
 type PrivateLabelContent = {
@@ -142,18 +142,26 @@ const collectionPlanning = {
 const manufacturerTrustCards = [
   {
     title: 'Direct Tea Sourcing',
+    image: '/images/private-label/direct-tea-sourcing.webp',
+    imageAlt: 'Direct tea sourcing from Chinese tea growing regions for private label tea production',
     description: 'Carefully selected Chinese tea from trusted growing regions.',
   },
   {
     title: 'Flexible Private Label',
+    image: '/images/private-label/flexible-private-label.webp',
+    imageAlt: 'Private label tea packaging and branding options for tea businesses',
     description: 'Custom tea blends, packaging and branding for different business sizes.',
   },
   {
     title: 'OEM Manufacturing',
+    image: '/images/private-label/oem-manufacturing.webp',
+    imageAlt: 'OEM tea manufacturing facility for private label tea orders',
     description: 'Reliable production with consistent quality and flexible capacity.',
   },
   {
     title: 'Global Export Experience',
+    image: '/images/private-label/global-export-card.webp',
+    imageAlt: 'Export-ready tea products prepared for international buyers',
     description: 'Serving international tea businesses with export-ready solutions.',
   },
 ];
@@ -161,24 +169,32 @@ const manufacturerTrustCards = [
 const manufacturingCapabilities = [
   {
     title: 'Tea Processing',
+    image: '/images/private-label/tea-processing.webp',
+    imageAlt: 'Tea processing equipment and production facility for OEM tea manufacturing',
     description: 'Modern equipment for stable production.',
   },
   {
     title: 'Packaging Workshop',
+    image: '/images/private-label/packaging-workshop.webp',
+    imageAlt: 'Tea packaging workshop for private label tea projects',
     description: 'Flexible packing solutions for private label projects.',
   },
   {
     title: 'Production Facility',
+    image: '/images/private-label/production-facility.webp',
+    imageAlt: 'Tea production facility supporting different private label order volumes',
     description: 'Efficient manufacturing for different order volumes.',
   },
   {
     title: 'Finished Products',
+    image: '/images/private-label/finished-products.webp',
+    imageAlt: 'Finished private label tea products prepared for shipment',
     description: 'Products prepared for shipment with consistent quality.',
   },
 ];
 
-const productionVideoPoster = '/images/contact/tea-processing-workshop.jpg';
-const productionVideoSrc = '/images/tea-knowledge/jasmine-tea-making/jasmine-scenting-process.mp4';
+const productionVideoPoster = '/images/private-label/tea-processing.webp';
+const productionVideoSrc = '/images/private-label/tea-processing.mp4';
 
 function trackPackagingContactClick() {
   window.gtag?.('event', 'click', {
@@ -190,19 +206,26 @@ function trackPackagingContactClick() {
 function ProductionVideoShowcase() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const [videoSource, setVideoSource] = useState<string>();
+
+  useEffect(() => {
+    if (videoSource) {
+      void videoRef.current?.play();
+    }
+  }, [videoSource]);
 
   function handlePlay() {
     setHasStarted(true);
-    void videoRef.current?.play();
+    setVideoSource(productionVideoSrc);
   }
 
   return (
     <div className={`production-video-card ${hasStarted ? 'production-video-card--playing' : ''}`}>
       <video
         ref={videoRef}
-        src={productionVideoSrc}
+        src={videoSource}
         controls={hasStarted}
-        preload="metadata"
+        preload={videoSource ? 'metadata' : 'none'}
         playsInline
       />
       <img
@@ -236,11 +259,17 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
           <p className="page-eyebrow">Why Choose QL Tea Life</p>
           <h2>Built for Tea Brands and Importers</h2>
           <div className="manufacturer-trust-grid">
-            {manufacturerTrustCards.map((card, index) => (
+            {manufacturerTrustCards.map((card) => (
               <article className="manufacturer-card" key={card.title}>
-                <div className="manufacturer-placeholder" aria-label={`${card.title} factory image placeholder`}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                </div>
+                <img
+                  className="manufacturer-card__image"
+                  src={card.image}
+                  alt={card.imageAlt}
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
               </article>
@@ -263,11 +292,17 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
           <p className="page-eyebrow">Manufacturing Capabilities</p>
           <h2>Production Support for Private Label Tea Projects</h2>
           <div className="manufacturing-grid">
-            {manufacturingCapabilities.map((capability, index) => (
+            {manufacturingCapabilities.map((capability) => (
               <article className="manufacturer-card" key={capability.title}>
-                <div className="manufacturer-placeholder manufacturer-placeholder--compact" aria-label={`${capability.title} image placeholder`}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                </div>
+                <img
+                  className="manufacturer-card__image"
+                  src={capability.image}
+                  alt={capability.imageAlt}
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <h3>{capability.title}</h3>
                 <p>{capability.description}</p>
               </article>
@@ -276,7 +311,15 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
         </section>
 
         <section className="page-section export-experience">
-          <div className="export-experience__visual" aria-label="Global export image placeholder" />
+          <img
+            className="export-experience__image"
+            src="/images/private-label/global-export-banner.webp"
+            alt="Global tea export experience for private label and OEM tea buyers"
+            width="1400"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="export-experience__copy">
             <p className="page-eyebrow">Export Ready</p>
             <h2>Global Export Experience</h2>
