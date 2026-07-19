@@ -138,6 +138,44 @@ const collectionPlanning = {
   items: ['Individual retail products', 'Signature tea ranges', 'Gift sets', 'Seasonal collections'],
 };
 
+const manufacturerTrustCards = [
+  {
+    title: 'Direct Tea Sourcing',
+    description: 'Carefully selected Chinese tea from trusted growing regions.',
+  },
+  {
+    title: 'Flexible Private Label',
+    description: 'Custom tea blends, packaging and branding for different business sizes.',
+  },
+  {
+    title: 'OEM Manufacturing',
+    description: 'Reliable production with consistent quality and flexible capacity.',
+  },
+  {
+    title: 'Global Export Experience',
+    description: 'Serving international tea businesses with export-ready solutions.',
+  },
+];
+
+const manufacturingCapabilities = [
+  {
+    title: 'Tea Processing',
+    description: 'Modern equipment for stable production.',
+  },
+  {
+    title: 'Packaging Workshop',
+    description: 'Flexible packing solutions for private label projects.',
+  },
+  {
+    title: 'Production Facility',
+    description: 'Efficient manufacturing for different order volumes.',
+  },
+  {
+    title: 'Finished Products',
+    description: 'Products prepared for shipment with consistent quality.',
+  },
+];
+
 function trackPackagingContactClick() {
   window.gtag?.('event', 'click', {
     location: 'private_label_packaging_options',
@@ -146,6 +184,81 @@ function trackPackagingContactClick() {
 }
 
 export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }) {
+  if (page.title === 'Private Label Tea') {
+    return (
+      <main className="content-page private-label-manufacturing-page">
+        <section className="page-hero">
+          <p className="page-eyebrow">Private Label Solutions</p>
+          <h1>{page.title}</h1>
+          <p>{page.intro}</p>
+        </section>
+
+        <section className="page-section manufacturer-section">
+          <p className="page-eyebrow">Why Choose QL Tea Life</p>
+          <h2>Built for Tea Brands and Importers</h2>
+          <div className="manufacturer-trust-grid">
+            {manufacturerTrustCards.map((card, index) => (
+              <article className="manufacturer-card" key={card.title}>
+                <div className="manufacturer-placeholder" aria-label={`${card.title} factory image placeholder`}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="page-section production-section">
+          <div className="production-section__copy">
+            <p className="page-eyebrow">Factory Process</p>
+            <h2>Inside Our Production</h2>
+            <p>
+              See how our tea is professionally produced in our factory, following standardized procedures to ensure
+              consistent quality for every OEM order.
+            </p>
+          </div>
+          <div className="production-video-placeholder" aria-label="Production video placeholder">
+            <span className="production-video-placeholder__button" aria-hidden="true" />
+          </div>
+        </section>
+
+        <section className="page-section page-section--tinted manufacturer-section">
+          <p className="page-eyebrow">Manufacturing Capabilities</p>
+          <h2>Production Support for Private Label Tea Projects</h2>
+          <div className="manufacturing-grid">
+            {manufacturingCapabilities.map((capability, index) => (
+              <article className="manufacturer-card" key={capability.title}>
+                <div className="manufacturer-placeholder manufacturer-placeholder--compact" aria-label={`${capability.title} image placeholder`}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{capability.title}</h3>
+                <p>{capability.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="page-section export-experience">
+          <div className="export-experience__visual" aria-label="Global export image placeholder" />
+          <div className="export-experience__copy">
+            <p className="page-eyebrow">Export Ready</p>
+            <h2>Global Export Experience</h2>
+            <p>
+              Supporting tea businesses around the world with reliable OEM production, export documentation and
+              international logistics experience.
+            </p>
+          </div>
+        </section>
+
+        <section className="inquiry-cta">
+          <div><p className="page-eyebrow">Start a Project</p><h2>Discuss Your Private Label Requirements</h2></div>
+          <a className="page-button" href="/contact">Contact Us</a>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="content-page">
       <section className="page-hero">
