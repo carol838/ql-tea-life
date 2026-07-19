@@ -249,10 +249,23 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
   if (page.title === 'Private Label Tea') {
     return (
       <main className="content-page private-label-manufacturing-page">
-        <section className="page-hero">
-          <p className="page-eyebrow">Private Label Solutions</p>
-          <h1>{page.title}</h1>
-          <p>{page.intro}</p>
+        <section className="page-hero private-label-hero">
+          <div className="private-label-hero__copy">
+            <p className="page-eyebrow">Private Label Solutions</p>
+            <h1>{page.title}</h1>
+            <p>{page.intro}</p>
+          </div>
+          <img
+            className="private-label-hero__image"
+            src="/images/private-label/private-label-hero.webp"
+            srcSet="/images/private-label/private-label-hero-900.webp 900w, /images/private-label/private-label-hero.webp 1600w"
+            sizes="(max-width: 760px) 100vw, 52vw"
+            alt="Private label tea packaging development with tea samples labels and packaging mockups"
+            width="1600"
+            height="932"
+            loading="eager"
+            decoding="async"
+          />
         </section>
 
         <section className="page-section manufacturer-section">
@@ -313,10 +326,10 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
         <section className="page-section export-experience">
           <img
             className="export-experience__image"
-            src="/images/private-label/global-export-banner.webp"
+            src="/images/private-label/global-export-experience.webp"
             alt="Global tea export experience for private label and OEM tea buyers"
             width="1400"
-            height="1050"
+            height="934"
             loading="lazy"
             decoding="async"
           />

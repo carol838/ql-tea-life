@@ -786,6 +786,36 @@
   overflow-x: hidden;
 }
 
+.private-label-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.private-label-hero__copy h1 {
+  max-width: 760px;
+  margin: 0 0 18px;
+  font-family: Georgia, serif;
+  font-size: 54px;
+  font-weight: 400;
+}
+
+.private-label-hero__copy p:last-child {
+  max-width: 680px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.private-label-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
 .manufacturer-section h2,
 .production-section h2,
 .export-experience h2 {
@@ -1046,9 +1076,9 @@
 .export-experience__image {
   display: block;
   width: 100%;
-  min-height: 390px;
+  height: auto;
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .packaging-hero {
@@ -1439,6 +1469,7 @@
   .product-placeholder-grid,
   .benefit-grid,
   .packaging-hero,
+  .private-label-hero,
   .production-section,
   .export-experience,
   .packaging-collection-card,
@@ -1482,6 +1513,14 @@
     line-height: 1.14;
   }
 
+  .private-label-hero {
+    gap: 34px;
+  }
+
+  .private-label-hero__copy h1 {
+    font-size: 40px;
+  }
+
   .production-section {
     gap: 32px;
   }
@@ -1519,7 +1558,7 @@
 
   .export-experience__image {
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
   }
 
   .packaging-card-grid,
