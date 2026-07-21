@@ -291,17 +291,17 @@ export const productPages: Record<string, ProductPageData> = {
     seoTitle: 'Ancient Tree Black Tea for Wholesale & Private Label | QL Tea Life',
     seoDescription:
       'Source premium Yunnan Ancient Tree Black Tea for wholesale, private label tea brands and international distribution.',
-    ogImage: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+    ogImage: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
     eyebrow: 'Wholesale Chinese Black Tea',
     title: 'Ancient Tree Black Tea',
     subtitle: 'Premium Yunnan black tea crafted from centuries-old tea trees.',
     description:
       'Ancient Tree Black Tea is a premium Yunnan black tea selected for its naturally rich aroma, smooth body and distinctive origin character. It is suitable for specialty tea brands, wholesale buyers and private label tea programs.',
     heroImage: {
-      src: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+      src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
       alt: 'Ancient Tree Black Tea dry leaves for wholesale and private label projects',
-      width: '800',
-      height: '800',
+      width: '4672',
+      height: '4672',
     },
     whatsappLocation: 'product_ancient_tree_black_tea',
     highlights: [
@@ -330,8 +330,16 @@ export const productPages: Record<string, ProductPageData> = {
       'Packaging can be customized according to product positioning, market requirements and order quantity.',
     galleryImages: [
       {
-        src: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+        src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
         alt: 'Premium Ancient Tree Black Tea leaves',
+      },
+      {
+        src: '/images/products/ancient-tree-black-tea/dry-tea-2.webp',
+        alt: 'Close-up reference of Ancient Tree Black Tea dry leaves',
+      },
+      {
+        src: '/images/products/ancient-tree-black-tea/tea-liquor.webp',
+        alt: 'Ancient Tree Black Tea liquor reference for buyers',
       },
     ],
     comparison: {
@@ -378,7 +386,283 @@ function ProductImage({ image, className }: { image: ProductImage; className?: s
   );
 }
 
+const ancientTreeStoryParagraphs = [
+  'Hidden in the mountains of Gui’an, Guizhou, lies the Yang’ai Tea Garden, home to more than 9,600 ancient tea trees. Some of these trees have grown for over a century, with the oldest reaching nearly 300 years.',
+  'Located near the 27°N latitude tea-growing region, this unique environment provides ideal conditions for tea cultivation. High elevation, frequent mist, rich soil, and significant temperature differences between day and night allow the ancient tea trees to develop their own distinctive character.',
+  'Unlike ordinary tea plantations, these ancient trees grow naturally with minimal human intervention. Their deep root systems absorb nutrients from the surrounding soil over generations, creating leaves with a naturally rich aroma, smooth texture, and complex flavor.',
+  'Due to the height and natural growth pattern of these ancient tea trees, mechanical harvesting is not possible. Each harvest season, experienced tea workers carefully select and hand-pick the tender leaves from the trees.',
+  'This traditional harvesting method requires patience and craftsmanship, preserving the unique qualities of the ancient tea leaves while carrying forward generations of tea-making knowledge.',
+];
+
+const ancientStoryImages: ProductImage[] = [
+  {
+    src: '/images/products/ancient-tree-black-tea/ancient-tea-tree.webp',
+    alt: 'Ancient tea tree growing naturally in Yang’ai Tea Garden in Guizhou',
+    width: '960',
+    height: '1280',
+  },
+  {
+    src: '/images/products/ancient-tree-black-tea/tea-grower-ancient-tree.webp',
+    alt: 'Tea grower standing beside an ancient tea tree during hand harvesting',
+    width: '720',
+    height: '1280',
+  },
+];
+
+const ancientAppearanceImages: Array<ProductImage & { caption: string }> = [
+  {
+    src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
+    alt: 'Ancient Tree Black Tea dry leaves displayed for premium loose leaf tea sourcing',
+    width: '4672',
+    height: '4672',
+    caption: 'Dry Tea Appearance',
+  },
+  {
+    src: '/images/products/ancient-tree-black-tea/dry-tea-2.webp',
+    alt: 'Close-up of Ancient Tree Black Tea dry leaves with rich black tea color',
+    width: '1000',
+    height: '1000',
+    caption: 'Leaf Detail',
+  },
+  {
+    src: '/images/products/ancient-tree-black-tea/tea-liquor.webp',
+    alt: 'Ancient Tree Black Tea liquor with warm amber infusion color',
+    width: '1000',
+    height: '1000',
+    caption: 'Tea Infusion',
+  },
+];
+
+const ancientSpecifications = [
+  ['Tea Type', 'Chinese Black Tea'],
+  ['Origin', 'Yang’ai Tea Garden, Gui’an, Guizhou'],
+  ['Tree Source', 'Ancient tea trees, including trees over 100 years old'],
+  ['Harvesting', 'Hand-picked tender leaves'],
+  ['Flavor Character', 'Rich aroma, smooth texture and complex natural sweetness'],
+  ['Best For', 'Premium loose leaf tea, private label projects and gift packaging'],
+];
+
+const ancientBrewingGuide = [
+  ['Tea Amount', '3–5g'],
+  ['Water Temperature', '90–95°C'],
+  ['Steeping Time', '3–5 minutes'],
+  ['Infusions', 'Multiple infusions depending on leaf grade and preference'],
+];
+
+const ancientPackagingSolutions = [
+  'Bulk tea supply',
+  'Custom labeled products',
+  'Retail packaging',
+  'Gift packaging',
+];
+
+const ancientFaqs = [
+  {
+    question: 'What makes Ancient Tree Black Tea different?',
+    answer:
+      'Ancient Tree Black Tea comes from mature tea trees with deep root systems and natural growing conditions, creating a richer aroma, smoother texture and stronger origin story than ordinary plantation tea.',
+  },
+  {
+    question: 'Is Ancient Tree Black Tea suitable for private label projects?',
+    answer:
+      'Yes. Its premium origin positioning makes it suitable for specialty loose leaf tea brands, curated black tea collections, retail tins, gift packaging and private label tea programs.',
+  },
+  {
+    question: 'Can I order samples before wholesale purchase?',
+    answer:
+      'Yes. Samples can be arranged so buyers can evaluate dry leaf appearance, aroma, infusion color and flavor before confirming wholesale or private label orders.',
+  },
+  {
+    question: 'What packaging options are available?',
+    answer:
+      'Available options include bulk tea supply, custom labels, retail pouches, tins and gift packaging based on your brand positioning and target market.',
+  },
+];
+
+function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
+  return (
+    <main className="product-page ancient-tree-page">
+      <section className="product-hero">
+        <div className="product-hero__copy">
+          <p className="page-eyebrow">{page.eyebrow}</p>
+          <h1>{page.title}</h1>
+          <p className="product-hero__subtitle">{page.subtitle}</p>
+          <p>{page.description}</p>
+          <a
+            className="product-button product-button--primary"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackProductWhatsAppClick(page.whatsappLocation)}
+          >
+            Request Wholesale Quote
+          </a>
+        </div>
+        <figure className="product-hero__visual">
+          <img
+            src={page.heroImage.src}
+            alt={page.heroImage.alt}
+            width={page.heroImage.width ?? '1200'}
+            height={page.heroImage.height ?? '900'}
+            decoding="async"
+          />
+        </figure>
+      </section>
+
+      <section className="product-section ancient-tree-story">
+        <div className="ancient-tree-story__copy">
+          <p className="page-eyebrow">Ancient Tree Origin</p>
+          <h2>A Rare Tea Rooted in Ancient Tea Trees</h2>
+          {ancientTreeStoryParagraphs.slice(0, 3).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <h3>Harvested by Hand, Preserving a Tea Tradition</h3>
+          {ancientTreeStoryParagraphs.slice(3).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="ancient-tree-story__images">
+          {ancientStoryImages.map((image) => (
+            <figure key={image.src}>
+              <ProductImage image={image} />
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section ancient-appearance">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Tasting Reference</p>
+          <h2>Tea Appearance &amp; Infusion</h2>
+        </div>
+        <div className="ancient-appearance__grid">
+          {ancientAppearanceImages.map((image) => (
+            <figure key={image.src}>
+              <ProductImage image={image} />
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section ancient-highlight-section">
+        <p className="page-eyebrow">Product Highlights</p>
+        <div className="product-highlight-grid">
+          {page.highlights.map((highlight, index) => (
+            <article key={highlight}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h2>{highlight}</h2>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section ancient-profile">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Tea Profile</p>
+          <h2>Specifications</h2>
+        </div>
+        <dl className="ancient-spec-grid">
+          {ancientSpecifications.map(([term, detail]) => (
+            <div key={term}>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="product-section ancient-brewing">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Brewing Guide</p>
+          <h2>Suggested Brewing Method</h2>
+        </div>
+        <div className="ancient-brewing__grid">
+          {ancientBrewingGuide.map(([label, value]) => (
+            <article key={label}>
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section ancient-packaging">
+        <div>
+          <p className="page-eyebrow">Packaging &amp; Private Label</p>
+          <h2>Available Packaging &amp; Private Label Solutions</h2>
+          <p>
+            Ancient Tree Black Tea can be prepared for wholesale supply, premium retail collections and private label tea programs.
+          </p>
+        </div>
+        <ul className="ancient-packaging__list">
+          {ancientPackagingSolutions.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </section>
+
+      <section className="product-section ancient-faq">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">FAQ</p>
+          <h2>Wholesale Ancient Tree Black Tea FAQ</h2>
+        </div>
+        <div className="ancient-faq__list">
+          {ancientFaqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section product-guidance">
+        <div>
+          <p className="page-eyebrow">{page.comparison.eyebrow}</p>
+          <h2>{page.comparison.title}</h2>
+        </div>
+        <div className="product-guidance__body">
+          {page.comparison.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          {page.comparison.items ? (
+            <ul>
+              {page.comparison.items.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          ) : null}
+          <a className="text-link" href={page.comparison.link.href}>
+            {page.comparison.link.label}
+          </a>
+        </div>
+      </section>
+
+      <section className="product-cta">
+        <div>
+          <p className="page-eyebrow">{page.finalCta.eyebrow}</p>
+          <h2>{page.finalCta.title}</h2>
+          <p>{page.finalCta.text}</p>
+        </div>
+        <div className="product-cta__actions">
+          <a className="product-button" href="/contact">Contact Us</a>
+          <a
+            className="product-button product-button--primary"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackProductWhatsAppClick(page.whatsappLocation)}
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+
 export default function ProductPage({ page }: ProductPageProps) {
+  if (page.url === ANCIENT_TREE_BLACK_TEA_PRODUCT_URL) {
+    return <AncientTreeBlackTeaPage page={page} />;
+  }
+
   return (
     <main className="product-page">
       <section className="product-hero">
