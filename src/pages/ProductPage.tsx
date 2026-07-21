@@ -71,6 +71,7 @@ export type ProductPageData = {
 
 export const JASMINE_FLOWERS_PRODUCT_URL = '/products/jasmine-tea-with-flowers';
 export const TRADITIONAL_JASMINE_PRODUCT_URL = '/products/traditional-jasmine-tea';
+export const ANCIENT_TREE_BLACK_TEA_PRODUCT_URL = '/products/ancient-tree-black-tea';
 
 export const productPages: Record<string, ProductPageData> = {
   [JASMINE_FLOWERS_PRODUCT_URL]: {
@@ -283,6 +284,71 @@ export const productPages: Record<string, ProductPageData> = {
       eyebrow: 'Wholesale Inquiry',
       title: 'Looking for Traditional Jasmine Tea for Your Brand?',
       text: 'QL Tea Life supplies traditional jasmine tea for wholesale, OEM and private label projects.',
+    },
+  },
+  [ANCIENT_TREE_BLACK_TEA_PRODUCT_URL]: {
+    url: ANCIENT_TREE_BLACK_TEA_PRODUCT_URL,
+    seoTitle: 'Ancient Tree Black Tea for Wholesale & Private Label | QL Tea Life',
+    seoDescription:
+      'Source premium Yunnan Ancient Tree Black Tea for wholesale, private label tea brands and international distribution.',
+    ogImage: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+    eyebrow: 'Wholesale Chinese Black Tea',
+    title: 'Ancient Tree Black Tea',
+    subtitle: 'Premium Yunnan black tea crafted from centuries-old tea trees.',
+    description:
+      'Ancient Tree Black Tea is a premium Yunnan black tea selected for its naturally rich aroma, smooth body and distinctive origin character. It is suitable for specialty tea brands, wholesale buyers and private label tea programs.',
+    heroImage: {
+      src: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+      alt: 'Ancient Tree Black Tea dry leaves for wholesale and private label projects',
+      width: '800',
+      height: '800',
+    },
+    whatsappLocation: 'product_ancient_tree_black_tea',
+    highlights: [
+      'Yunnan Black Tea',
+      'Ancient Tree Origin',
+      'Rich Natural Aroma',
+      'Private Label Available',
+    ],
+    recommendedFor: [
+      'Specialty tea brands',
+      'Wholesale distributors',
+      'Premium retail collections',
+      'Private label black tea projects',
+    ],
+    packagingCards: [
+      {
+        title: 'Loose Leaf Retail Packaging',
+        description: 'Suitable for premium pouches, tins and gift-oriented black tea collections.',
+      },
+      {
+        title: 'Wholesale Bulk Supply',
+        description: 'Prepared for importers, distributors and tea brands requiring stable black tea sourcing.',
+      },
+    ],
+    packagingNote:
+      'Packaging can be customized according to product positioning, market requirements and order quantity.',
+    galleryImages: [
+      {
+        src: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp',
+        alt: 'Premium Ancient Tree Black Tea leaves',
+      },
+    ],
+    comparison: {
+      eyebrow: 'Category Guidance',
+      title: 'Explore Chinese Black Tea Options',
+      paragraphs: [
+        'Ancient Tree Black Tea is well suited for buyers seeking a premium Yunnan black tea with strong origin appeal and refined loose leaf positioning.',
+      ],
+      link: {
+        href: '/black-tea',
+        label: 'Back to Black Tea Collection',
+      },
+    },
+    finalCta: {
+      eyebrow: 'Wholesale Inquiry',
+      title: 'Looking for Ancient Tree Black Tea?',
+      text: 'Contact QL Tea Life for samples, wholesale supply and private label packaging options.',
     },
   },
 };

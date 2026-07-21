@@ -110,12 +110,12 @@ export const teaCategories: Record<string, TeaCategory> = {
     about: [
       'Chinese black tea offers rich color, smooth body, and naturally sweet or malty aromas for diverse international markets.',
       'Full oxidation develops its deeper character and makes it suitable for straight tea, breakfast blends, milk tea, and flavored products.',
-      'Our sourcing options include premium whole leaf grades, commercial blends, tea bags, and private label black tea solutions.',
+      'Our sourcing options include premium whole leaf grades, Yunnan black tea, commercial blends, tea bags, and private label black tea solutions.',
     ],
     benefits: commonBenefits('Rich Flavor Profiles', 'Black teas selected for liquor color, aroma, body, and blending performance.'),
     products: [
       { title: 'Lapsang Souchong', description: 'A famous Chinese black tea from the Wuyi Mountains, known for its rich aroma, smooth body and traditional heritage.', image: '/images/tea-collection/categories/black-tea.webp' },
-      { title: 'Dian Hong Black Tea', description: 'A premium Yunnan black tea with golden tips, natural sweetness and a full-bodied character.', image: '/images/black-tea/dian-hong-black-tea.webp' },
+      { title: 'Ancient Tree Black Tea', description: 'Premium Yunnan black tea crafted from centuries-old tea trees, carefully hand-picked and naturally rich in aroma.', image: '/images/products/ancient-tree-black-tea/ancient-tree-black-tea.webp', href: '/products/ancient-tree-black-tea' },
       { title: 'Black Tea Bags', description: 'Convenient black tea bag solutions suitable for retail, gifting and private label projects.', image: '/images/black-tea/black-tea-bags.webp' },
     ],
     faqs: commonFaqs('black tea', 'Whole leaf, broken leaf, blending grades, tea bags, and custom packs are available.', 'We assess oxidation, aroma, liquor color, taste consistency, moisture, and grade specifications.'),
