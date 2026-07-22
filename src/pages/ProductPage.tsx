@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { trackWhatsAppLead } from '../utils/analytics';
 import './ProductPage.css';
 
@@ -407,72 +408,94 @@ const ancientStoryImages: ProductImage[] = [
   },
 ];
 
-const ancientAppearanceImages: Array<ProductImage & { caption: string }> = [
+const ancientHeroGalleryImages: Array<ProductImage & { label: string }> = [
+  {
+    src: '/images/products/ancient-tree-black-tea/tea-liquor.webp',
+    alt: 'Ancient Tree Black Tea liquor with warm amber red infusion color',
+    width: '1000',
+    height: '1000',
+    label: 'Tea Liquor',
+  },
   {
     src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
     alt: 'Ancient Tree Black Tea dry leaves displayed for premium loose leaf tea sourcing',
     width: '4672',
     height: '4672',
-    caption: 'Dry Leaf Appearance',
+    label: 'Dry Leaf Appearance',
   },
   {
     src: '/images/products/ancient-tree-black-tea/dry-tea-2.webp',
     alt: 'Close-up of Ancient Tree Black Tea dry leaves with rich black tea color',
     width: '1000',
     height: '1000',
-    caption: 'Leaf Detail',
+    label: 'Leaf Detail',
   },
+];
+
+const ancientTastingProfileItems: Array<ProductImage & { title: string; description: string }> = [
   {
     src: '/images/products/ancient-tree-black-tea/tea-liquor.webp',
     alt: 'Ancient Tree Black Tea liquor with warm amber red infusion color',
     width: '1000',
     height: '1000',
-    caption: 'Tea Liquor',
+    title: 'Tea Liquor',
+    description: 'Bright amber-red color with a smooth and clear infusion.',
+  },
+  {
+    src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
+    alt: 'Ancient Tree Black Tea dry leaves displayed for premium loose leaf tea sourcing',
+    width: '4672',
+    height: '4672',
+    title: 'Dry Leaf',
+    description: 'Dark twisted leaves with natural texture.',
+  },
+  {
+    src: '/images/products/ancient-tree-black-tea/dry-tea-2.webp',
+    alt: 'Close-up of Ancient Tree Black Tea dry leaves with rich black tea color',
+    width: '1000',
+    height: '1000',
+    title: 'Leaf Detail',
+    description: 'A closer look at the leaf shape and craftsmanship.',
   },
 ];
 
 const ancientHighlights = [
   {
-    title: '100+ Year-Old Tea Trees',
+    title: 'Ancient Tree Origin',
     description:
-      'Leaves are harvested from mature ancient tea trees, with the oldest trees reaching nearly 300 years.',
+      'Selected from mature ancient tea trees with deep roots and a distinctive mountain origin character.',
   },
   {
-    title: 'Gui’an, Guizhou Origin',
+    title: 'Gui’an, Guizhou',
     description:
-      'Grown in the Yang’ai Tea Garden near the 27°N tea-growing region.',
+      'Sourced from Yang’ai Tea Garden in Gui’an, Guizhou, a region known for misty mountains and rich tea-growing conditions.',
   },
   {
     title: 'Hand-Picked Harvest',
     description:
-      'The trees grow naturally and are too tall for mechanical harvesting, so tender leaves are selected by hand.',
+      'Tender leaves are carefully hand-picked because the natural tree height and growth pattern are not suitable for mechanical harvesting.',
   },
   {
-    title: 'Rich & Layered Character',
+    title: 'Rich Natural Character',
     description:
-      'A smooth texture with natural sweetness, depth and a lasting aroma.',
+      'A smooth Chinese black tea with natural sweetness, layered aroma and a refined premium profile.',
   },
 ];
 
 const ancientSpecifications = [
   ['Tea Type', 'Chinese Black Tea'],
   ['Origin', 'Yang’ai Tea Garden, Gui’an, Guizhou, China'],
-  ['Tree Age', 'More than 100 years, with the oldest trees nearly 300 years old'],
+  ['Tree Source', 'Ancient tea trees, including trees over 100 years old'],
   ['Harvest', 'Hand-picked tender leaves'],
-  ['Dry Leaf', 'Dark, twisted whole leaves'],
-  ['Tea Liquor', 'Bright amber-red'],
-  ['Aroma', 'Rich, natural and gently floral'],
-  ['Taste', 'Smooth, mellow, layered and naturally sweet'],
-  ['Storage', 'Store in a cool, dry place away from direct light and strong odors'],
-  ['Shelf Life', '24 months'],
+  ['Flavor Character', 'Smooth texture, natural sweetness and layered aroma'],
+  ['Best For', 'Premium loose leaf tea, private label projects and gift packaging'],
 ];
 
 const ancientBrewingGuide = [
-  ['Tea Amount', '3–5 g'],
+  ['Tea Amount', '3–5g'],
   ['Water Temperature', '90–95°C'],
-  ['Water Volume', '150–200 ml'],
   ['Steeping Time', '3–5 minutes'],
-  ['Infusions', '3–5 infusions'],
+  ['Infusions', 'Multiple infusions'],
 ];
 
 const ancientPackagingCards: ProductPackagingCard[] = [
@@ -532,6 +555,8 @@ const ancientFaqs = [
 ];
 
 function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
+  const [activeHeroImage, setActiveHeroImage] = useState(ancientHeroGalleryImages[0]);
+
   return (
     <main className="product-page ancient-tree-page">
       <section className="product-hero">
@@ -550,15 +575,24 @@ function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
             Request Wholesale Quote
           </a>
         </div>
-        <figure className="product-hero__visual">
-          <img
-            src={page.heroImage.src}
-            alt={page.heroImage.alt}
-            width={page.heroImage.width ?? '1200'}
-            height={page.heroImage.height ?? '900'}
-            decoding="async"
-          />
-        </figure>
+        <div className="ancient-hero-gallery" aria-label="Ancient Tree Black Tea image gallery">
+          <figure className="ancient-hero-gallery__main">
+            <ProductImage image={activeHeroImage} />
+          </figure>
+          <div className="ancient-hero-gallery__thumbs" aria-label="Select product image">
+            {ancientHeroGalleryImages.map((image) => (
+              <button
+                key={image.src}
+                type="button"
+                className={image.src === activeHeroImage.src ? 'is-active' : undefined}
+                onClick={() => setActiveHeroImage(image)}
+              >
+                <ProductImage image={image} />
+                <span>{image.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="product-section ancient-tree-story">
@@ -582,21 +616,6 @@ function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
         </div>
       </section>
 
-      <section className="product-section ancient-appearance">
-        <div className="ancient-section-heading">
-          <p className="page-eyebrow">Tasting Reference</p>
-          <h2>Tea Appearance &amp; Infusion</h2>
-        </div>
-        <div className="ancient-appearance__grid">
-          {ancientAppearanceImages.map((image) => (
-            <figure key={image.src}>
-              <ProductImage image={image} />
-              <figcaption>{image.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
       <section className="product-section ancient-highlight-section">
         <p className="page-eyebrow">Product Highlights</p>
         <div className="ancient-highlight-grid">
@@ -607,6 +626,33 @@ function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
               <p>{highlight.description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="product-section ancient-tasting-profile">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Tasting Reference</p>
+          <h2>Tasting Profile</h2>
+        </div>
+        <div className="ancient-tasting-profile__grid">
+          <figure className="ancient-tasting-profile__main">
+            <ProductImage image={ancientTastingProfileItems[0]} />
+            <figcaption>
+              <strong>{ancientTastingProfileItems[0].title}</strong>
+              <span>{ancientTastingProfileItems[0].description}</span>
+            </figcaption>
+          </figure>
+          <div className="ancient-tasting-profile__support">
+            {ancientTastingProfileItems.slice(1).map((image) => (
+              <figure key={image.src}>
+                <ProductImage image={image} />
+                <figcaption>
+                  <strong>{image.title}</strong>
+                  <span>{image.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
