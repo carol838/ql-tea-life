@@ -450,6 +450,24 @@
   object-fit: contain;
 }
 
+@media (min-width: 901px) {
+  .ancient-tree-story__images figure {
+    height: clamp(420px, 33vw, 480px);
+  }
+
+  .ancient-tree-story__images img {
+    object-fit: cover;
+  }
+
+  .ancient-tree-story__images figure:first-child img {
+    object-position: center 46%;
+  }
+
+  .ancient-tree-story__images figure:nth-child(2) img {
+    object-position: center 38%;
+  }
+}
+
 .ancient-section-heading {
   max-width: 720px;
 }
