@@ -432,32 +432,12 @@ const ancientHeroGalleryImages: Array<ProductImage & { label: string }> = [
   },
 ];
 
-const ancientTastingProfileItems: Array<ProductImage & { title: string; description: string }> = [
-  {
-    src: '/images/products/ancient-tree-black-tea/tea-liquor.webp',
-    alt: 'Ancient Tree Black Tea liquor with warm amber red infusion color',
-    width: '1000',
-    height: '1000',
-    title: 'Tea Liquor',
-    description: 'Bright amber-red color with a smooth and clear infusion.',
-  },
-  {
-    src: '/images/products/ancient-tree-black-tea/dry-tea-1.webp',
-    alt: 'Ancient Tree Black Tea dry leaves displayed for premium loose leaf tea sourcing',
-    width: '4672',
-    height: '4672',
-    title: 'Dry Leaf',
-    description: 'Dark twisted leaves with natural texture.',
-  },
-  {
-    src: '/images/products/ancient-tree-black-tea/dry-tea-2.webp',
-    alt: 'Close-up of Ancient Tree Black Tea dry leaves with rich black tea color',
-    width: '1000',
-    height: '1000',
-    title: 'Leaf Detail',
-    description: 'A closer look at the leaf shape and craftsmanship.',
-  },
-];
+const ancientTastingProfileInfographic: ProductImage = {
+  src: '/images/products/ancient-tree-black-tea/tasting-profile.png',
+  alt: 'Ancient Tree Black Tea tasting profile showing dry leaves, infused leaves and tea liquor',
+  width: '1024',
+  height: '1536',
+};
 
 const ancientHighlights = [
   {
@@ -631,29 +611,12 @@ function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
 
       <section className="product-section ancient-tasting-profile">
         <div className="ancient-section-heading">
-          <p className="page-eyebrow">Tasting Reference</p>
+          <p className="page-eyebrow">Tasting Profile</p>
           <h2>Tasting Profile</h2>
         </div>
-        <div className="ancient-tasting-profile__grid">
-          <figure className="ancient-tasting-profile__main">
-            <ProductImage image={ancientTastingProfileItems[0]} />
-            <figcaption>
-              <strong>{ancientTastingProfileItems[0].title}</strong>
-              <span>{ancientTastingProfileItems[0].description}</span>
-            </figcaption>
-          </figure>
-          <div className="ancient-tasting-profile__support">
-            {ancientTastingProfileItems.slice(1).map((image) => (
-              <figure key={image.src}>
-                <ProductImage image={image} />
-                <figcaption>
-                  <strong>{image.title}</strong>
-                  <span>{image.description}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
+        <figure className="ancient-tasting-profile__infographic">
+          <ProductImage image={ancientTastingProfileInfographic} />
+        </figure>
       </section>
 
       <section className="product-section ancient-profile">

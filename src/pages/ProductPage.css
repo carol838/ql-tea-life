@@ -491,56 +491,24 @@
   line-height: 1.65;
 }
 
-.ancient-tasting-profile__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(300px, 0.94fr);
-  align-items: start;
-  gap: 30px;
+.ancient-tasting-profile .ancient-section-heading {
+  margin: 0 auto 34px;
+  text-align: center;
 }
 
-.ancient-tasting-profile figure {
-  margin: 0;
-  display: grid;
-  gap: 14px;
+.ancient-tasting-profile__infographic {
+  width: min(920px, 100%);
+  margin: 0 auto;
 }
 
-.ancient-tasting-profile img {
+.ancient-tasting-profile__infographic img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 18px;
   background: var(--color-surface);
-  box-shadow: 0 18px 40px rgba(45, 40, 31, 0.1);
+  box-shadow: 0 20px 48px rgba(45, 40, 31, 0.1);
   object-fit: contain;
-}
-
-.ancient-tasting-profile__main {
-  max-width: 680px;
-}
-
-.ancient-tasting-profile__support {
-  display: grid;
-  gap: 24px;
-}
-
-.ancient-tasting-profile figcaption {
-  display: grid;
-  gap: 6px;
-  max-width: 560px;
-}
-
-.ancient-tasting-profile figcaption strong {
-  color: var(--color-ink);
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.ancient-tasting-profile figcaption span {
-  color: var(--color-muted);
-  font-size: 15px;
-  line-height: 1.7;
 }
 
 .ancient-spec-grid {
@@ -697,8 +665,7 @@
     min-height: auto;
   }
 
-  .ancient-hero-gallery,
-  .ancient-tasting-profile__grid {
+  .ancient-hero-gallery {
     grid-template-columns: 1fr;
   }
 
