@@ -1405,33 +1405,30 @@
   gap: 12px;
 }
 
-.ancient-knowledge-placeholder {
-  display: grid;
-  min-height: 340px;
-  place-items: center;
+.ancient-knowledge-image {
   margin: 0;
-  border: 1px solid rgba(185, 155, 94, 0.28);
   border-radius: 18px;
-  background:
-    linear-gradient(135deg, rgba(255, 252, 244, 0.92), rgba(239, 228, 204, 0.48)),
-    repeating-linear-gradient(45deg, rgba(185, 155, 94, 0.08) 0 1px, transparent 1px 18px);
 }
 
-.ancient-knowledge-placeholder--vertical {
-  width: min(100%, 360px);
-  min-height: 0;
-  aspect-ratio: 9 / 14;
+.ancient-knowledge-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+.ancient-knowledge-image--vertical {
+  width: min(100%, 380px);
   justify-self: center;
 }
 
-.ancient-knowledge-placeholder span {
-  max-width: 180px;
-  color: var(--color-gold);
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
+.ancient-knowledge-image:not(.ancient-knowledge-image--vertical) img {
+  box-shadow: 0 24px 52px rgba(38, 47, 33, 0.1);
+}
+
+.ancient-knowledge-hero .ancient-knowledge-image--vertical img {
+  max-height: 620px;
 }
 
 .ancient-knowledge-body {
@@ -1523,7 +1520,7 @@
     order: 2;
   }
 
-  .ancient-knowledge-split--reverse > .ancient-knowledge-placeholder {
+  .ancient-knowledge-split--reverse > .ancient-knowledge-image {
     order: 1;
   }
 }

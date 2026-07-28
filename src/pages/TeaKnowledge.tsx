@@ -19,7 +19,8 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'Ancient Tree Black Tea',
     url: '/tea-knowledge/ancient-tree-black-tea',
     description: 'Learn about Ancient Tree Black Tea, its unique flavor profile, craftsmanship, and why it is a premium choice for tea brands and private label projects.',
-    imageAlt: 'Ancient Tree Black Tea premium tea knowledge image placeholder',
+    image: '/images/tea-knowledge/ancient-tree-black-tea/ancient-tree-black-tea-hero.webp',
+    imageAlt: 'Ancient Tree Black Tea with bright tea liquor and dry black tea leaves',
     seoTitle: 'Ancient Tree Black Tea | Premium Chinese Black Tea Supplier',
     listingSummary: 'Explore the origin, craftsmanship, flavor profile and B2B applications of Ancient Tree Black Tea for premium tea brands and private label projects.',
   },
@@ -281,10 +282,20 @@ function trackHengzhouWhatsAppClick() {
 }
 
 
-function AncientKnowledgePlaceholder({ label, vertical = false }: { label: string; vertical?: boolean }) {
+function AncientKnowledgeImage({
+  src,
+  alt,
+  vertical = false,
+  loading = 'lazy',
+}: {
+  src: string;
+  alt: string;
+  vertical?: boolean;
+  loading?: 'eager' | 'lazy';
+}) {
   return (
-    <figure className={`ancient-knowledge-placeholder${vertical ? ' ancient-knowledge-placeholder--vertical' : ''}`}>
-      <span>{label}</span>
+    <figure className={`ancient-knowledge-image${vertical ? ' ancient-knowledge-image--vertical' : ''}`}>
+      <img src={src} alt={alt} loading={loading} decoding="async" />
     </figure>
   );
 }
@@ -321,12 +332,21 @@ function AncientTreeBlackTeaKnowledgeArticle({ article }: { article: KnowledgeAr
             <a className="page-button" href="/private-label">OEM Inquiry</a>
           </div>
         </div>
-        <AncientKnowledgePlaceholder label="Vertical Premium Tea Image" vertical />
+        <AncientKnowledgeImage
+          src="/images/tea-knowledge/ancient-tree-black-tea/ancient-tree-black-tea-hero.webp"
+          alt="Ancient Tree Black Tea with bright tea liquor and dry black tea leaves"
+          vertical
+          loading="eager"
+        />
       </header>
 
       <article className="article-body ancient-knowledge-body">
         <section className="ancient-knowledge-split">
-          <AncientKnowledgePlaceholder label="Ancient Tea Tree Photo" vertical />
+          <AncientKnowledgeImage
+            src="/images/tea-knowledge/ancient-tree-black-tea/ancient-tea-tree-origin.webp"
+            alt="Ancient tea trees in a natural mountain tea garden"
+            vertical
+          />
           <div>
             <p className="page-eyebrow">Origin Story</p>
             <h2>A Tea Shaped by Time and Nature</h2>
@@ -365,7 +385,10 @@ function AncientTreeBlackTeaKnowledgeArticle({ article }: { article: KnowledgeAr
               <li>Oxidation and drying for stable black tea character</li>
             </ul>
           </div>
-          <AncientKnowledgePlaceholder label="Harvesting or Production Photo" />
+          <AncientKnowledgeImage
+            src="/images/tea-knowledge/ancient-tree-black-tea/ancient-tree-harvesting.webp"
+            alt="Tea workers harvesting leaves from ancient tea trees"
+          />
         </section>
 
         <section className="ancient-knowledge-profile">
@@ -392,7 +415,10 @@ function AncientTreeBlackTeaKnowledgeArticle({ article }: { article: KnowledgeAr
                 <strong>Long-lasting aftertaste</strong>
               </article>
             </div>
-            <AncientKnowledgePlaceholder label="Tea Liquor / Dry Leaf Detail Image" />
+            <AncientKnowledgeImage
+              src="/images/tea-knowledge/ancient-tree-black-tea/ancient-tree-tea-liquor.webp"
+              alt="Bright orange-golden Ancient Tree Black Tea liquor in a tasting cup"
+            />
           </div>
         </section>
 
