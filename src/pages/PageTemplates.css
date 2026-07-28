@@ -699,6 +699,19 @@
   object-fit: cover;
 }
 
+.article-card__image--placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--color-gold);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.92), rgba(239, 228, 204, 0.5)),
+    repeating-linear-gradient(45deg, rgba(185, 155, 94, 0.08) 0 1px, transparent 1px 18px);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .product-placeholder h3,
 .benefit-grid h3,
 .article-card h2 {
@@ -1330,6 +1343,209 @@
 .article-card .text-link {
   width: fit-content;
   margin-top: auto;
+}
+
+
+.ancient-knowledge-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.58fr);
+  align-items: center;
+  gap: 72px;
+  padding: 92px max(24px, calc((100% - 1120px) / 2)) 76px;
+  background: linear-gradient(120deg, var(--color-beige), var(--color-surface));
+}
+
+.ancient-knowledge-hero__copy h1 {
+  max-width: 700px;
+  margin: 0 0 18px;
+  color: var(--color-ink);
+  font-family: Georgia, serif;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.ancient-knowledge-hero__subtitle {
+  max-width: 600px;
+  margin: 0 0 24px;
+  color: var(--color-ink);
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.ancient-knowledge-hero__highlights {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.ancient-knowledge-hero__highlights li {
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ancient-knowledge-hero__highlights li::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 12px;
+  border-radius: 999px;
+  background: var(--color-gold);
+  vertical-align: 2px;
+}
+
+.ancient-knowledge-hero__actions,
+.ancient-knowledge-cta .article-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ancient-knowledge-placeholder {
+  display: grid;
+  min-height: 340px;
+  place-items: center;
+  margin: 0;
+  border: 1px solid rgba(185, 155, 94, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.92), rgba(239, 228, 204, 0.48)),
+    repeating-linear-gradient(45deg, rgba(185, 155, 94, 0.08) 0 1px, transparent 1px 18px);
+}
+
+.ancient-knowledge-placeholder--vertical {
+  width: min(100%, 360px);
+  min-height: 0;
+  aspect-ratio: 9 / 14;
+  justify-self: center;
+}
+
+.ancient-knowledge-placeholder span {
+  max-width: 180px;
+  color: var(--color-gold);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ancient-knowledge-body {
+  width: min(980px, calc(100% - 40px));
+}
+
+.ancient-knowledge-split,
+.ancient-knowledge-profile__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 52px;
+}
+
+.ancient-knowledge-split--reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+}
+
+.ancient-knowledge-profile .ancient-section-heading {
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.ancient-knowledge-profile__grid,
+.ancient-knowledge-brewing__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ancient-knowledge-profile__grid article,
+.ancient-knowledge-brewing__grid article {
+  border: 1px solid rgba(185, 155, 94, 0.28);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--color-surface);
+}
+
+.ancient-knowledge-profile__grid span,
+.ancient-knowledge-brewing__grid span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ancient-knowledge-profile__grid strong,
+.ancient-knowledge-brewing__grid strong {
+  color: var(--color-ink);
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.ancient-knowledge-application {
+  padding: 34px;
+  border: 1px solid rgba(185, 155, 94, 0.26);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 250, 240, 0.86), rgba(239, 228, 204, 0.38));
+}
+
+.ancient-knowledge-application__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: 20px;
+}
+
+.ancient-knowledge-cta {
+  width: min(980px, calc(100% - 40px));
+}
+
+@media (max-width: 900px) {
+  .ancient-knowledge-hero,
+  .ancient-knowledge-split,
+  .ancient-knowledge-split--reverse,
+  .ancient-knowledge-profile__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ancient-knowledge-hero {
+    gap: 42px;
+    padding-top: 68px;
+  }
+
+  .ancient-knowledge-split--reverse > div:first-child {
+    order: 2;
+  }
+
+  .ancient-knowledge-split--reverse > .ancient-knowledge-placeholder {
+    order: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .ancient-knowledge-hero__copy h1 {
+    font-size: 44px;
+  }
+
+  .ancient-knowledge-hero__subtitle {
+    font-size: 19px;
+  }
+
+  .ancient-knowledge-profile__grid,
+  .ancient-knowledge-brewing__grid,
+  .ancient-knowledge-application__list {
+    grid-template-columns: 1fr;
+  }
+
+  .ancient-knowledge-application {
+    padding: 24px;
+  }
 }
 
 @media (max-width: 900px) {

@@ -6,7 +6,7 @@ export type KnowledgeArticleData = {
   title: string;
   url: string;
   description: string;
-  image: string;
+  image?: string;
   imageAlt: string;
   seoTitle?: string;
   listingSummary?: string;
@@ -14,6 +14,15 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Black Tea',
+    title: 'Ancient Tree Black Tea',
+    url: '/tea-knowledge/ancient-tree-black-tea',
+    description: 'Learn about Ancient Tree Black Tea, its unique flavor profile, craftsmanship, and why it is a premium choice for tea brands and private label projects.',
+    imageAlt: 'Ancient Tree Black Tea premium tea knowledge image placeholder',
+    seoTitle: 'Ancient Tree Black Tea | Premium Chinese Black Tea Supplier',
+    listingSummary: 'Explore the origin, craftsmanship, flavor profile and B2B applications of Ancient Tree Black Tea for premium tea brands and private label projects.',
+  },
   {
     category: 'Jasmine Tea',
     title: 'How Will the 2026 Hengzhou Floods Affect Jasmine Tea Supply?',
@@ -85,15 +94,21 @@ export default function TeaKnowledge() {
         <div className="article-grid">
           {knowledgeArticles.map((article) => (
             <article className="article-card" key={article.url}>
-              <img
-                className="article-card__image"
-                src={article.image}
-                alt={article.imageAlt}
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-              />
+              {article.image ? (
+                <img
+                  className="article-card__image"
+                  src={article.image}
+                  alt={article.imageAlt}
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div className="article-card__image article-card__image--placeholder" role="img" aria-label={article.imageAlt}>
+                  <span>Image Placeholder</span>
+                </div>
+              )}
               <p className="page-eyebrow">{article.category}</p>
               <h2>{article.title}</h2>
               <p className="article-card__summary">{article.listingSummary ?? article.description}</p>
@@ -107,6 +122,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/ancient-tree-black-tea') {
+    return <AncientTreeBlackTeaKnowledgeArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/2026-hengzhou-floods-jasmine-tea-supply') {
     return <HengzhouFloodArticle article={article} />;
   }
@@ -259,6 +278,181 @@ function trackHengzhouWhatsAppClick() {
     contact_method: 'whatsapp',
     location: 'article_hengzhou_flood_2026',
   });
+}
+
+
+function AncientKnowledgePlaceholder({ label, vertical = false }: { label: string; vertical?: boolean }) {
+  return (
+    <figure className={`ancient-knowledge-placeholder${vertical ? ' ancient-knowledge-placeholder--vertical' : ''}`}>
+      <span>{label}</span>
+    </figure>
+  );
+}
+
+function AncientTreeBlackTeaKnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    mainEntityOfPage: 'https://www.qltealife.com/tea-knowledge/ancient-tree-black-tea',
+    publisher: {
+      '@type': 'Organization',
+      name: 'QL Tea Life',
+      url: 'https://www.qltealife.com',
+    },
+  };
+
+  return (
+    <main className="article-page ancient-knowledge-page">
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <header className="ancient-knowledge-hero">
+        <div className="ancient-knowledge-hero__copy">
+          <p className="page-eyebrow">{article.category}</p>
+          <h1>Ancient Tree Black Tea</h1>
+          <p className="ancient-knowledge-hero__subtitle">A Premium Chinese Black Tea with Depth and Character</p>
+          <ul className="ancient-knowledge-hero__highlights">
+            <li>Bright orange-golden liquor</li>
+            <li>Rich woody aroma</li>
+            <li>Smooth and silky mouthfeel</li>
+          </ul>
+          <div className="ancient-knowledge-hero__actions">
+            <a className="page-button" href="/contact">Request Sample</a>
+            <a className="page-button" href="/private-label">OEM Inquiry</a>
+          </div>
+        </div>
+        <AncientKnowledgePlaceholder label="Vertical Premium Tea Image" vertical />
+      </header>
+
+      <article className="article-body ancient-knowledge-body">
+        <section className="ancient-knowledge-split">
+          <AncientKnowledgePlaceholder label="Ancient Tea Tree Photo" vertical />
+          <div>
+            <p className="page-eyebrow">Origin Story</p>
+            <h2>A Tea Shaped by Time and Nature</h2>
+            <p>
+              Ancient Tree Black Tea begins with mature tea trees growing in a natural mountain environment. Compared
+              with ordinary plantation tea, these older trees develop deeper root systems and slower leaf growth, helping
+              create a more layered tea character.
+            </p>
+            <p>
+              For international tea buyers, this origin story gives the tea a clear premium position while still keeping
+              the focus on authentic sourcing, stable quality, and practical B2B use.
+            </p>
+            <p>
+              Explore our <a className="article-inline-link" href="/black-tea">Black Tea category</a> for related
+              Chinese black tea options.
+            </p>
+          </div>
+        </section>
+
+        <section className="ancient-knowledge-split ancient-knowledge-split--reverse">
+          <div>
+            <p className="page-eyebrow">Craftsmanship</p>
+            <h2>Traditional Craftsmanship Behind Every Leaf</h2>
+            <p>
+              Quality black tea production depends on careful fresh leaf selection, controlled withering, rolling,
+              oxidation, and final drying. Each step influences aroma clarity, liquor color, mouthfeel, and shelf
+              stability.
+            </p>
+            <p>
+              For wholesale and private label customers, consistent processing is just as important as origin. QL Tea
+              Life evaluates both tea character and production reliability so buyers can build repeatable product lines.
+            </p>
+            <ul>
+              <li>Fresh leaf selection for clean raw material quality</li>
+              <li>Withering and rolling to shape aroma and body</li>
+              <li>Oxidation and drying for stable black tea character</li>
+            </ul>
+          </div>
+          <AncientKnowledgePlaceholder label="Harvesting or Production Photo" />
+        </section>
+
+        <section className="ancient-knowledge-profile">
+          <div className="ancient-section-heading">
+            <p className="page-eyebrow">Cup Character</p>
+            <h2>Flavor Profile</h2>
+          </div>
+          <div className="ancient-knowledge-profile__layout">
+            <div className="ancient-knowledge-profile__grid">
+              <article>
+                <span>Appearance</span>
+                <strong>Bright orange-golden liquor</strong>
+              </article>
+              <article>
+                <span>Aroma</span>
+                <strong>Rich woody notes</strong>
+              </article>
+              <article>
+                <span>Taste</span>
+                <strong>Smooth and mellow</strong>
+              </article>
+              <article>
+                <span>Finish</span>
+                <strong>Long-lasting aftertaste</strong>
+              </article>
+            </div>
+            <AncientKnowledgePlaceholder label="Tea Liquor / Dry Leaf Detail Image" />
+          </div>
+        </section>
+
+        <section className="ancient-knowledge-application">
+          <p className="page-eyebrow">B2B Application</p>
+          <h2>A Distinctive Choice for Premium Tea Brands</h2>
+          <p>
+            Ancient Tree Black Tea is suitable for buyers who need a product with clear origin value, elegant cup
+            quality, and a premium retail story. It can support curated black tea selections as well as private label
+            programs for specialty tea markets.
+          </p>
+          <ul className="ancient-knowledge-application__list">
+            <li>Premium loose leaf collections</li>
+            <li>Gift tea products</li>
+            <li>Specialty tea shops</li>
+            <li>Private label tea brands</li>
+          </ul>
+          <p>
+            For custom packaging and brand-ready tea programs, visit our{' '}
+            <a className="article-inline-link" href="/private-label">Private Label Solutions</a> page.
+          </p>
+        </section>
+
+        <section className="ancient-knowledge-brewing">
+          <p className="page-eyebrow">Brewing Guide</p>
+          <h2>Brewing Recommendation</h2>
+          <div className="ancient-knowledge-brewing__grid">
+            <article>
+              <span>Tea Amount</span>
+              <strong>5g</strong>
+            </article>
+            <article>
+              <span>Water Temperature</span>
+              <strong>90°C</strong>
+            </article>
+            <article>
+              <span>First Infusion</span>
+              <strong>15-20 seconds</strong>
+            </article>
+            <article>
+              <span>Multiple Infusions</span>
+              <strong>Yes</strong>
+            </article>
+          </div>
+        </section>
+      </article>
+
+      <section className="article-cta ancient-knowledge-cta">
+        <div>
+          <p className="page-eyebrow">Premium Tea Development</p>
+          <h2>Develop Your Premium Tea Collection With Us</h2>
+          <p>QL Tea Life provides Chinese tea sourcing, OEM solutions, and private label support.</p>
+        </div>
+        <div className="article-cta__actions">
+          <a className="page-button" href="/contact">Request Samples</a>
+          <a className="page-button" href="/contact">Contact Us</a>
+        </div>
+      </section>
+    </main>
+  );
 }
 
 function HengzhouFloodArticle({ article }: { article: KnowledgeArticleData }) {
