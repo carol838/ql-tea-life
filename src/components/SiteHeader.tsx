@@ -57,6 +57,7 @@ export default function SiteHeader() {
         <nav className={`site-nav${menuOpen ? ' site-nav--open' : ''}`} aria-label="Main navigation">
           <a href="/">Home</a>
           <Dropdown label="Tea Collection" links={teaLinks} />
+          <a href="/tea-knowledge">Tea Knowledge</a>
           <a href="/private-label/packaging-options">Packaging Options</a>
           <a href="/private-label">Private Label Solutions</a>
           <a href="/contact">Contact</a>
