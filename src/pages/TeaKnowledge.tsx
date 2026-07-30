@@ -19,7 +19,8 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'How to Start Your Own Tea Brand: A Complete Guide',
     url: '/tea-knowledge/how-to-start-your-own-tea-brand',
     description: 'Learn how to start your own tea brand, from selecting tea products and packaging options to working with a private label tea manufacturer in China.',
-    imageAlt: 'Guide to start your own tea brand with private label tea manufacturing support',
+    image: '/images/tea-knowledge/tea-brand-guide-cover.webp',
+    imageAlt: 'Private label tea brand development and custom packaging',
     seoTitle: 'How to Start Your Own Tea Brand: A Complete Guide | QL Tea Life',
     listingSummary: 'A practical guide for entrepreneurs, retailers and beverage companies planning to start your own tea brand with a private label tea manufacturer.',
   },
@@ -89,21 +90,10 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
 export default function TeaKnowledge() {
   return (
     <main className="content-page">
-      <section className="page-hero tea-knowledge-hero">
-        <div className="tea-knowledge-hero__copy">
-          <p className="page-eyebrow">Buyer Resources</p>
-          <h1>Tea Knowledge</h1>
-          <p>Practical sourcing and category insights for tea importers, distributors and private label brands.</p>
-        </div>
-        <img
-          className="tea-knowledge-hero__cover"
-          src="/images/tea-knowledge/tea-knowledge-cover.webp"
-          alt="Premium Chinese Tea Knowledge and Sourcing Guide"
-          width="1400"
-          height="1050"
-          loading="eager"
-          decoding="async"
-        />
+      <section className="page-hero">
+        <p className="page-eyebrow">Buyer Resources</p>
+        <h1>Tea Knowledge</h1>
+        <p>Practical sourcing and category insights for tea importers, distributors and private label brands.</p>
       </section>
       <section className="page-section">
         <div className="article-filters" aria-label="Article categories">
