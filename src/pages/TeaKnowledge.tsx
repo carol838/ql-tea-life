@@ -89,10 +89,21 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
 export default function TeaKnowledge() {
   return (
     <main className="content-page">
-      <section className="page-hero">
-        <p className="page-eyebrow">Buyer Resources</p>
-        <h1>Tea Knowledge</h1>
-        <p>Practical sourcing and category insights for tea importers, distributors and private label brands.</p>
+      <section className="page-hero tea-knowledge-hero">
+        <div className="tea-knowledge-hero__copy">
+          <p className="page-eyebrow">Buyer Resources</p>
+          <h1>Tea Knowledge</h1>
+          <p>Practical sourcing and category insights for tea importers, distributors and private label brands.</p>
+        </div>
+        <img
+          className="tea-knowledge-hero__cover"
+          src="/images/tea-knowledge/tea-knowledge-cover.webp"
+          alt="Premium Chinese Tea Knowledge and Sourcing Guide"
+          width="1400"
+          height="1050"
+          loading="eager"
+          decoding="async"
+        />
       </section>
       <section className="page-section">
         <div className="article-filters" aria-label="Article categories">

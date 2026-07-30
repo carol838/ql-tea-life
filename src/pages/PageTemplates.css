@@ -428,6 +428,29 @@
   line-height: 1.7;
 }
 
+.tea-knowledge-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.74fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.tea-knowledge-hero__copy p:last-child {
+  max-width: 680px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.tea-knowledge-hero__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--product-image-ratio);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 24px 48px rgba(45, 40, 31, 0.08);
+}
+
 .category-hero__subtitle {
   letter-spacing: 0.02em;
   line-height: 1.55;
@@ -1637,6 +1660,11 @@
   .page-hero {
     padding-top: 64px;
     padding-bottom: 64px;
+  }
+
+  .tea-knowledge-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .page-hero--image {
