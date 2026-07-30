@@ -19,9 +19,9 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     title: 'How to Start Your Own Tea Brand: A Complete Guide',
     url: '/tea-knowledge/how-to-start-your-own-tea-brand',
     description: 'Learn how to start your own tea brand, from selecting tea products and packaging options to working with a private label tea manufacturer in China.',
-    imageAlt: 'Tea brand development guide for private label tea buyers',
+    imageAlt: 'Guide to start your own tea brand with private label tea manufacturing support',
     seoTitle: 'How to Start Your Own Tea Brand: A Complete Guide | QL Tea Life',
-    listingSummary: 'A practical guide for entrepreneurs, retailers and beverage companies planning to launch a private label tea brand.',
+    listingSummary: 'A practical guide for entrepreneurs, retailers and beverage companies planning to start your own tea brand with a private label tea manufacturer.',
   },
   {
     category: 'Black Tea',
@@ -297,8 +297,54 @@ function trackHengzhouWhatsAppClick() {
 
 
 function TeaBrandGuideArticle({ article }: { article: KnowledgeArticleData }) {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    mainEntityOfPage: 'https://www.qltealife.com/tea-knowledge/how-to-start-your-own-tea-brand',
+    publisher: {
+      '@type': 'Organization',
+      name: 'QL Tea Life',
+      url: 'https://www.qltealife.com',
+    },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is private label tea?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Private label tea is tea sourced, blended, packed, or manufactured by a supplier and sold under your own brand name.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the MOQ for starting a tea brand?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'MOQ depends on the tea type, packaging format, and customization level. Many new tea brands begin with smaller trial orders before scaling production.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I customize tea packaging for my own brand?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Tea packaging can usually be customized with brand colors, labels, pouches, tea tins, paper canisters, tea bags, and gift boxes depending on project requirements.',
+        },
+      },
+    ],
+  };
+
   return (
     <main className="article-page">
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       <section className="article-hero">
         <p className="page-eyebrow">{article.category}</p>
         <h1>How to Start Your Own Tea Brand: A Complete Guide</h1>
@@ -317,7 +363,10 @@ function TeaBrandGuideArticle({ article }: { article: KnowledgeArticleData }) {
             and packaging design to quality control and production, every step plays an important role in creating a
             unique tea brand.
           </p>
-          <p>This guide explains the key steps to start your own tea brand.</p>
+          <p>
+            This guide explains the key steps to start your own tea brand, build your tea brand with a clear product
+            strategy, and work with a reliable tea brand manufacturer for private label tea projects.
+          </p>
         </section>
 
         <section>
@@ -466,6 +515,35 @@ function TeaBrandGuideArticle({ article }: { article: KnowledgeArticleData }) {
             support your tea journey.
           </p>
         </section>
+
+        <section>
+          <h2>Tea Brand FAQ</h2>
+          <div className="faq-list">
+            <details>
+              <summary>What is private label tea?</summary>
+              <p>
+                Private label tea is tea sourced, blended, packed, or manufactured by a supplier and sold under your own
+                brand name. It allows businesses to launch branded tea products without building their own production
+                facility.
+              </p>
+            </details>
+            <details>
+              <summary>What is the MOQ for starting a tea brand?</summary>
+              <p>
+                MOQ depends on tea type, packaging format, and customization level. Many new tea brands begin with
+                smaller trial orders, then increase production volume after testing the market.
+              </p>
+            </details>
+            <details>
+              <summary>Can I customize tea packaging for my own brand?</summary>
+              <p>
+                Yes. Packaging can be customized with brand colors, labels, pouches, tea tins, paper canisters, tea bags,
+                and gift boxes depending on your product plan and target market.
+              </p>
+            </details>
+          </div>
+        </section>
+
       </article>
 
       <section className="article-cta">
