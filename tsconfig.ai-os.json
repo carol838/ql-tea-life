@@ -1,0 +1,15 @@
+﻿{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": ".ai-os-build",
+    "rootDir": ".",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src/ai-os/**/*.ts", "scripts/qualify-inquiry.ts", "scripts/test-qualification-workflow.ts"]
+}
