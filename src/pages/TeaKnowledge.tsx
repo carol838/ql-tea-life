@@ -520,6 +520,22 @@ function PrivateLabelTeaManufacturerChinaArticle({ article }: { article: Knowled
           </p>
           <p>Contact us to discuss your private label tea project.</p>
         </section>
+
+        <section>
+          <h2>Related Reading</h2>
+          <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/how-to-start-your-own-tea-brand">
+                How to Start Your Own Tea Brand: A Complete Guide
+              </a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/private-label-tea-how-to-build-your-own-tea-brand">
+                Private Label Tea: How to Build Your Own Tea Brand
+              </a>
+            </li>
+          </ul>
+        </section>
       </article>
 
       <section className="article-cta">
