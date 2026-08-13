@@ -59,6 +59,7 @@ export default function SiteHeader() {
           <Dropdown label="Tea Collection" links={teaLinks} />
           <a href="/tea-knowledge">Tea Knowledge</a>
           <a href="/private-label/packaging-options">Packaging Options</a>
+          <a href="/pyramid-tea-bags">Tea Bags & ODM</a>
           <a href="/private-label">Private Label Solutions</a>
           <a href="/contact">Contact</a>
         </nav>

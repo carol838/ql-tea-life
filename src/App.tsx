@@ -12,6 +12,7 @@ import PrivateLabelPage, {
   privateLabelPages,
 } from './pages/PrivateLabelPage';
 import ProductPage, { productPages } from './pages/ProductPage';
+import PyramidTeaBagsPage, { PYRAMID_TEA_BAGS_ROUTE, PYRAMID_TEA_BAGS_SEO } from './pages/PyramidTeaBagsPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
 
 const SITE_URL = 'https://www.qltealife.com';
@@ -60,6 +61,11 @@ export default function App() {
     title = PACKAGING_OPTIONS_SEO.title;
     description = PACKAGING_OPTIONS_SEO.description;
     ogImagePath = PACKAGING_OPTIONS_SEO.ogImage;
+  } else if (path === PYRAMID_TEA_BAGS_ROUTE) {
+    page = <PyramidTeaBagsPage />;
+    title = PYRAMID_TEA_BAGS_SEO.title;
+    description = PYRAMID_TEA_BAGS_SEO.description;
+    ogImagePath = PYRAMID_TEA_BAGS_SEO.ogImage;
   } else if (teaCategory) {
     page = <CategoryPage category={teaCategory} />;
     title = teaCategory.seoTitle;

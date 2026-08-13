@@ -93,7 +93,7 @@ const marketApplications = [
     description: 'Flexible tea bag formats for modern retail, hospitality and everyday tea drinking.',
     image: '/images/home/market-applications/pyramid-tea-bags.webp',
     alt: 'Private label pyramid tea bags and packaged tea products',
-    href: '/private-label',
+    href: '/pyramid-tea-bags',
   },
   {
     title: 'Cafes & Foodservice',
