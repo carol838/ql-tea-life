@@ -81,6 +81,35 @@ const teaCategories = [
   ['Flavoured Tea', '/flavoured-tea', '/images/tea-collection/categories/flavoured-tea.webp'],
 ];
 
+const marketApplications = [
+  {
+    title: 'Premium Tea Collections',
+    description: 'Premium loose leaf teas for boutique brands, specialty retailers and curated tea collections.',
+    image: '/images/home/market-applications/premium-tea-collections.webp',
+    alt: 'Premium Chinese loose leaf tea collection for retail brands',
+  },
+  {
+    title: 'Tea Bags & Pyramid Tea',
+    description: 'Flexible tea bag formats for modern retail, hospitality and everyday tea drinking.',
+    image: '/images/home/market-applications/pyramid-tea-bags.webp',
+    alt: 'Private label pyramid tea bags and packaged tea products',
+    href: '/private-label',
+  },
+  {
+    title: 'Cafes & Foodservice',
+    description: 'Versatile Chinese teas for cafes, hotels, restaurants and modern beverage applications.',
+    image: '/images/home/market-applications/tea-cafe-foodservice.webp',
+    alt: 'Chinese tea for cafes hotels and foodservice applications',
+  },
+  {
+    title: 'Retail & Gift Collections',
+    description: 'Tea products and packaging designed for retail, gifting and branded collections.',
+    image: '/images/home/market-applications/retail-tea-gift-collections.webp',
+    alt: 'Premium tea gift and retail packaging collection',
+    href: '/private-label',
+  },
+];
+
 const privateLabelFeatures = [
   'Tea Bags',
   'Custom Packaging',
@@ -241,6 +270,47 @@ export default function Home() {
               <span>Explore category</span>
             </a>
           ))}
+        </div>
+      </section>
+
+      <section className="home-section home-market-applications">
+        <div className="home-section__heading">
+          <p className="home-section__eyebrow">For Your Business</p>
+          <h2>From Chinese Tea to Your Market</h2>
+          <p>Premium Chinese tea, adapted for different products, brands and markets.</p>
+        </div>
+        <div className="home-market-grid">
+          {marketApplications.map((application) => {
+            const content = (
+              <>
+                <div className="home-market-card__image-wrap">
+                  <img
+                    className="home-market-card__image"
+                    src={application.image}
+                    alt={application.alt}
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="home-market-card__content">
+                  <h3>{application.title}</h3>
+                  <p>{application.description}</p>
+                </div>
+              </>
+            );
+
+            return application.href ? (
+              <a className="home-market-card" href={application.href} key={application.title}>
+                {content}
+              </a>
+            ) : (
+              <article className="home-market-card" key={application.title}>
+                {content}
+              </article>
+            );
+          })}
         </div>
       </section>
 
