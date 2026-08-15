@@ -450,6 +450,21 @@
   font-size: 24px;
 }
 
+
+.pyramid-comparison__resource {
+  margin-top: 10px !important;
+  color: var(--color-muted) !important;
+  font-family: inherit !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+}
+
+.pyramid-comparison__resource a {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-gold);
+  text-underline-offset: 4px;
+}
+
 .pyramid-final-cta p:last-child {
   max-width: 640px;
   margin: 14px 0 0;

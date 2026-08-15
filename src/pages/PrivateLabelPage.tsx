@@ -323,7 +323,13 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
         </section>
 
         <section className="inquiry-cta">
-          <div><p className="page-eyebrow">Start a Project</p><h2>Discuss Your Private Label Requirements</h2></div>
+          <div>
+            <p className="page-eyebrow">Start a Project</p>
+            <h2>Discuss Your Private Label Requirements</h2>
+            <p>
+              Resource: <a className="article-inline-link" href="/tea-knowledge/chinese-tea-grades-wholesale-guide">Understanding Chinese Tea Grades for Wholesale Buyers</a>
+            </p>
+          </div>
           <a className="page-button" href="/contact">Contact Us</a>
         </section>
       </main>

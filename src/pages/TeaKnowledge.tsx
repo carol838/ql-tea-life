@@ -35,6 +35,15 @@ export const knowledgeArticles: KnowledgeArticleData[] = [
     listingSummary: 'A practical guide for entrepreneurs, retailers and beverage companies planning to start your own tea brand with a private label tea manufacturer.',
   },
   {
+    category: 'Tea Sourcing',
+    title: 'Chinese Tea Grades Explained: How to Choose the Right Tea for Wholesale',
+    url: '/tea-knowledge/chinese-tea-grades-wholesale-guide',
+    description: 'Learn how Chinese tea grades differ and how wholesale buyers can choose the right tea based on quality, application, target market and price range.',
+    imageAlt: 'Chinese tea grades guide for wholesale buyers',
+    seoTitle: 'Chinese Tea Grades Explained: A Guide for Wholesale Buyers | QL Tea Life',
+    listingSummary: 'Understand how Chinese tea grades differ and how to choose the right tea based on application, market positioning, quality and target price.',
+  },
+  {
     category: 'Black Tea',
     title: 'Ancient Tree Black Tea',
     url: '/tea-knowledge/ancient-tree-black-tea',
@@ -145,6 +154,10 @@ export default function TeaKnowledge() {
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
   if (article.url === '/tea-knowledge/private-label-tea-manufacturer-china') {
     return <PrivateLabelTeaManufacturerChinaArticle article={article} />;
+  }
+
+  if (article.url === '/tea-knowledge/chinese-tea-grades-wholesale-guide') {
+    return <ChineseTeaGradesArticle article={article} />;
   }
 
   if (article.url === '/tea-knowledge/how-to-start-your-own-tea-brand') {
@@ -545,6 +558,430 @@ function PrivateLabelTeaManufacturerChinaArticle({ article }: { article: Knowled
           <p>Contact QL Tea Life to discuss OEM tea production, custom packaging, MOQ, and quality control requirements.</p>
         </div>
         <a className="page-button" href="/contact">Contact Us</a>
+      </section>
+    </main>
+  );
+}
+
+
+function ChineseTeaGradesArticle({ article }: { article: KnowledgeArticleData }) {
+  const applicationRows = [
+    ['Premium Loose Leaf', 'Leaf appearance, aroma, origin, flavor complexity and leaf integrity'],
+    ['Pyramid Tea Bags', 'Flavor consistency, suitable leaf size, aroma and infusion performance'],
+    ['Conventional Tea Bags', 'Fast infusion, consistency, strength and cost efficiency'],
+    ['Iced Tea', 'Clean flavor, liquor color, strength and refreshing character'],
+    ['Milk Tea', 'Body, strength and ability to maintain tea character with milk'],
+    ['Retail Tea', 'Target consumer, visual quality, flavor and target retail price'],
+    ['Private Label', 'Market positioning, consistency, packaging format and target cost'],
+  ];
+
+  const checklistRows = [
+    ['What is the tea used for?', 'Different applications require different specifications'],
+    ['What market will it be sold in?', 'Consumer preferences and positioning vary by market'],
+    ['What quality level is required?', 'Prevents unnecessary over-specification'],
+    ['What is the target price range?', 'Helps identify commercially realistic options'],
+    ['Have samples been compared?', 'Grade names alone cannot show actual quality'],
+    ['Is supply consistency important?', 'Essential for repeat orders and branded products'],
+    ['What packaging will be used?', 'Packaging format can influence tea selection'],
+    ['Are testing requirements known?', 'Requirements may vary by product and destination'],
+  ];
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    mainEntityOfPage: 'https://www.qltealife.com/tea-knowledge/chinese-tea-grades-wholesale-guide',
+    publisher: {
+      '@type': 'Organization',
+      name: 'QL Tea Life',
+      url: 'https://www.qltealife.com',
+    },
+  };
+
+  return (
+    <main className="article-page">
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <section className="article-hero">
+        <p className="page-eyebrow">{article.category}</p>
+        <h1>Chinese Tea Grades Explained: How to Choose the Right Tea for Wholesale</h1>
+        <p>{article.description}</p>
+      </section>
+
+      <article className="article-body">
+        <section>
+          <p>
+            When sourcing Chinese tea for wholesale, buyers often encounter terms such as premium, special grade, Grade
+            A, first grade or superfine.
+          </p>
+          <p>But what do these grades actually mean?</p>
+          <p>
+            Unlike many standardized industrial products, Chinese tea does not follow one universal grading system across
+            every tea category, producing region and supplier. Two teas with the same name can differ significantly in
+            leaf appearance, harvest season, aroma, taste, processing and price.
+          </p>
+          <p>
+            For wholesale buyers, understanding these differences is more useful than simply asking for the highest
+            grade.
+          </p>
+          <p>
+            The right tea is the one that fits your market, application, quality expectations and target price.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Does a Chinese Tea Grade Actually Mean?</h2>
+          <p>
+            Tea grading can refer to several different characteristics, and the importance of each factor varies between
+            tea types.
+          </p>
+          <p>Common factors include:</p>
+          <h3>Leaf Standard</h3>
+          <p>
+            The proportion of buds, young leaves and mature leaves can influence appearance, flavor and cost.
+          </p>
+          <p>
+            A tea made primarily from young buds may command a higher price than one containing larger or more mature
+            leaves, but this does not automatically make it the best choice for every application.
+          </p>
+          <h3>Harvest Season</h3>
+          <p>
+            Spring teas are often valued for their tenderness and aroma, while teas harvested later in the season may
+            offer a different flavor profile, stronger body or more competitive price.
+          </p>
+          <p>Harvest season can therefore influence both quality positioning and cost.</p>
+          <h3>Leaf Appearance</h3>
+          <p>Shape, size, color, uniformity and leaf integrity can all contribute to how a tea is evaluated.</p>
+          <p>
+            Appearance is particularly important for premium loose-leaf products where consumers can see the dry leaves
+            before brewing.
+          </p>
+          <h3>Aroma and Taste</h3>
+          <p>For many buyers, sensory quality matters more than visual grade.</p>
+          <p>
+            Aroma intensity, sweetness, freshness, body, astringency, aftertaste and overall balance can all influence
+            the commercial value of a tea.
+          </p>
+          <h3>Origin and Processing</h3>
+          <p>
+            Growing region, cultivar and processing methods can create significant differences even between teas sold
+            under similar product names.
+          </p>
+          <p>This is why a product name alone is rarely enough to define a wholesale tea specification.</p>
+        </section>
+
+        <section>
+          <h2>There Is No Universal Grade A for Chinese Tea</h2>
+          <p>
+            One of the most important things for international buyers to understand is that terms such as Grade A,
+            Premium, Superfine or Special Grade are not universal quality standards covering all Chinese teas.
+          </p>
+          <p>
+            A supplier&apos;s Premium Jasmine Green Tea, for example, may not be directly equivalent to another supplier&apos;s
+            product using the same description.
+          </p>
+          <p>The same applies to many green teas, black teas and oolong teas.</p>
+          <p>
+            For this reason, wholesale buyers should look beyond the grade name and evaluate the actual specification
+            and sample.
+          </p>
+          <blockquote className="article-pull-quote">Buy the tea, not the grade name.</blockquote>
+          <p>
+            The commercial value of a tea depends on whether its actual quality is appropriate for your product and
+            market.
+          </p>
+        </section>
+
+        <section className="article-emphasis-block">
+          <p className="page-eyebrow">Buyer Principle</p>
+          <h2>Higher Grade Does Not Always Mean Better for Your Business</h2>
+          <p>
+            It can be tempting to assume that the highest available grade is always the best purchasing decision. For
+            wholesale business, that is not necessarily true.
+          </p>
+          <p>
+            A premium loose-leaf tea sold by a specialty tea shop may require attractive whole leaves, a distinctive
+            aroma and a refined flavor profile.
+          </p>
+          <p>
+            A tea used in <a className="article-inline-link" href="/pyramid-tea-bags">pyramid tea bags</a> may instead
+            need good flavor consistency, suitable leaf size and reliable infusion performance.
+          </p>
+          <p>
+            For iced tea, buyers may place more emphasis on liquor color, clean flavor and strength. For milk tea or
+            other beverage applications, body and the ability to maintain tea character when combined with milk or other
+            ingredients may be more important than dry-leaf appearance.
+          </p>
+          <p>
+            Commercial teas such as CTC black tea provide another good example. CTC tea is processed for small, uniform
+            particles and rapid extraction. Its appearance is very different from premium whole-leaf black tea, but its
+            strength and infusion characteristics can make it highly suitable for tea bags, milk tea, blending and other
+            commercial applications.
+          </p>
+          <p>The question is therefore not simply: Which tea has the highest grade?</p>
+          <p>A better question is: Which tea specification is most suitable for my product?</p>
+        </section>
+
+        <section>
+          <h2>Choose the Tea According to Its Application</h2>
+          <p>Before comparing grades, define how the tea will be sold or used.</p>
+          <div className="article-table-wrap article-table-wrap--stacked">
+            <table>
+              <thead>
+                <tr>
+                  <th>Application</th>
+                  <th>Key Considerations</th>
+                </tr>
+              </thead>
+              <tbody>
+                {applicationRows.map(([application, considerations]) => (
+                  <tr key={application}>
+                    <td data-label="Application">{application}</td>
+                    <td data-label="Key Considerations">{considerations}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p>
+            This application-first approach helps buyers avoid paying for characteristics that may not add value to the
+            final product.
+          </p>
+          <p>
+            For example, a beautiful whole-leaf tea may justify a premium price in transparent retail packaging, but the
+            same visual characteristics may offer little commercial advantage if the tea will be processed into a
+            conventional tea bag.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why Can the Same Type of Tea Have Very Different Prices?</h2>
+          <p>
+            Wholesale buyers sometimes receive several quotations for what appears to be the same tea and wonder why the
+            prices are so different.
+          </p>
+          <p>The answer is often that the products are not actually the same specification.</p>
+          <p>Price can be affected by factors such as:</p>
+          <ul>
+            <li>Harvest season</li>
+            <li>Leaf standard</li>
+            <li>Growing region</li>
+            <li>Cultivar</li>
+            <li>Processing method</li>
+            <li>Leaf uniformity</li>
+            <li>Aroma and flavor quality</li>
+            <li>Sorting requirements</li>
+            <li>Production volume</li>
+            <li>Order quantity</li>
+            <li>Packaging requirements</li>
+          </ul>
+          <p>Flavoured and scented teas may involve additional variables.</p>
+          <p>
+            For example, two jasmine teas can differ in the quality of the base green tea, the scenting process, aroma
+            intensity and finished-leaf quality.
+          </p>
+          <p>Therefore: Same tea name does not necessarily mean same tea quality.</p>
+          <p>
+            When comparing quotations, buyers should compare the actual products and specifications rather than price
+            alone.
+          </p>
+        </section>
+
+        <section>
+          <h2>Start with Your Target Market and Price Positioning</h2>
+          <p>Before asking a supplier to recommend a tea, it helps to provide some commercial context.</p>
+          <p>Useful information includes:</p>
+          <h3>Target Market</h3>
+          <p>Where will the tea be sold?</p>
+          <p>
+            A tea intended for the United States, Germany, Kazakhstan or the Middle East may serve different consumer
+            preferences, price levels and product formats.
+          </p>
+          <h3>Product Application</h3>
+          <p>Will it be sold as loose leaf, pyramid tea bags, conventional tea bags, iced tea, milk tea or another beverage product?</p>
+          <h3>Quality Positioning</h3>
+          <p>Are you developing an everyday tea, a mid-range specialty product or a premium collection?</p>
+          <h3>Target Price Range</h3>
+          <p>
+            A realistic target price helps suppliers recommend an appropriate quality level rather than quoting products
+            that do not fit the project.
+          </p>
+          <h3>Estimated Quantity</h3>
+          <p>Order volume can affect both tea selection and pricing.</p>
+          <h3>Packaging Format</h3>
+          <p>Bulk tea, retail pouches, tea boxes and tea bags may require different tea specifications.</p>
+          <p>
+            The more clearly these requirements are defined, the easier it becomes to identify a commercially suitable
+            tea.
+          </p>
+        </section>
+
+        <section>
+          <h2>Samples Matter More Than Grade Names</h2>
+          <p>
+            For wholesale sourcing, samples are one of the most useful tools for comparing tea quality. A sample allows
+            buyers to evaluate the actual product rather than relying only on descriptions such as premium or first
+            grade.
+          </p>
+          <p>When comparing samples, consider:</p>
+          <h3>Dry Leaf</h3>
+          <p>Look at leaf size, shape, color, uniformity and overall appearance.</p>
+          <h3>Aroma</h3>
+          <p>Evaluate both the dry-leaf aroma and the aroma after brewing.</p>
+          <h3>Liquor</h3>
+          <p>Compare clarity, color and brightness.</p>
+          <h3>Taste</h3>
+          <p>Consider strength, sweetness, freshness, astringency, body, balance and aftertaste.</p>
+          <h3>Infused Leaf</h3>
+          <p>The brewed leaves can provide additional information about leaf material and processing.</p>
+          <p>
+            For tea bag applications, buyers should also consider infusion speed and flavor consistency under the
+            intended brewing conditions.
+          </p>
+          <p>Whenever possible, compare several samples under the same brewing parameters.</p>
+          <p>This makes differences in quality much easier to identify.</p>
+        </section>
+
+        <section>
+          <h2>Consistency Matters in Wholesale Tea</h2>
+          <p>Finding a good sample is only the beginning.</p>
+          <p>
+            For importers, distributors and tea brands, batch-to-batch consistency is often just as important as the
+            quality of the first sample.
+          </p>
+          <p>
+            Natural agricultural products will always show some variation, but commercial tea sourcing should aim to
+            maintain an agreed quality profile.
+          </p>
+          <p>Important factors may include:</p>
+          <ul>
+            <li>Leaf appearance</li>
+            <li>Aroma</li>
+            <li>Flavor</li>
+            <li>Liquor color</li>
+            <li>Moisture</li>
+            <li>Product specification</li>
+            <li>Packaging consistency</li>
+          </ul>
+          <p>This becomes especially important for branded products.</p>
+          <p>
+            Consumers expect the same tea product to deliver a reasonably consistent experience each time they purchase
+            it.
+          </p>
+          <p>
+            For this reason, wholesale buyers should discuss not only sample quality but also how future production will
+            be matched to the approved product standard.
+          </p>
+        </section>
+
+        <section>
+          <h2>What Should You Tell a Chinese Tea Supplier?</h2>
+          <p>Instead of sending a general inquiry such as: Please send me your best green tea price.</p>
+          <p>A more useful sourcing request might include:</p>
+          <ul>
+            <li>Tea type</li>
+            <li>Destination market</li>
+            <li>Intended application</li>
+            <li>Preferred flavor profile</li>
+            <li>Quality positioning</li>
+            <li>Target price range</li>
+            <li>Estimated order quantity</li>
+            <li>Packaging format</li>
+            <li>Testing or documentation requirements</li>
+          </ul>
+          <p>For example:</p>
+          <blockquote className="article-example-quote">
+            We are looking for a jasmine green tea for pyramid tea bags for the European specialty retail market. We
+            prefer a fresh green tea character with a clear jasmine aroma and are looking for a mid-to-premium quality
+            level.
+          </blockquote>
+          <p>
+            This gives the supplier much more information to work with than simply requesting Grade A jasmine tea.
+          </p>
+        </section>
+
+        <section>
+          <h2>A Practical Checklist for Wholesale Buyers</h2>
+          <p>Before confirming a tea, consider the following questions:</p>
+          <div className="article-table-wrap article-table-wrap--stacked">
+            <table>
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>Why It Matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                {checklistRows.map(([question, reason]) => (
+                  <tr key={question}>
+                    <td data-label="Question">{question}</td>
+                    <td data-label="Why It Matters">{reason}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p>The goal is not to find the most expensive tea.</p>
+          <p>
+            It is to find the tea that delivers the right combination of quality, consistency, application and
+            commercial value.
+          </p>
+        </section>
+
+        <section>
+          <h2>Choosing the Right Chinese Tea for Your Market</h2>
+          <p>
+            China offers an enormous range of teas, from delicate <a className="article-inline-link" href="/green-tea">premium Chinese green teas</a>{' '}
+            to strong commercial teas designed for high-volume applications. Buyers comparing <a className="article-inline-link" href="/black-tea">Chinese black tea</a>{' '}
+            should also consider whether the product will be sold as loose leaf, tea bags, iced tea, milk tea or another
+            application.
+          </p>
+          <p>That variety is an advantage - but only when the product is selected according to the buyer&apos;s actual needs.</p>
+          <p>Rather than focusing only on grade terminology, start with four questions:</p>
+          <ul>
+            <li>Where will the tea be sold?</li>
+            <li>How will it be used?</li>
+            <li>What quality level does the market require?</li>
+            <li>What price range makes commercial sense?</li>
+          </ul>
+          <p>From there, samples and specifications can be used to identify the most suitable option.</p>
+          <p>
+            At QL Tea Life, we work with overseas tea businesses to source Chinese teas according to market positioning,
+            application, quality requirements and target price range.
+          </p>
+          <p>
+            Whether you are looking for loose-leaf tea, tea bags, wholesale supply or <a className="article-inline-link" href="/private-label">private label tea solutions</a>,
+            the starting point should always be the same: the right tea for the right market.
+          </p>
+        </section>
+
+        <aside className="article-related">
+          <p className="page-eyebrow">Related Reading</p>
+          <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/how-to-choose-high-quality-chinese-tea-for-your-business">
+                How to Choose High-Quality Chinese Tea for Your Business
+              </a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/chinese-tea-types-explained">Chinese Tea Types Explained</a>
+            </li>
+            <li>
+              <a href="/tea-knowledge/private-label-tea-manufacturer-china">
+                Private Label Tea Manufacturer in China: A Complete Guide
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </article>
+
+      <section className="article-cta">
+        <div>
+          <p className="page-eyebrow">Wholesale Tea Sourcing</p>
+          <h2>Need Help Choosing the Right Tea Specification?</h2>
+          <p>Contact QL Tea Life to discuss tea application, target market, quality expectations and sourcing direction.</p>
+        </div>
+        <a className="page-button" href="/contact">Contact QL Tea Life</a>
       </section>
     </main>
   );

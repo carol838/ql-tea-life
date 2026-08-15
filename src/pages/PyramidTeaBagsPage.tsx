@@ -389,7 +389,12 @@ export default function PyramidTeaBagsPage() {
           ))}
         </div>
         <div className="pyramid-comparison__cta">
-          <p>Need a more customized tea solution?</p>
+          <div>
+            <p>Need a more customized tea solution?</p>
+            <p className="pyramid-comparison__resource">
+              Learn more about <a href="/tea-knowledge/chinese-tea-grades-wholesale-guide">choosing the right tea specification for your market</a>.
+            </p>
+          </div>
           <a className="page-button" href="/private-label">Explore Private Label Solutions</a>
         </div>
       </section>
