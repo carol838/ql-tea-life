@@ -1,4 +1,4 @@
-import { trackWhatsAppLead } from '../utils/analytics';
+import { trackEmailClick, trackWhatsAppLead } from '../utils/analytics';
 import './Contact.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
@@ -7,7 +7,13 @@ export default function Contact() {
   const trackWhatsAppClick = () => {
     trackWhatsAppLead({
       contact_method: 'whatsapp',
-      location: 'contact_page',
+      cta_location: 'contact_page',
+    });
+  };
+
+  const trackContactEmailClick = () => {
+    trackEmailClick({
+      cta_location: 'contact_page',
     });
   };
 
@@ -23,7 +29,7 @@ export default function Contact() {
             <div>
               <dt>Email</dt>
               <dd>
-                <a href="mailto:carol@nbqltrading.com">carol@nbqltrading.com</a>
+                <a href="mailto:carol@nbqltrading.com" onClick={trackContactEmailClick}>carol@nbqltrading.com</a>
               </dd>
             </div>
             <div>
@@ -78,3 +84,5 @@ export default function Contact() {
     </main>
   );
 }
+
+
