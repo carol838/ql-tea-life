@@ -73,8 +73,59 @@ export type ProductPageData = {
 export const JASMINE_FLOWERS_PRODUCT_URL = '/products/jasmine-tea-with-flowers';
 export const TRADITIONAL_JASMINE_PRODUCT_URL = '/products/traditional-jasmine-tea';
 export const ANCIENT_TREE_BLACK_TEA_PRODUCT_URL = '/products/ancient-tree-black-tea';
+export const MAOFENG_GREEN_TEA_PRODUCT_URL = '/products/maofeng-green-tea';
 
 export const productPages: Record<string, ProductPageData> = {
+  [MAOFENG_GREEN_TEA_PRODUCT_URL]: {
+    url: MAOFENG_GREEN_TEA_PRODUCT_URL,
+    seoTitle: "Maofeng Green Tea Wholesale | Chinese Green Tea | QL Tea Life",
+    seoDescription:
+      "Source Maofeng green tea from China for wholesale and private label. Fresh aroma, clean taste and flexible bulk or customized packaging options.",
+    ogImage: "/images/products/maofeng-green-tea/maofeng-green-tea-dry-leaf.webp",
+    eyebrow: "Chinese Green Tea Wholesale",
+    title: "Maofeng Green Tea",
+    subtitle: "Fresh & Refined Chinese Green Tea for Wholesale",
+    description:
+      "A classic Chinese green tea with a fresh aroma, tender leaf character and clean, refreshing taste. Available for wholesale, tea shops and private label projects.",
+    heroImage: {
+      src: "/images/products/maofeng-green-tea/maofeng-green-tea-dry-leaf.webp",
+      alt: "Maofeng Green Tea dry leaves for wholesale Chinese green tea sourcing",
+      width: "800",
+      height: "800",
+    },
+    whatsappLocation: "product_maofeng_green_tea",
+    highlights: [
+      "Fresh Aroma",
+      "Tender Leaf Character",
+      "Clean Refreshing Taste",
+      "Wholesale Supply",
+    ],
+    recommendedFor: [
+      "Tea Importers",
+      "Tea Shops",
+      "Specialty Retail",
+      "Private Label Tea",
+    ],
+    packagingCards: [],
+    packagingNote: "",
+    galleryImages: [],
+    comparison: {
+      eyebrow: "Buying Guidance",
+      title: "Choosing the Right Maofeng",
+      paragraphs: [
+        "For wholesale buyers, the right Maofeng Green Tea specification should match the target market, product positioning, sensory expectations, application and budget. The highest grade is not always the best commercial choice.",
+      ],
+      link: {
+        href: "/tea-knowledge/chinese-tea-grades-wholesale-guide",
+        label: "Learn How to Choose Chinese Tea Grades ->",
+      },
+    },
+    finalCta: {
+      eyebrow: "Wholesale Inquiry",
+      title: "Looking for Maofeng Green Tea for Your Market?",
+      text: "Contact QL Tea Life for Maofeng Green Tea samples, wholesale information and customized packaging support.",
+    },
+  },
   [JASMINE_FLOWERS_PRODUCT_URL]: {
     url: JASMINE_FLOWERS_PRODUCT_URL,
     seoTitle: 'Jasmine Tea With Flowers for Wholesale & Private Label | QL Tea Life',
@@ -534,6 +585,229 @@ const ancientFaqs = [
   },
 ];
 
+const maofengProfile = [
+  ["Tea Type", "Green Tea"],
+  ["Origin", "China"],
+  ["Appearance", "Tender, naturally shaped green leaves"],
+  ["Aroma", "Fresh and clean"],
+  ["Taste", "Smooth, refreshing and balanced"],
+  ["Application", "Loose Leaf / Tea Shop / Specialty Retail / Private Label"],
+  ["Supply", "Wholesale"],
+  ["Packaging", "Bulk / Customized Packaging"],
+];
+
+const maofengVisuals: Array<{ title: string; description: string; image: ProductImage; contain?: boolean }> = [
+  {
+    title: "Dry Leaf",
+    description: "Tender green leaves with a fresh, natural appearance.",
+    image: {
+      src: "/images/products/maofeng-green-tea/maofeng-green-tea-dry-leaf.webp",
+      alt: "Maofeng Green Tea dry leaves with tender naturally shaped green leaves",
+      width: "800",
+      height: "800",
+    },
+  },
+  {
+    title: "Infused Leaf",
+    description: "A useful reference for evaluating leaf condition and brewing performance.",
+    image: {
+      src: "/images/products/maofeng-green-tea/maofeng-green-tea-infused-leaf.webp",
+      alt: "Maofeng Green Tea infused leaves showing leaf condition after brewing",
+      width: "800",
+      height: "800",
+    },
+  },
+  {
+    title: "Tea Liquor",
+    description: "Clean and bright green-tea infusion.",
+    image: {
+      src: "/images/products/maofeng-green-tea/maofeng-green-tea-liquor.webp",
+      alt: "Maofeng Green Tea liquor in a glass cup with brewed green tea leaves",
+      width: "800",
+      height: "800",
+    },
+    contain: true,
+  },
+];
+
+const maofengSuitableFor = [
+  "Tea Importers",
+  "Tea Shops",
+  "Specialty Retail",
+  "Private Label Tea",
+];
+
+const maofengWholesaleItems = [
+  {
+    title: "Bulk Supply",
+    description: "Wholesale supply options for importers, distributors and tea businesses.",
+  },
+  {
+    title: "Sample Evaluation",
+    description: "Review dry leaf, aroma, liquor and taste before confirming a wholesale specification.",
+  },
+  {
+    title: "Custom Packaging",
+    description: "Support for retail packaging direction based on your brand positioning and market needs.",
+  },
+  {
+    title: "Flexible Sourcing",
+    description: "Tea sourcing support based on application, quality expectations and commercial requirements.",
+  },
+];
+
+const maofengFaqs = [
+  {
+    question: "Can I request a Maofeng sample before ordering?",
+    answer: "Yes. Samples can be arranged so your team can evaluate dry leaf appearance, aroma, liquor and taste before confirming a wholesale order.",
+  },
+  {
+    question: "Is Maofeng available in different quality levels?",
+    answer: "Yes. Maofeng can be sourced according to different market positioning, sensory expectations and target applications.",
+  },
+  {
+    question: "Can Maofeng be supplied for private label projects?",
+    answer: "Yes. Maofeng Green Tea can be prepared for private label loose leaf tea, tea shop collections and specialty retail programs.",
+  },
+  {
+    question: "What packaging options are available for wholesale orders?",
+    answer: "Options can include bulk packaging and customized retail packaging depending on your brand positioning and order requirements.",
+  },
+];
+
+function MaofengGreenTeaPage({ page }: ProductPageProps) {
+  return (
+    <main className="product-page maofeng-page">
+      <section className="product-hero maofeng-hero">
+        <div className="product-hero__copy">
+          <p className="page-eyebrow">{page.eyebrow}</p>
+          <h1>{page.title}</h1>
+          <p className="product-hero__subtitle">{page.subtitle}</p>
+          <p>{page.description}</p>
+          <div className="product-hero__actions">
+            <a className="product-button product-button--primary" href="/contact">Request a Sample</a>
+            <a className="product-button" href="/contact">Contact Us</a>
+          </div>
+        </div>
+        <figure className="product-hero__visual maofeng-hero__visual">
+          <ProductImage image={page.heroImage} />
+        </figure>
+      </section>
+
+      <section className="product-section maofeng-profile">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Product Profile</p>
+          <h2>Maofeng Green Tea Profile</h2>
+          <p>
+            Explore more <a className="article-inline-link" href="/green-tea">Chinese green tea</a> options for wholesale sourcing.
+          </p>
+        </div>
+        <dl className="ancient-spec-grid">
+          {maofengProfile.map(([term, detail]) => (
+            <div key={term}>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="product-section maofeng-visual-section">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Leaf, Liquor &amp; Infusion</p>
+          <h2>Leaf, Liquor &amp; Infusion</h2>
+        </div>
+        <div className="maofeng-visual-grid">
+          {maofengVisuals.map((item) => (
+            <article className="maofeng-visual-card" key={item.title}>
+              <figure>
+                <ProductImage image={item.image} className={item.contain ? "maofeng-image--contain" : undefined} />
+              </figure>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section product-guidance maofeng-guidance">
+        <div>
+          <p className="page-eyebrow">Buying Guidance</p>
+          <h2>Choosing the Right Maofeng</h2>
+        </div>
+        <div className="product-guidance__body">
+          <p>
+            For wholesale buyers, the right Maofeng Green Tea specification should match the target market, product positioning, sensory expectations, application and budget. The highest grade is not always the best commercial choice.
+          </p>
+          <a className="text-link" href="/tea-knowledge/chinese-tea-grades-wholesale-guide">Learn How to Choose Chinese Tea Grades -&gt;</a>
+        </div>
+      </section>
+
+      <section className="product-section maofeng-suitable">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">Suitable For</p>
+          <h2>Suitable For</h2>
+        </div>
+        <div className="ancient-highlight-grid maofeng-suitable-grid">
+          {maofengSuitableFor.map((item, index) => (
+            <article key={item}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h2>{item}</h2>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-section maofeng-wholesale">
+        <div>
+          <p className="page-eyebrow">Wholesale &amp; Private Label</p>
+          <h2>Wholesale &amp; Private Label Support</h2>
+          <p>
+            Maofeng Green Tea can be supplied for wholesale tea sourcing, specialty retail and <a className="article-inline-link" href="/private-label">private label tea solutions</a>.
+          </p>
+        </div>
+        <div className="maofeng-wholesale-grid">
+          {maofengWholesaleItems.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+        <a className="product-button product-button--primary" href="/contact">Request Samples &amp; Wholesale Information</a>
+      </section>
+
+      <section className="product-section ancient-faq maofeng-faq">
+        <div className="ancient-section-heading">
+          <p className="page-eyebrow">FAQ</p>
+          <h2>Maofeng Green Tea Wholesale FAQ</h2>
+        </div>
+        <div className="ancient-faq__list">
+          {maofengFaqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-cta">
+        <div>
+          <p className="page-eyebrow">{page.finalCta.eyebrow}</p>
+          <h2>{page.finalCta.title}</h2>
+          <p>{page.finalCta.text}</p>
+        </div>
+        <div className="product-cta__actions">
+          <a className="product-button product-button--primary" href="/contact">Request a Sample</a>
+          <a className="product-button" href="/contact">Contact Us</a>
+        </div>
+      </section>
+    </main>
+  );
+}
 function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
   const [activeHeroImage, setActiveHeroImage] = useState(ancientHeroGalleryImages[0]);
 
@@ -713,6 +987,10 @@ function AncientTreeBlackTeaPage({ page }: ProductPageProps) {
 }
 
 export default function ProductPage({ page }: ProductPageProps) {
+  if (page.url === MAOFENG_GREEN_TEA_PRODUCT_URL) {
+    return <MaofengGreenTeaPage page={page} />;
+  }
+
   if (page.url === ANCIENT_TREE_BLACK_TEA_PRODUCT_URL) {
     return <AncientTreeBlackTeaPage page={page} />;
   }

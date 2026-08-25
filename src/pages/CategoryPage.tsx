@@ -94,7 +94,7 @@ export const teaCategories: Record<string, TeaCategory> = {
     products: [
       { title: 'Longjing Tea', description: 'Flat-leaf Chinese green tea with a fresh, smooth, and lightly roasted profile.', image: '/images/tea-collection/categories/green-tea.webp' },
       { title: 'Dian Green Tea', description: 'A vibrant Chinese green tea from Yunnan, known for its fresh aroma, rich body and lasting sweetness.', image: '/images/green-tea/dian-green-tea.webp' },
-      { title: 'Mao Feng Green Tea', description: 'A classic Chinese green tea with tender leaves, delicate chestnut notes and a smooth refreshing taste.', image: '/images/green-tea/mao-feng-green-tea.webp' },
+      { title: 'Maofeng Green Tea', description: 'A classic Chinese green tea with a fresh aroma, tender leaf character and clean, refreshing taste.', image: '/images/products/maofeng-green-tea/maofeng-green-tea-dry-leaf.webp', href: '/products/maofeng-green-tea' },
     ],
     faqs: commonFaqs('green tea', 'Loose leaf grades, tea bags, bulk cartons, and private label retail formats are available.', 'We review harvest timing, leaf shape, color, aroma, moisture, and liquor quality.'),
   },

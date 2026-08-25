@@ -678,6 +678,148 @@
   padding: 0 24px 24px;
 }
 
+.product-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.maofeng-page .product-hero {
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+}
+
+.maofeng-hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.maofeng-hero__visual img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.maofeng-profile .ancient-section-heading p:not(.page-eyebrow),
+.maofeng-wholesale > div:first-child p {
+  max-width: 720px;
+  margin: 0 0 28px;
+}
+
+.maofeng-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.maofeng-visual-card {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-surface);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.maofeng-visual-card:hover {
+  box-shadow: 0 18px 34px rgba(45, 40, 31, 0.11);
+  transform: translateY(-3px);
+}
+
+.maofeng-visual-card figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #fbfaf6;
+}
+
+.maofeng-visual-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.maofeng-visual-card img.maofeng-image--contain {
+  object-fit: contain;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.maofeng-visual-card div {
+  padding: 24px;
+}
+
+.maofeng-visual-card h3,
+.maofeng-wholesale-grid h3 {
+  margin: 0 0 12px;
+  color: var(--color-ink);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.maofeng-visual-card p,
+.maofeng-wholesale-grid p,
+.maofeng-wholesale > div:first-child p {
+  margin: 0;
+}
+
+.maofeng-wholesale-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0 30px;
+}
+
+.maofeng-wholesale-grid article {
+  min-height: 210px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 24px;
+  background: var(--color-surface);
+}
+
+.maofeng-suitable-grid article {
+  min-height: 160px;
+}
+
+@media (max-width: 900px) {
+  .maofeng-page .product-hero,
+  .maofeng-visual-grid,
+  .maofeng-wholesale-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maofeng-hero__visual img {
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-hero__actions {
+    width: 100%;
+  }
+
+  .maofeng-hero__visual {
+    padding: 14px;
+  }
+
+  .maofeng-visual-card div,
+  .maofeng-wholesale-grid article {
+    padding: 22px;
+  }
+
+  .maofeng-visual-card h3,
+  .maofeng-wholesale-grid h3 {
+    font-size: 22px;
+  }
+}
 @media (max-width: 900px) {
   .ancient-tree-page .product-hero {
     min-height: auto;
