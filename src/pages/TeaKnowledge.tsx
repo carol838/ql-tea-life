@@ -1,4 +1,5 @@
 import { trackWhatsAppLead } from '../utils/analytics';
+import TeaSampleEvaluationArticle from './TeaSampleEvaluationArticle';
 import './PageTemplates.css';
 
 export type KnowledgeArticleData = {
@@ -14,6 +15,16 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Tea Sourcing / Buyer Guide',
+    title: 'How to Evaluate Tea Samples Before Placing a Wholesale Order',
+    url: '/tea-knowledge/how-to-evaluate-tea-samples-wholesale',
+    description: 'Learn how to evaluate tea samples before a wholesale order, including dry leaf appearance, aroma, liquor, taste, consistency, application and price positioning.',
+    image: '/images/tea-knowledge/how-to-evaluate-tea-samples-wholesale/wholesale-tea-sample-evaluation.jpg',
+    imageAlt: 'Wholesale tea sample evaluation with dry tea leaves and brewed tea liquor',
+    seoTitle: 'How to Evaluate Tea Samples for Wholesale | Tea Sourcing Guide',
+    listingSummary: 'A practical buyer’s guide to comparing tea samples by appearance, aroma, liquor, taste, application, consistency and price positioning.',
+  },
   {
     category: 'Tea Business Guide',
     title: 'Private Label Tea Manufacturer in China: A Complete Guide',
@@ -153,6 +164,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/how-to-evaluate-tea-samples-wholesale') {
+    return <TeaSampleEvaluationArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/private-label-tea-manufacturer-china') {
     return <PrivateLabelTeaManufacturerChinaArticle article={article} />;
   }
