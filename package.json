@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/generate-static-seo-pages.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b && tsc -p tsconfig.ai-os.json --noEmit",
     "build:ai-os": "tsc -p tsconfig.ai-os.json",

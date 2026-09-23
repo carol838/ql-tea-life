@@ -45,7 +45,18 @@ export default function App() {
   const knowledgeArticle = knowledgeArticles.find(
     (article) => article.url === path || article.aliases?.includes(path),
   );
-  const canonicalPath = knowledgeArticle?.url ?? path;
+  const isNotFound = !(
+    path === '/' ||
+    path === PACKAGING_OPTIONS_ROUTE ||
+    path === PYRAMID_TEA_BAGS_ROUTE ||
+    Boolean(teaCategory) ||
+    Boolean(privateLabelPage) ||
+    path === '/tea-knowledge' ||
+    Boolean(knowledgeArticle) ||
+    Boolean(productPage) ||
+    path === '/contact'
+  );
+  const canonicalPath = isNotFound ? undefined : (knowledgeArticle?.url ?? path);
   let ogImagePath = knowledgeArticle?.image;
 
   let page = <NotFound />;
@@ -105,16 +116,37 @@ export default function App() {
 
     meta.content = description;
 
-    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const existingCanonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    let canonicalUrl: string | undefined;
 
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
+    if (canonicalPath) {
+      const canonical = existingCanonical ?? document.createElement('link');
+
+      if (!existingCanonical) {
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+
+      canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
+      canonical.href = canonicalUrl;
+    } else {
+      existingCanonical?.remove();
     }
 
-    const canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
-    canonical.href = canonicalUrl;
+    const existingRobots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+
+    if (isNotFound) {
+      const robots = existingRobots ?? document.createElement('meta');
+
+      if (!existingRobots) {
+        robots.name = 'robots';
+        document.head.appendChild(robots);
+      }
+
+      robots.content = 'noindex, follow';
+    } else {
+      existingRobots?.remove();
+    }
 
     if (ogImagePath) {
       let ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
@@ -155,10 +187,10 @@ export default function App() {
     window.gtag?.('event', 'page_view', {
       send_to: GA_MEASUREMENT_ID,
       page_title: title,
-      page_location: canonicalUrl,
-      page_path: canonicalPath,
+      page_location: canonicalUrl ?? `${SITE_URL}${path}`,
+      page_path: canonicalPath ?? path,
     });
-  }, [canonicalPath, description, ogImagePath, title]);
+  }, [canonicalPath, description, isNotFound, ogImagePath, path, title]);
 
   return (
     <>
