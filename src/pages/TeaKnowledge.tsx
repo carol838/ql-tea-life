@@ -1,4 +1,5 @@
 import { trackWhatsAppLead } from '../utils/analytics';
+import OsmanthusBlackTeaArticle from './OsmanthusBlackTeaArticle';
 import TeaSampleEvaluationArticle from './TeaSampleEvaluationArticle';
 import './PageTemplates.css';
 
@@ -15,6 +16,16 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Black Tea',
+    title: 'Osmanthus Black Tea: A Floral Taste of Chinese Autumn',
+    url: '/tea-knowledge/osmanthus-black-tea',
+    description: 'Discover Osmanthus Black Tea, its sweet floral aroma, smooth taste, brewing guide, product formats and wholesale private label potential.',
+    image: '/images/tea-knowledge/osmanthus-black-tea/osmanthus-black-tea-loose-leaf.webp',
+    imageAlt: 'Loose leaf Osmanthus Black Tea with golden osmanthus blossoms',
+    seoTitle: 'Osmanthus Black Tea: Taste & Brewing Guide | QL Tea Life',
+    listingSummary: 'Discover the delicate aroma, brewing traditions and wholesale potential of one of China’s distinctive floral black teas.',
+  },
   {
     category: 'Tea Sourcing / Buyer Guide',
     title: 'How to Evaluate Tea Samples Before Placing a Wholesale Order',
@@ -164,6 +175,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/osmanthus-black-tea') {
+    return <OsmanthusBlackTeaArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/how-to-evaluate-tea-samples-wholesale') {
     return <TeaSampleEvaluationArticle article={article} />;
   }

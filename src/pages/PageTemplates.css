@@ -49,6 +49,35 @@
   object-fit: cover;
 }
 
+.osmanthus-article__portrait,
+.osmanthus-article__product-image {
+  margin: 32px auto;
+}
+
+.osmanthus-article__portrait {
+  width: min(340px, 100%);
+}
+
+.osmanthus-article__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.osmanthus-article__product-image {
+  width: min(100%, 640px);
+}
+
+.osmanthus-article__product-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .article-body__image {
   display: block;
   width: min(100%, 760px);
