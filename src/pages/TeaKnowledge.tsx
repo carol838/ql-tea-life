@@ -1,4 +1,5 @@
 import { trackWhatsAppLead } from '../utils/analytics';
+import ChoosingTeaForWholesaleArticle from './ChoosingTeaForWholesaleArticle';
 import OsmanthusBlackTeaArticle from './OsmanthusBlackTeaArticle';
 import TeaSampleEvaluationArticle from './TeaSampleEvaluationArticle';
 import './PageTemplates.css';
@@ -16,6 +17,16 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Tea Sourcing / Buyer Guide',
+    title: 'Choosing Chinese Tea for Wholesale: Price, Samples & Packaging',
+    url: '/tea-knowledge/choosing-tea-for-wholesale',
+    description: 'Learn how to choose Chinese tea for wholesale by comparing target prices, tea samples, product characteristics and private label packaging options.',
+    image: '/images/tea-knowledge/choosing-tea-for-wholesale/chinese-loose-tea-selection.webp',
+    imageAlt: 'Assortment of Chinese loose-leaf teas in white tasting bowls for wholesale selection',
+    seoTitle: 'Choosing Chinese Tea for Wholesale: Price & Samples | QL Tea Life',
+    listingSummary: 'A practical guide to narrowing tea selections, comparing wholesale prices and samples, and planning the right packaging for your market.',
+  },
   {
     category: 'Black Tea',
     title: 'Osmanthus Black Tea: A Floral Taste of Chinese Autumn',
@@ -175,6 +186,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/choosing-tea-for-wholesale') {
+    return <ChoosingTeaForWholesaleArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/osmanthus-black-tea') {
     return <OsmanthusBlackTeaArticle article={article} />;
   }
@@ -3076,6 +3091,11 @@ function TeaQualityArticle({ article }: { article: KnowledgeArticleData }) {
         <aside className="article-related">
           <p className="page-eyebrow">Related Reading</p>
           <ul className="article-related__list">
+            <li>
+              <a href="/tea-knowledge/choosing-tea-for-wholesale">
+                Choosing Chinese Tea for Wholesale: Price, Samples &amp; Packaging
+              </a>
+            </li>
             <li>
               <a href="/tea-knowledge/chinese-tea-types-explained">Chinese Tea Types Explained</a>
             </li>

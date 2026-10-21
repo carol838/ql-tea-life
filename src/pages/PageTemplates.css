@@ -256,6 +256,34 @@
   font-size: 21px;
 }
 
+.wholesale-selection-article__figure {
+  width: min(100%, 760px);
+  margin: 32px auto;
+}
+
+.wholesale-selection-article__figure--lead {
+  margin-top: 0;
+  margin-bottom: 56px;
+}
+
+.wholesale-selection-article__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wholesale-selection-article__figure .article-media-caption {
+  margin: 14px auto 0;
+}
+
+.article-body .wholesale-selection-article__steps {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding-left: 24px;
+}
+
 .article-editor-note {
   margin: 12px 0 48px;
   border: 1px solid rgba(185, 155, 94, 0.28);
@@ -1706,6 +1734,15 @@
   }
 
   .tea-sample-article__hero {
+    margin-bottom: 42px;
+  }
+
+  .wholesale-selection-article__figure {
+    margin: 26px auto;
+  }
+
+  .wholesale-selection-article__figure--lead {
+    margin-top: 0;
     margin-bottom: 42px;
   }
 
