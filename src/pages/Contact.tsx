@@ -1,10 +1,12 @@
 import { FormEvent, useRef, useState } from 'react';
+import { useCatalogueDownload } from '../components/CatalogueDownload';
 import { generateLead, trackEmailClick, trackWhatsAppLead } from '../utils/analytics';
 import './Contact.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
 
 export default function Contact() {
+  const { openCatalogueDownload } = useCatalogueDownload();
   const submissionInProgress = useRef(false);
   const [submissionState, setSubmissionState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [submissionMessage, setSubmissionMessage] = useState('');
@@ -120,6 +122,15 @@ export default function Contact() {
           />
           <figcaption>Reliable Tea Production for Global Buyers</figcaption>
         </figure>
+      </section>
+
+      <section className="contact-catalogue" aria-labelledby="contact-catalogue-title">
+        <div>
+          <p className="contact-eyebrow">Wholesale Product Guide</p>
+          <h2 id="contact-catalogue-title">Explore Our Tea Catalogue</h2>
+          <p>Review our Chinese tea selection and private label packaging options before starting your inquiry.</p>
+        </div>
+        <button type="button" onClick={openCatalogueDownload}>Download Tea Catalogue</button>
       </section>
 
       <section className="contact-inquiry">

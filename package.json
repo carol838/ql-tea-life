@@ -11,7 +11,8 @@
     "build:ai-os": "tsc -p tsconfig.ai-os.json",
     "qualify:inquiry": "npm run build:ai-os && node .ai-os-build/scripts/qualify-inquiry.js",
     "test:contact": "node scripts/test-contact-submission.mjs",
-    "test": "npm run build:ai-os && node .ai-os-build/scripts/test-qualification-workflow.js"
+    "test:catalogue": "node scripts/test-catalogue-submission.mjs",
+    "test": "npm run build:ai-os && node .ai-os-build/scripts/test-qualification-workflow.js && node scripts/test-contact-submission.mjs && node scripts/test-catalogue-submission.mjs"
   },
   "dependencies": {
     "react": "18.3.1",

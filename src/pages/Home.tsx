@@ -1,3 +1,4 @@
+import { useCatalogueDownload } from '../components/CatalogueDownload';
 import { trackWhatsAppLead } from '../utils/analytics';
 import './Home.css';
 
@@ -183,6 +184,8 @@ const faqStructuredData = {
 };
 
 export default function Home() {
+  const { openCatalogueDownload } = useCatalogueDownload();
+
   return (
     <main className="home-page">
       <script
@@ -271,6 +274,20 @@ export default function Home() {
             </a>
           ))}
         </div>
+      </section>
+
+      <section className="home-section home-catalogue">
+        <div className="home-catalogue__content">
+          <p className="home-section__eyebrow">Wholesale Product Guide</p>
+          <h2>Explore Our Tea Collection</h2>
+          <p>
+            Discover our selection of Chinese green, black, oolong, jasmine and flavoured teas, along with
+            available packaging options for wholesale and private label projects.
+          </p>
+        </div>
+        <button className="home-button home-catalogue__button" type="button" onClick={openCatalogueDownload}>
+          Download Tea Catalogue
+        </button>
       </section>
 
       <section className="home-section home-market-applications">

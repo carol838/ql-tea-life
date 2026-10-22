@@ -89,11 +89,18 @@
 }
 
 .site-footer__copyright {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
   padding-top: 20px;
   border-top: 1px solid rgba(185, 144, 72, 0.22);
   color: var(--color-muted);
   font-size: 12px;
+}
+
+.site-footer__copyright a {
+  color: inherit;
+  text-underline-offset: 3px;
 }
 
 .site-footer a:focus-visible {
@@ -124,5 +131,10 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 13px;
+  }
+
+  .site-footer__copyright {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

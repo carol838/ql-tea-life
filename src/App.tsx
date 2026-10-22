@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { CatalogueDownloadProvider } from './components/CatalogueDownload';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -11,6 +12,7 @@ import PrivateLabelPage, {
   PackagingOptionsPage,
   privateLabelPages,
 } from './pages/PrivateLabelPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import ProductPage, { productPages } from './pages/ProductPage';
 import PyramidTeaBagsPage, { PYRAMID_TEA_BAGS_ROUTE, PYRAMID_TEA_BAGS_SEO } from './pages/PyramidTeaBagsPage';
 import TeaKnowledge, { KnowledgeArticle, knowledgeArticles } from './pages/TeaKnowledge';
@@ -54,7 +56,8 @@ export default function App() {
     path === '/tea-knowledge' ||
     Boolean(knowledgeArticle) ||
     Boolean(productPage) ||
-    path === '/contact'
+    path === '/contact' ||
+    path === '/privacy-policy'
   );
   const canonicalPath = isNotFound ? undefined : (knowledgeArticle?.url ?? path);
   let ogImagePath = knowledgeArticle?.image;
@@ -102,6 +105,10 @@ export default function App() {
     page = <Contact />;
     title = 'Contact QL Tea Life | Wholesale Tea Inquiry';
     description = 'Contact QL Tea Life about wholesale Chinese tea, private label packaging and OEM projects.';
+  } else if (path === '/privacy-policy') {
+    page = <PrivacyPolicy />;
+    title = 'Privacy Policy | QL Tea Life';
+    description = 'Learn how QL Tea Life handles information submitted through website inquiry and catalogue request forms.';
   }
 
   useEffect(() => {
@@ -193,11 +200,11 @@ export default function App() {
   }, [canonicalPath, description, isNotFound, ogImagePath, path, title]);
 
   return (
-    <>
+    <CatalogueDownloadProvider>
       <SiteHeader />
       {page}
       <SiteFooter />
       <WhatsAppButton />
-    </>
+    </CatalogueDownloadProvider>
   );
 }

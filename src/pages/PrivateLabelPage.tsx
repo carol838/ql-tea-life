@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useCatalogueDownload } from '../components/CatalogueDownload';
 import './PageTemplates.css';
 
 type PrivateLabelContent = {
@@ -237,6 +238,8 @@ function ProductionVideoShowcase() {
 }
 
 export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }) {
+  const { openCatalogueDownload } = useCatalogueDownload();
+
   if (page.title === 'Private Label Tea') {
     return (
       <main className="content-page private-label-manufacturing-page">
@@ -244,7 +247,12 @@ export default function PrivateLabelPage({ page }: { page: PrivateLabelContent }
           <p className="page-eyebrow">Private Label Solutions</p>
           <h1>{page.title}</h1>
           <p>{page.intro}</p>
-          <a className="page-button" href="/contact">Contact Us</a>
+          <div className="private-label-hero__actions">
+            <a className="page-button" href="/contact">Contact Us</a>
+            <button className="page-button page-button--secondary" type="button" onClick={openCatalogueDownload}>
+              Download Product Catalogue
+            </button>
+          </div>
         </section>
 
         <section className="page-section manufacturer-section">

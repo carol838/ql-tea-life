@@ -17,6 +17,11 @@ type EmailClickParams = {
   location?: string;
 };
 
+type CatalogueDownloadParams = {
+  source_page: string;
+  catalogue_name: string;
+};
+
 const isDevelopment = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env?.DEV === true;
 const debugParams = isDevelopment ? { debug_mode: true } : {};
 
@@ -72,6 +77,14 @@ export function trackEmailClick(params: EmailClickParams = {}) {
     contact_method: 'email',
     ...(params.cta_location ? { cta_location: params.cta_location } : {}),
     ...(params.location ? { cta_location: params.location, location: params.location } : {}),
+    ...debugParams,
+  });
+}
+
+export function trackCatalogueDownload(params: CatalogueDownloadParams) {
+  sendGtagEvent('catalogue_download', {
+    source_page: params.source_page,
+    catalogue_name: params.catalogue_name,
     ...debugParams,
   });
 }

@@ -969,9 +969,41 @@
   max-width: 680px;
 }
 
-.private-label-hero .page-button {
+.private-label-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   width: fit-content;
   margin-top: 32px;
+}
+
+.private-label-hero__actions .page-button {
+  margin: 0;
+}
+
+.page-button--secondary {
+  color: #17452d;
+  background: transparent;
+}
+
+.page-button--secondary:hover,
+.page-button--secondary:focus-visible {
+  background: rgba(216, 191, 130, 0.22);
+}
+
+.privacy-policy-content {
+  max-width: 820px;
+}
+
+.privacy-policy-content h2 {
+  margin: 38px 0 12px;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.privacy-policy-content p {
+  line-height: 1.75;
 }
 
 .manufacturer-section h2,
@@ -1955,6 +1987,15 @@
   .private-label-manufacturing-page .page-section h2 {
     font-size: 34px;
     line-height: 1.14;
+  }
+
+  .private-label-hero__actions {
+    width: 100%;
+  }
+
+  .private-label-hero__actions .page-button {
+    width: 100%;
+    text-align: center;
   }
 
   .production-section {

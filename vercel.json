@@ -4,6 +4,11 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/catalogue-request.js": {
+      "includeFiles": "private/catalogues/QL_Tea_Life_Wholesale_Tea_Catalogue_Web.pdf"
+    }
+  },
   "redirects": [
     {
       "source": "/tea-knowledge/private-label-tea-guide",

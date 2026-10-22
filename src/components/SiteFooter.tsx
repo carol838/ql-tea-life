@@ -62,6 +62,7 @@ export default function SiteFooter() {
 
         <small className="site-footer__copyright">
           &copy; 2026 QL Tea Life. All rights reserved.
+          <a href="/privacy-policy">Privacy Policy</a>
         </small>
       </div>
     </footer>
