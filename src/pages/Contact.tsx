@@ -1,9 +1,14 @@
-import { trackEmailClick, trackWhatsAppLead } from '../utils/analytics';
+import { FormEvent, useRef, useState } from 'react';
+import { generateLead, trackEmailClick, trackWhatsAppLead } from '../utils/analytics';
 import './Contact.css';
 
 const WHATSAPP_URL = 'https://wa.me/8618767158838';
 
 export default function Contact() {
+  const submissionInProgress = useRef(false);
+  const [submissionState, setSubmissionState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [submissionMessage, setSubmissionMessage] = useState('');
+
   const trackWhatsAppClick = () => {
     trackWhatsAppLead({
       contact_method: 'whatsapp',
@@ -15,6 +20,62 @@ export default function Contact() {
     trackEmailClick({
       cta_location: 'contact_page',
     });
+  };
+
+  const submitInquiry = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (submissionInProgress.current) {
+      return;
+    }
+
+    submissionInProgress.current = true;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const submissionId = crypto.randomUUID();
+
+    setSubmissionState('sending');
+    setSubmissionMessage('Sending your inquiry…');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          website: formData.get('website'),
+          submissionId,
+        }),
+      });
+      const result = await response.json().catch(() => null) as { delivered?: boolean; message?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(result?.message ?? 'We could not send your inquiry. Please try again.');
+      }
+
+      form.reset();
+      setSubmissionState('success');
+      setSubmissionMessage(result?.message ?? 'Thank you. Your inquiry has been sent successfully.');
+      if (result?.delivered === true) {
+        generateLead({
+          method: 'contact_form',
+          page_path: '/contact',
+          form_name: 'contact_inquiry',
+        });
+      }
+    } catch (error) {
+      setSubmissionState('error');
+      setSubmissionMessage(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your inquiry. Please try again or email us directly.',
+      );
+    } finally {
+      submissionInProgress.current = false;
+    }
   };
 
   return (
@@ -68,17 +129,34 @@ export default function Contact() {
           <p>Tell us about the tea, packaging, quantity, and market you are planning for.</p>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={submitInquiry}>
           <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" />
+          <input id="name" name="name" type="text" autoComplete="name" maxLength={100} required />
 
           <label htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" />
+          <input id="email" name="email" type="email" autoComplete="email" maxLength={254} required />
 
           <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" />
+          <textarea id="message" name="message" maxLength={5000} required />
 
-          <button type="submit">Submit Inquiry</button>
+          <div className="contact-form__honeypot" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input id="website" name="website" type="text" autoComplete="off" maxLength={200} tabIndex={-1} />
+          </div>
+
+          <button type="submit" disabled={submissionState === 'sending'} aria-busy={submissionState === 'sending'}>
+            {submissionState === 'sending' ? 'Sending…' : 'Submit Inquiry'}
+          </button>
+
+          {submissionMessage ? (
+            <p
+              className={`contact-form__status contact-form__status--${submissionState}`}
+              role={submissionState === 'error' ? 'alert' : 'status'}
+              aria-live="polite"
+            >
+              {submissionMessage}
+            </p>
+          ) : null}
         </form>
       </section>
     </main>
