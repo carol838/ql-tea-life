@@ -1,4 +1,5 @@
 import { trackWhatsAppLead } from '../utils/analytics';
+import ChineseGreenTeaWholesaleArticle from './ChineseGreenTeaWholesaleArticle';
 import ChoosingTeaForWholesaleArticle from './ChoosingTeaForWholesaleArticle';
 import OsmanthusBlackTeaArticle from './OsmanthusBlackTeaArticle';
 import TeaSampleEvaluationArticle from './TeaSampleEvaluationArticle';
@@ -17,6 +18,16 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Green Tea / Buyer Guide',
+    title: 'Chinese Green Tea for Wholesale: How to Choose the Right Tea for Your Market',
+    url: '/tea-knowledge/chinese-green-tea-wholesale-guide',
+    description: 'Explore Chinese green tea styles, flavour profiles, samples and packaging considerations to choose the right wholesale tea for your market.',
+    image: '/images/category-hero/green-tea-hero.webp',
+    imageAlt: 'Chinese green tea leaves and pale green tea liquor prepared for wholesale evaluation',
+    seoTitle: 'Chinese Green Tea for Wholesale | QL Tea Life',
+    listingSummary: 'Compare Chinese green tea styles, target-market preferences, samples, pricing and packaging considerations for wholesale selection.',
+  },
   {
     category: 'Tea Sourcing / Buyer Guide',
     title: 'Choosing Chinese Tea for Wholesale: Price, Samples & Packaging',
@@ -186,6 +197,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/chinese-green-tea-wholesale-guide') {
+    return <ChineseGreenTeaWholesaleArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/choosing-tea-for-wholesale') {
     return <ChoosingTeaForWholesaleArticle article={article} />;
   }

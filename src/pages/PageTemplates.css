@@ -303,6 +303,48 @@
   text-underline-offset: 4px;
 }
 
+.article-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  gap: 8px;
+  margin: 0 0 24px;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.article-breadcrumbs a {
+  color: #315c3a;
+  text-decoration-color: rgba(185, 144, 72, 0.72);
+  text-underline-offset: 3px;
+}
+
+.green-wholesale-article__introduction {
+  margin-bottom: 48px;
+}
+
+.green-wholesale-article__figure {
+  width: min(82%, 640px);
+  margin: 32px auto;
+}
+
+.green-wholesale-article__figure--lead {
+  width: min(85%, 680px);
+  margin-top: 34px;
+}
+
+.green-wholesale-article__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.green-wholesale-article__figure .article-media-caption {
+  margin: 14px auto 0;
+}
+
 .article-heading-link {
   color: inherit;
   text-decoration-color: var(--color-gold);
@@ -1763,6 +1805,11 @@
 
   .article-body__lead-image {
     margin-bottom: 42px;
+  }
+
+  .green-wholesale-article__figure,
+  .green-wholesale-article__figure--lead {
+    width: 100%;
   }
 
   .tea-sample-article__hero {
