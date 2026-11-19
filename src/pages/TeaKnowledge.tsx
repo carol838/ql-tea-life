@@ -1,6 +1,7 @@
 import { trackWhatsAppLead } from '../utils/analytics';
 import ChineseGreenTeaWholesaleArticle from './ChineseGreenTeaWholesaleArticle';
 import ChoosingTeaForWholesaleArticle from './ChoosingTeaForWholesaleArticle';
+import JasmineGreenTeaMilkTeaArticle from './JasmineGreenTeaMilkTeaArticle';
 import OsmanthusBlackTeaArticle from './OsmanthusBlackTeaArticle';
 import TeaSampleEvaluationArticle from './TeaSampleEvaluationArticle';
 import './PageTemplates.css';
@@ -18,6 +19,16 @@ export type KnowledgeArticleData = {
 };
 
 export const knowledgeArticles: KnowledgeArticleData[] = [
+  {
+    category: 'Jasmine Tea / Beverage Guide',
+    title: 'Jasmine Green Tea for Milk Tea Shops: Choosing the Right Tea Base',
+    url: '/tea-knowledge/jasmine-green-tea-for-milk-tea-shops',
+    description: 'Learn how milk tea shops and beverage brands can evaluate jasmine green tea by aroma, extraction, ingredient compatibility, cost per serving and supply consistency.',
+    image: '/images/jasmine-tea/jasmine-green-tea.webp',
+    imageAlt: 'Loose jasmine green tea leaves and jasmine blossoms for beverage applications',
+    seoTitle: 'Jasmine Green Tea for Milk Tea Shops | QL Tea Life',
+    listingSummary: 'A practical guide to choosing a jasmine green tea base for milk tea, fruit tea and other commercial beverage applications.',
+  },
   {
     category: 'Green Tea / Buyer Guide',
     title: 'Chinese Green Tea for Wholesale: How to Choose the Right Tea for Your Market',
@@ -197,6 +208,10 @@ export default function TeaKnowledge() {
 }
 
 export function KnowledgeArticle({ article }: { article: KnowledgeArticleData }) {
+  if (article.url === '/tea-knowledge/jasmine-green-tea-for-milk-tea-shops') {
+    return <JasmineGreenTeaMilkTeaArticle article={article} />;
+  }
+
   if (article.url === '/tea-knowledge/chinese-green-tea-wholesale-guide') {
     return <ChineseGreenTeaWholesaleArticle article={article} />;
   }

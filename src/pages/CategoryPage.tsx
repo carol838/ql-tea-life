@@ -323,6 +323,58 @@ export default function CategoryPage({ category }: { category: TeaCategory }) {
         </div>
       </section>
 
+      {category.name === 'Jasmine Tea' && (
+        <section className="jasmine-beverage-section">
+          <figure className="jasmine-beverage-section__visual">
+            <img
+              src="/images/jasmine-tea/jasmine-green-tea.webp"
+              alt="Loose jasmine green tea leaves and jasmine blossoms for milk tea shops"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div className="jasmine-beverage-section__copy">
+            <p className="page-eyebrow">Commercial Beverage Applications</p>
+            <h2>Jasmine Green Tea for Milk Tea Shops &amp; Beverage Brands</h2>
+            <p>
+              Aromatic Chinese jasmine green tea for milk tea shops, beverage brands, and commercial tea applications.
+            </p>
+            <p>
+              QL Tea Life provides wholesale jasmine green tea with product recommendations, sample support, and
+              flexible sourcing solutions for beverage businesses.
+            </p>
+            <div className="jasmine-beverage-section__lists">
+              <div>
+                <h3>Suitable Applications</h3>
+                <ul>
+                  <li>Jasmine Milk Tea</li>
+                  <li>Jasmine Fruit Tea</li>
+                  <li>Iced Jasmine Tea</li>
+                  <li>Specialty Tea Beverages</li>
+                </ul>
+              </div>
+              <div>
+                <h3>What We Offer</h3>
+                <ul>
+                  <li>Bulk jasmine green tea supply</li>
+                  <li>Product selection and blending support</li>
+                  <li>Samples for beverage testing</li>
+                  <li>Private label and customized packaging</li>
+                </ul>
+              </div>
+            </div>
+            <h3>Looking for a Jasmine Green Tea Supplier?</h3>
+            <p>
+              Tell us your target flavor, purchasing volume, and budget. We&apos;ll help you find a suitable tea for your
+              beverage business.
+            </p>
+            <a className="page-button" href="/contact">Get a Wholesale Quote</a>
+          </div>
+        </section>
+      )}
+
       <section className="inquiry-cta">
         <div>
           <p className="page-eyebrow">Wholesale Inquiry</p>

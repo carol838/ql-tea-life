@@ -345,6 +345,22 @@
   margin: 14px auto 0;
 }
 
+.jasmine-milk-tea-article__figure {
+  width: min(82%, 640px);
+  margin: 34px auto 0;
+}
+
+.jasmine-milk-tea-article__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.jasmine-milk-tea-article__figure .article-media-caption {
+  margin: 14px auto 0;
+}
+
 .article-heading-link {
   color: inherit;
   text-decoration-color: var(--color-gold);
@@ -785,6 +801,78 @@
   color: var(--color-muted);
   font-size: 14px;
   line-height: 1.65;
+}
+
+.jasmine-beverage-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  width: min(1120px, calc(100% - 40px));
+  gap: 52px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 72px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.jasmine-beverage-section__visual {
+  overflow: hidden;
+  margin: 0;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: 0 22px 52px rgba(45, 40, 31, 0.12);
+}
+
+.jasmine-beverage-section__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.jasmine-beverage-section__copy h2 {
+  margin: 0 0 20px;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.jasmine-beverage-section__copy > p:not(.page-eyebrow) {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.jasmine-beverage-section__lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 28px 0;
+}
+
+.jasmine-beverage-section__copy h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.jasmine-beverage-section__copy ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.jasmine-beverage-section__copy li {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.jasmine-beverage-section__copy .page-button {
+  display: inline-flex;
+  margin-top: 8px;
 }
 
 .jasmine-product-grid {
@@ -1812,6 +1900,10 @@
     width: 100%;
   }
 
+  .jasmine-milk-tea-article__figure {
+    width: 100%;
+  }
+
   .tea-sample-article__hero {
     margin-bottom: 42px;
   }
@@ -1988,6 +2080,7 @@
 
   .page-section--split,
   .jasmine-about,
+  .jasmine-beverage-section,
   .product-placeholder-grid,
   .benefit-grid,
   .packaging-hero,
@@ -2104,6 +2197,11 @@
     padding-bottom: 52px;
   }
 
+  .jasmine-beverage-section {
+    gap: 32px;
+    padding: 52px 0;
+  }
+
   .jasmine-about__visual {
     height: auto;
     aspect-ratio: 4 / 3;
@@ -2143,8 +2241,17 @@
 
 @media (max-width: 520px) {
   .jasmine-about,
-  .jasmine-benefits {
+  .jasmine-benefits,
+  .jasmine-beverage-section {
     width: min(100% - 28px, 1120px);
+  }
+
+  .jasmine-beverage-section__copy h2 {
+    font-size: 30px;
+  }
+
+  .jasmine-beverage-section__lists {
+    grid-template-columns: 1fr;
   }
 
   .jasmine-about h2,
